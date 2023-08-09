@@ -1,0 +1,64 @@
+@import './burger-menu.scss';
+
+.header {
+  max-height: 110px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @media (max-width: $mobile) {
+    max-height: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    > .user-button {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+  &__quiz-button {
+    margin-left: 30px;
+    white-space: nowrap;
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__logo {
+    &-img {
+      max-width: 42px;
+      max-height: 50px;
+      width: 100%;
+      height: 100%;
+      @media (max-width: $mobile) {
+        max-width: 33px;
+        max-height: 40px;
+      }
+    }
+  }
+
+  &__basket-button {
+    margin-left: 30px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: $mobile) {
+      margin-left: 0;
+    }
+    &-img {
+      max-width: 22px;
+      max-height: 26px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
