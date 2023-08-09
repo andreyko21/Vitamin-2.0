@@ -1,0 +1,92 @@
+@import './user-button.scss';
+@import './iconMenu.scss';
+@import './shop-menu.scss';
+$black: #000000;
+$main_orange: #ff7d4e;
+
+.burger-menu {
+  @media (min-width: ($mobile + 0.1px)) {
+    display: none;
+  }
+  @media (max-width: $mobile) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+    &:not(.open) {
+      transform: translate(0, -1000%);
+    }
+    &.open {
+      transform: translate(0);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    &__nav {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba($color: $black, $alpha: 0.07);
+    }
+    &__header {
+      border-bottom: 1px solid rgba($color: $black, $alpha: 0.07);
+      &-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 19px;
+        padding-bottom: 21px;
+      }
+    }
+    &__nav-text-button {
+      font-family: 'Effra';
+      font-weight: 500;
+      font-size: 20px;
+      display: block;
+      width: 100%;
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+      .right-arrow {
+        max-width: 9px;
+        max-height: 15px;
+      }
+      &.take-quiz-button {
+        color: $main_orange;
+      }
+    }
+    &__footer {
+      font-family: 'OpenSans';
+      font-weight: 400;
+
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    &__mailto-link {
+      color: rgba($color: $black, $alpha: 0.5);
+      font-size: 14px;
+    }
+    &__all-rights {
+      margin-top: 15px;
+      color: rgba($color: $black, $alpha: 0.3);
+      font-size: 12px;
+    }
+  }
+  .header__user-button {
+    background: none;
+    border-radius: 50%;
+    max-width: 32px;
+    max-height: 32px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+  }
+}
