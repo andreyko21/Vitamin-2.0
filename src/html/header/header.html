@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="header__container">
+    @@include('menu.html') @@include('shop-menu.html')
+    @@include('information-menu.html') @@include('profile-menu.html')
+    @@include('iconMenu.html')
+    <a class="header__logo" href="#">
+      <svg class="header__logo-img">
+        <use href="images/Sprite.svg#logo"></use>
+      </svg>
+    </a>
+    <div class="header__buttons">
+      @@include('user-button.html')
+      <button class="header__basket-button">
+        <svg class="header__basket-button-img">
+          <use href="images/Sprite.svg#basket"></use>
+        </svg>
+      </button>
+      <a class="header__quiz-button default-button" href="#">Take the quiz</a>
+    </div>
+  </div>
+</header>

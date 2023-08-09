@@ -1,0 +1,43 @@
+<div class="burger-menu">
+  <div class="burger-menu__header">
+    <div class="burger-menu__container">
+      <div class="burger-menu__header-inner">
+        @@include('iconMenu.html')
+        <button class="user-button profile burger-profile-open-button">
+          <svg class="user-button__icon">
+            <use href="images/Sprite.svg#user"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="burger-menu__container">
+    <nav class="burger-menu__nav">
+      <button class="burger-menu__nav-text-button burger-shop-open-button">
+        Shop
+        <svg class="right-arrow">
+          <use xlink:href="images/Sprite.svg#right-arrow"></use>
+        </svg>
+      </button>
+      <button
+        class="burger-menu__nav-text-button burger-information-open-button"
+      >
+        Information
+        <svg class="right-arrow">
+          <use xlink:href="images/Sprite.svg#right-arrow"></use>
+        </svg>
+      </button>
+      <button class="burger-menu__nav-text-button take-quiz-button">
+        Take the quiz
+      </button>
+    </nav>
+    <div class="burger-menu__footer">
+      <a class="burger-menu__mailto-link" href="mailto:support@medstogo.com"
+        >support@medstogo.com</a
+      >
+      <p class="burger-menu__all-rights">
+        © 2020 Vitamins.com / All rights reserved
+      </p>
+    </div>
+  </div>
+</div>
