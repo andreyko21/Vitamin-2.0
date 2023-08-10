@@ -2,8 +2,15 @@
   <div class="burger-menu__header">
     <div class="burger-menu__container">
       <div class="burger-menu__header-inner">
-        @@include('iconMenu.html')
-        <button class="user-button profile burger-profile-open-button">
+        <button class="burger-menu-button" aria-label="Close Menu">
+          <div class="icon-menu">
+            <span></span>
+          </div>
+        </button>
+        <button
+          class="user-button profile burger-profile-open-button"
+          aria-label="Profile"
+        >
           <svg class="user-button__icon">
             <use href="images/Sprite.svg#user"></use>
           </svg>

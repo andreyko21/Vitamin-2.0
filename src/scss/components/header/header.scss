@@ -1,15 +1,19 @@
 @import './burger-menu.scss';
 
 .header {
+  top: 0;
+  position: sticky;
   max-height: 110px;
   padding-top: 30px;
   padding-bottom: 30px;
+  z-index: 10;
   @media (max-width: $mobile) {
     max-height: 70px;
     padding-top: 15px;
     padding-bottom: 15px;
   }
   &__container {
+    max-width: 1770px;
     display: flex;
     justify-content: space-between;
     align-items: center;

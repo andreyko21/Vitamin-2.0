@@ -3,7 +3,6 @@
 /**
 * Подключение шрифтов локально из папки "./src/fonts"
 */
-@import 'config/fonts';
 
 /** Подключение переменных */
 @import 'config/vars';
@@ -45,6 +44,7 @@
 */
 @import 'components/UI/default-button.scss';
 @import 'components/header/header.scss';
+@import 'components/footer.scss';
 
 .scroll-lock {
   overflow: hidden;
