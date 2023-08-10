@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/home.min.css?_v=20230810161428">
+  <link rel="stylesheet" href="css/home.min.css?_v=20230810163226">
   <title>Головна</title>
 </head>
 
@@ -17,13 +17,12 @@
   <div class="burger-menu__header">
     <div class="burger-menu__container">
       <div class="burger-menu__header-inner">
-        <button class="burger-menu-button">
-  <div class="icon-menu">
-    <span></span>
-  </div>
-</button>
-
-        <button class="profile user-button burger-profile-open-button">
+        <button class="burger-menu-button" aria-label="Close Menu">
+          <div class="icon-menu">
+            <span></span>
+          </div>
+        </button>
+        <button class="profile user-button burger-profile-open-button" aria-label="Profile">
           <svg class="user-button__icon">
             <use href="images/Sprite.svg#user"></use>
           </svg>
@@ -61,7 +60,7 @@
   <div class="sub-menu__header">
     <div class="sub-menu__container">
       <div class="sub-menu__header-inner">
-        <button class="sub-menu__back-button burger-shop-close-button">
+        <button class="sub-menu__back-button burger-shop-close-button" aria-label="Close Sub-Menu">
           <svg class="back-arrow">
             <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
           </svg>
@@ -101,7 +100,7 @@
   <div class="sub-menu__header">
     <div class="sub-menu__container">
       <div class="sub-menu__header-inner">
-        <button class="sub-menu__back-button burger-information-close-button">
+        <button class="sub-menu__back-button burger-information-close-button" aria-label="Close Sub-Menu">
           <svg class="back-arrow">
             <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
           </svg>
@@ -124,7 +123,7 @@
   <div class="sub-menu__header">
     <div class="sub-menu__container">
       <div class="sub-menu__header-inner">
-        <button class="sub-menu__back-button burger-profile-close-button">
+        <button class="sub-menu__back-button burger-profile-close-button" aria-label="Close Sub-Menu">
           <svg class="back-arrow">
             <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
           </svg>
@@ -145,25 +144,24 @@
   </div>
 </div>
 
-    <button class="burger-menu-button">
-  <div class="icon-menu">
-    <span></span>
-  </div>
-</button>
-
-    <a class="header__logo" href="#">
+    <button class="burger-menu-button" aria-label="Open Menu">
+      <div class="icon-menu">
+        <span></span>
+      </div>
+    </button>
+    <a class="header__logo" href="#" aria-label="Home">
       <svg class="header__logo-img">
         <use href="images/Sprite.svg#logo"></use>
       </svg>
     </a>
     <div class="header__buttons">
-      <button class="profile user-button">
+      <button class="profile user-button" aria-label="Profile">
   <svg class="user-button__icon">
     <use href="images/Sprite.svg#user"></use>
   </svg>
 </button>
 
-      <button class="header__basket-button">
+      <button class="header__basket-button" aria-label="Basket">
         <svg class="header__basket-button-img">
           <use href="images/Sprite.svg#basket"></use>
         </svg>
@@ -211,7 +209,7 @@
       <footer class="footer">
   <div class="footer__container">
     <div class="footer__inner">
-      <a class="footer__logo" href="#">
+      <a class="footer__logo" href="#" aria-label="Home">
         <svg class="footer__logo-img">
           <use href="images/Sprite.svg#logo"></use>
         </svg>
@@ -253,7 +251,7 @@
           <div class="footer__sub-menu-items-blocks">
             <div class="footer__sub-menu-items-block">
               <a class="footer__sub-menu-item" href="mailto:support@medstogo.com">support@medstogo.com</a>
-              <a class="footer__sub-menu-item" href="https://uk-ua.facebook.com/" target="_blank">
+              <a class="footer__sub-menu-item" href="https://uk-ua.facebook.com/" target="_blank" aria-label="Home">
                 <svg class="footer__facebook-img">
                   <use href="images/Sprite.svg#facebook"></use>
                 </svg>
@@ -274,6 +272,6 @@
 </footer>
 
     </div>
-    <script src="js/app.min.js?_v=20230810161428"></script>
+    <script src="js/app.min.js?_v=20230810163226"></script>
   </body>
 </html>
