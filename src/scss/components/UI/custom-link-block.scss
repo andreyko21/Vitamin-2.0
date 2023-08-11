@@ -1,0 +1,23 @@
+.custom-link-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__text {
+    color: #000;
+    font-family: 'OpenSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__link {
+    margin-left: 5px;
+    color: var(--main-orange, #ff7d4e);
+    font-family: 'OpenSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
