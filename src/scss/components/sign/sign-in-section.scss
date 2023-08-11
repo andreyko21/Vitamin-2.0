@@ -5,16 +5,26 @@
 .sign-in-section {
   padding-top: 54px;
   padding-bottom: 44px;
+  @media (max-width: $mobile) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
   &__inner {
     background-color: #ffffff;
     max-width: 920px;
-    padding: 59px 120px 60px;
+    padding: 59px 20px 60px;
     margin-left: auto;
     margin-right: auto;
+    @media (max-width: $mobile) {
+      padding: 0px;
+    }
   }
 
   &__form {
+    max-width: 682px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__title {
@@ -25,6 +35,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    @media (max-width: $mobile) {
+      font-size: 1.5rem;
+    }
   }
 
   &__description {
@@ -36,10 +49,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.75rem;
+    @media (max-width: $mobile) {
+      font-size: 0.875rem;
+    }
   }
 
   &__button {
-    padding: 20px 20px;
+    padding: 20px;
     margin-top: 20px;
     display: block;
     max-width: 270px;
@@ -55,10 +71,22 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    @media (max-width: $mobile) {
+      max-width: none;
+      font-size: 16px;
+      padding: 18px;
+      margin-top: 20px;
+      height: 100%;
+    }
   }
 
   .text-with-lines-block {
     margin-top: 40px;
+    &__text {
+      @media (max-width: $mobile) {
+        font-size: 16px;
+      }
+    }
   }
 
   .social-block {
@@ -73,5 +101,11 @@
   margin-right: auto;
   & + .input-block {
     margin-top: 15px;
+  }
+  @media (max-width: $mobile) {
+    margin-top: 15px;
+    & + .input-block {
+      margin-top: 10px;
+    }
   }
 }

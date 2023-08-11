@@ -30,4 +30,7 @@
 
 .wrapper {
   background-color: #faf8f6;
+  @media (max-width: $mobile) {
+    background-color: #ffffff;
+  }
 }

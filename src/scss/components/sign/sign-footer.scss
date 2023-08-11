@@ -1,7 +1,14 @@
 @import './../UI/custom-link-block.scss';
 
-.sign__footer {
+.sign-footer {
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  &__container {
+    .custom-link-block {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      @media (max-width: $mobile) {
+        border-top: 1px solid #f2f2f2;
+      }
+    }
+  }
 }

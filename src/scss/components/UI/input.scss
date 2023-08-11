@@ -10,7 +10,8 @@
   align-items: center;
   border-radius: 12px;
   &__input {
-    flex: auto;
+    flex-grow: 1;
+    width: 100%;
     color: #000;
     font-family: 'OpenSans';
     font-size: 18px;
@@ -20,6 +21,7 @@
     background: none;
   }
   &__link {
+    white-space: nowrap;
     margin-left: 30px;
     color: rgba($color: #000000, $alpha: 0.5);
     text-align: center;
@@ -28,5 +30,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    @media (max-width: $mobile) {
+      margin-left: 10px;
+    }
   }
 }
