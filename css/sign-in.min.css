@@ -819,3 +819,224 @@ sup {
 .scroll-lock {
   overflow: hidden;
 }
+
+.header {
+  text-align: center;
+}
+
+.social-button {
+  padding: 20px 16px;
+  max-width: 206px;
+  max-height: 65px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #faf8f6;
+}
+.social-button__text {
+  color: #000;
+  font-family: "Effra";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  flex: auto;
+}
+.social-button__icon {
+  max-width: 32px;
+  max-height: 32px;
+  width: 100%;
+  height: 100%;
+}
+
+.social-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-block .social-button:not(:first-child) {
+  margin-left: 32px;
+}
+
+.text-with-lines-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.text-with-lines-block__text {
+  display: flex;
+  color: #000;
+  text-align: center;
+  font-family: Effra;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.text-with-lines-block::before, .text-with-lines-block::after {
+  left: 0;
+  position: relative;
+  content: "";
+  display: inline-block;
+  flex: auto;
+  height: 1px;
+  background-color: #f2f2f2;
+}
+
+.sign-in-section {
+  padding-top: 54px;
+  padding-bottom: 44px;
+}
+.sign-in-section__inner {
+  background-color: #ffffff;
+  max-width: 920px;
+  padding: 59px 120px 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sign-in-section__title {
+  color: #000;
+  text-align: center;
+  font-family: "Effra";
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.sign-in-section__description {
+  margin-top: 7px;
+  color: #000;
+  text-align: center;
+  font-family: "OpenSans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75rem;
+}
+.sign-in-section__button {
+  padding: 20px 20px;
+  margin-top: 20px;
+  display: block;
+  max-width: 270px;
+  max-height: 65px;
+  width: 100%;
+  height: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  text-align: center;
+  font-family: "Effra";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.sign-in-section .text-with-lines-block {
+  margin-top: 40px;
+}
+.sign-in-section .social-block {
+  margin-top: 40px;
+}
+
+.input-block {
+  margin-top: 23px;
+  max-width: 444px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.input-block + .input-block {
+  margin-top: 15px;
+}
+
+.custom-link-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-link-block__text {
+  color: #000;
+  font-family: "OpenSans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.custom-link-block__link {
+  margin-left: 5px;
+  color: var(--main-orange, #ff7d4e);
+  font-family: "OpenSans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.sign__footer {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.input-block {
+  max-width: 444px;
+  max-height: 56px;
+  height: 56px;
+  width: 100%;
+  padding: 15px 24px;
+  background-color: #faf8f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+}
+.input-block__input {
+  flex: auto;
+  color: #000;
+  font-family: "OpenSans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: none;
+}
+.input-block__link {
+  margin-left: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-family: "OpenSans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url("../fonts/Effra_Std_Bd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url("../fonts/Effra_Std_Md.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+.wrapper {
+  background-color: #faf8f6;
+}
