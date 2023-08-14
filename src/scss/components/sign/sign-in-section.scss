@@ -11,7 +11,7 @@
   }
 
   &__inner {
-    background-color: #ffffff;
+    background-color: $white;
     max-width: 920px;
     padding: 59px 20px 60px;
     margin-left: auto;
@@ -28,7 +28,7 @@
   }
 
   &__title {
-    color: #000;
+    color: $black;
     text-align: center;
     font-family: 'Effra';
     font-size: 1.625rem;
@@ -42,7 +42,7 @@
 
   &__description {
     margin-top: 7px;
-    color: #000;
+    color: $black;
     text-align: center;
     font-family: 'OpenSans';
     font-size: 1rem;
@@ -64,15 +64,19 @@
     height: 65px;
     margin-left: auto;
     margin-right: auto;
-    color: #fff;
+    color: $white;
     text-align: center;
     font-family: 'Effra';
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    &:disabled {
+      animation: none;
+      background-color: $disabled_color;
+    }
     @media (max-width: $mobile) {
-      max-width: none;
+      max-width: 444px;
       font-size: 16px;
       padding: 18px;
       margin-top: 20px;
@@ -93,12 +97,17 @@
     margin-top: 40px;
   }
 }
+.form-error {
+  color: #ff7d4e;
+  font-family: 'OpenSans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
 .input-block {
   margin-top: 23px;
-  max-width: 444px;
-  margin-left: auto;
-  margin-right: auto;
   & + .input-block {
     margin-top: 15px;
   }
@@ -108,4 +117,10 @@
       margin-top: 10px;
     }
   }
+}
+
+.inputs-block {
+  max-width: 444px;
+  margin-left: auto;
+  margin-right: auto;
 }

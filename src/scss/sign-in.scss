@@ -29,8 +29,17 @@
 }
 
 .wrapper {
-  background-color: #faf8f6;
+  background-color: $grayish_white;
   @media (max-width: $mobile) {
-    background-color: #ffffff;
+    background-color: $white;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s; /* Застосовуємо перехід для анімації стилів */
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px $grayish_white inset; /* Встановлюємо білий колір фону */
 }

@@ -1,18 +1,25 @@
 .default-button {
   display: inline-block;
   text-align: center;
-  background: #ff7d4e;
+  background: $main_orange;
   border-radius: 100px;
   padding: 15px 30px;
   font-family: Effra;
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: $white;
   animation: animate_pulse 1.5s infinite;
+  &:focus-within {
+    outline: 1px solid $focus_color;
+  }
 }
 
-.default-button:hover {
+.default-button:hover,
+.default-button:focus {
   animation: none;
+}
+
+.button-border-radius__pulse {
 }
 
 @keyframes animate_pulse {

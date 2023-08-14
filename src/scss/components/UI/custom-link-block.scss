@@ -4,7 +4,7 @@
   align-items: center;
   font-size: 16px;
   &__text {
-    color: #000;
+    color: $black;
     font-family: 'OpenSans';
     font-size: 16px;
     font-style: normal;
@@ -16,12 +16,15 @@
   }
   &__link {
     margin-left: 5px;
-    color: var(--main-orange, #ff7d4e);
+    color: $main_orange;
     font-family: 'OpenSans';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    &:hover {
+      color: red;
+    }
     @media (max-width: $mobile) {
       font-size: 14px;
     }

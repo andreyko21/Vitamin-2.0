@@ -1,7 +1,58 @@
-.header {
-  text-align: center;
+@import './../UI/back-button.scss';
+
+.sign-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
   position: static;
   @media (max-width: $mobile) {
-    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.07);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.07);
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo {
+    &:focus {
+      use {
+        stroke: $focus_color;
+      }
+    }
+    max-width: 42px;
+    max-height: 50px;
+    &-img {
+      max-width: 42px;
+      max-height: 50px;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  .back-button {
+    display: none;
+    @media (max-width: $mobile) {
+      display: block;
+    }
+  }
+  .sign-header-title {
+    display: none;
+    padding-right: 32px;
+    color: $black;
+    text-align: center;
+    font-family: 'Effra';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    flex: 100%;
+    @media (max-width: $mobile) {
+      display: block;
+      flex-grow: 1;
+    }
   }
 }

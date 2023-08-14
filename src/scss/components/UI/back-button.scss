@@ -1,0 +1,24 @@
+.back-button {
+  width: 32px;
+  height: 32px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .back-arrow {
+    max-width: 11px;
+    max-height: 18.88px;
+    width: 100%;
+    height: 100%;
+    use.back-arrow-use {
+      fill: $black;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+  &:hover {
+    use.back-arrow-use {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0.4;
+    }
+  }
+}

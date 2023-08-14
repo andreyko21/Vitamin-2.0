@@ -82,6 +82,8 @@
   "dependencies": {
     "aos": "^2.3.4",
     "firebase": "^10.1.0",
+    "jquery": "^3.7.0",
+    "jquery-validation": "^1.19.5",
     "swiper": "^8.4.5"
   }
 }

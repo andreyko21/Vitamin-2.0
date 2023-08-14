@@ -13,10 +13,8 @@
 @import 'config/functions';
 @import 'config/mixins';
 @import 'config/patternSelectors';
-
-/** Обнуление */
 @import 'config/reset';
-
+@import 'config/scrollbar';
 /**
 * Библиотеки
 * раскомментировать для использования
@@ -27,7 +25,6 @@
 /**
 * Подключение custom scrollbar для всего сайта
 */
-@import 'config/scrollbar';
 
 /**
 * Общие параметры, шаблоны(заготовки) и вспомогательные классы

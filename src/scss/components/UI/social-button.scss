@@ -7,13 +7,16 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-  background-color: #faf8f6;
+  background-color: $grayish_white;
+  &:focus {
+    outline: 1px solid rgb(65, 65, 65);
+  }
   @media (max-width: $mobile) {
     padding: 18px;
     max-height: 56px;
   }
   &__text {
-    color: #000;
+    color: $black;
     font-family: 'Effra';
     font-size: 20px;
     font-style: normal;

@@ -1,7 +1,7 @@
 .footer {
   padding-bottom: 74px;
   padding-top: 70px;
-  background-color: #faf8f6;
+  background-color: $grayish_white;
   @media (max-width: $tablet) {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -39,7 +39,7 @@
     margin-top: 48px;
     max-width: 124px;
     grid-area: c;
-    color: rgba($color: #000000, $alpha: 0.5);
+    color: rgba($color: $black, $alpha: 0.5);
     font-family: 'OpenSans';
     font-size: 12px;
     font-style: normal;
@@ -94,7 +94,7 @@
     }
     &-title {
       grid-area: title;
-      color: #000;
+      color: $black;
       font-family: 'Effra';
       font-size: 18px;
       font-style: normal;
@@ -126,7 +126,7 @@
       align-items: center;
       max-width: 182px;
       opacity: 0.5;
-      color: #000;
+      color: $black;
       font-family: 'OpenSans';
       font-size: 14px;
       font-style: normal;

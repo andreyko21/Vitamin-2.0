@@ -1,18 +1,23 @@
 .input-block {
   max-width: 444px;
-  max-height: 56px;
-  height: 56px;
-  width: 100%;
-  padding: 15px 24px;
-  background-color: #faf8f6;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 12px;
+  &__label {
+    max-height: 56px;
+    height: 56px;
+    width: 100%;
+    padding: 15px 24px;
+    background-color: $grayish_white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    &:focus-within {
+      outline: 1px solid $focus_color;
+    }
+  }
   &__input {
     flex-grow: 1;
     width: 100%;
-    color: #000;
+    color: $black;
     font-family: 'OpenSans';
     font-size: 18px;
     font-style: normal;
@@ -23,15 +28,28 @@
   &__link {
     white-space: nowrap;
     margin-left: 30px;
-    color: rgba($color: #000000, $alpha: 0.5);
+    color: rgba($color: $black, $alpha: 0.5);
     text-align: center;
     font-family: 'OpenSans';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    &:focus {
+      color: $focus_color;
+    }
     @media (max-width: $mobile) {
       margin-left: 10px;
+    }
+  }
+  &__error {
+    .error {
+      color: #ff7d4e;
+      font-family: 'OpenSans';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
     }
   }
 }
