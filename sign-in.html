@@ -6,55 +6,75 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/sign-in.min.css?_v=20230811192725">
+  <link rel="stylesheet" href="css/sign-in.min.css?_v=20230814114526">
   <title>Sign In</title>
 </head>
 
   <body>
     <div class="wrapper">
-      <header class="header"><a class="logo" href="./index.html" aria-label="Home">
+      <header class="sign-header">
+  <div class="sign-header__container">
+    <a class="logo" href="./index.html" aria-label="Home">
   <svg class="logo-img">
     <use href="images/Sprite.svg#logo"></use>
   </svg>
 </a>
+ <button class="back-button burger-shop-close-button" aria-label="Close Sub-Menu">
+  <svg class="back-arrow">
+    <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
+  </svg>
+</button>
+
+    <h2 class="sign-header-title">Account</h2>
+  </div>
 </header>
 
       <main class="page"><section class="sign-in-section">
   <div class="sign-in-section__container">
     <div class="sign-in-section__inner">
-      <div class="sign-in-section__form">
+      <form class="sign-in-section__form" id="myForm">
         <h1 class="sign-in-section__title">Sign in with email</h1>
         <p class="sign-in-section__description">
           Please enter your e-mail and password:
         </p>
-        <div class="input-block">
-  <input class="input-block__input" type="text" placeholder="Email">
+        <div class="inputs-block">
+          <div class="input-block">
+  <label class="input-block__label" for="email">
+    <input class="input-block__input" id="email" name="email" type="text" placeholder="Email">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+ <div class="input-block">
+  <label class="input-block__label" for="password">
+    <input class="input-block__input" id="password" name="password" type="password" placeholder="Password">
+    <a class="input-block__link" href="#">Forgot password?</a>
+  </label>
+  <div class="input-block__error"></div>
 </div>
 
-        <div class="input-block">
-  <input class="input-block__input" type="text" placeholder="Password">
-  <a class="input-block__link" href="#">Forgot password?</a>
-</div>
-
-        <button class="default-button sign-in-section__button">Sign in</button>
+          <div class="form-error"></div>
+          <button class="default-button sign-in-section__button">
+            Sign in
+          </button>
+        </div>
         <div class="text-with-lines-block">
   <p class="text-with-lines-block__text">or sign in with...</p>
 </div>
 
         <div class="social-block">
-  <button class="social-button">
+  <button class="social-button" type="button">
   <svg class="social-button__icon">
     <use xlink:href="images/Sprite.svg#google"></use>
   </svg>
   <p class="social-button__text">Google</p>
 </button>
- <button class="social-button">
+ <button class="social-button" type="button">
   <svg class="social-button__icon">
     <use xlink:href="images/Sprite.svg#apple"></use>
   </svg>
   <p class="social-button__text">Apple</p>
 </button>
- <button class="social-button">
+ <button class="social-button" type="button">
   <svg class="social-button__icon">
     <use xlink:href="images/Sprite.svg#facebook_log"></use>
   </svg>
@@ -63,7 +83,7 @@
 
 </div>
 
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -79,6 +99,6 @@
 </footer>
 
     </div>
-    <script src="js/app.min.js?_v=20230811192725"></script>
+    <script src="js/app.min.js?_v=20230814114526"></script>
   </body>
 </html>
