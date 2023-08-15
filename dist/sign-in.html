@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/sign-in.min.css?_v=20230815215927">
+  <link rel="stylesheet" href="css/sign-in.min.css?_v=20230816003834">
   <title>Sign In</title>
 </head>
 
@@ -47,7 +47,7 @@
  <div class="input-block">
   <label class="input-block__label" for="password">
     <input class="input-block__input" id="password" name="password" type="password" placeholder="Password">
-    <a class="input-block__link" href="#">Forgot password?</a>
+    <a class="input-block__link" href="./recovery.html">Forgot password?</a>
   </label>
   <div class="input-block__error"></div>
 </div>
@@ -65,19 +65,19 @@
 </div>
 
   <div class="social-block__buttons">
-    <button class="social-button" type="button">
+    <button class="social-button" type="button" id="googleSignInButton">
   <svg class="social-button__icon">
     <use xlink:href="images/Sprite.svg#google"></use>
   </svg>
   <p class="social-button__text">Google</p>
 </button>
- <button class="social-button" type="button">
+ <button class="social-button" type="button" id="@@id">
   <svg class="social-button__icon">
     <use xlink:href="images/Sprite.svg#apple"></use>
   </svg>
   <p class="social-button__text">Apple</p>
 </button>
- <button class="social-button" type="button">
+ <button class="social-button" type="button" id="@@id">
   <svg class="social-button__icon">
     <use xlink:href="images/Sprite.svg#facebook_log"></use>
   </svg>
@@ -102,6 +102,6 @@
         </div>
       </footer>
     </div>
-    <script type="module" src="js/signIn.min.js?_v=20230815215927"></script>
+    <script type="module" src="js/signIn.min.js?_v=20230816003834"></script>
   </body>
 </html>
