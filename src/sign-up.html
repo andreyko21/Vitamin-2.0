@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Sign Up', 'style':
+  'css/sign-up.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/sign/sign-header.html')
+      <main class="page">@@include('html/sign/sign-up-section.html')</main>
+      @@include('html/sign/sign-footer.html', {'text': 'Already have an account?', 'text-link': 'Sign In', 'href': './sign-in.html'})
+    </div>
+    <script type="module" src="js/signUp.min.js"></script>
+  </body>
+</html>

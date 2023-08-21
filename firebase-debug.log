@@ -1,0 +1,28 @@
+[debug] [2023-08-16T07:35:21.131Z] ----------------------------------------------------------------------
+[debug] [2023-08-16T07:35:21.132Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-08-16T07:35:21.133Z] CLI Version:   12.4.8
+[debug] [2023-08-16T07:35:21.133Z] Platform:      win32
+[debug] [2023-08-16T07:35:21.133Z] Node Version:  v18.17.0
+[debug] [2023-08-16T07:35:21.134Z] Time:          Wed Aug 16 2023 10:35:21 GMT+0300 (за московським стандартним часом)
+[debug] [2023-08-16T07:35:21.134Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-16T07:35:21.139Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-16T07:35:21.139Z] > authorizing via signed-in user (andriy.zakharkiv.2001@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Admin\Documents\Vitamin.2.0
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 

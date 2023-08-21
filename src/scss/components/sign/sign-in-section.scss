@@ -1,126 +1,16 @@
+@import './sign.scss';
 @import './../UI/social-button.scss';
 @import './../sign/social-block.scss';
 @import './../UI/text-with-lines.scss';
 
-.sign-in-section {
-  padding-top: 54px;
-  padding-bottom: 44px;
-  @media (max-width: $mobile) {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  &__inner {
-    background-color: $white;
-    max-width: 920px;
-    padding: 59px 20px 60px;
-    margin-left: auto;
-    margin-right: auto;
-    @media (max-width: $mobile) {
-      padding: 0px;
-    }
-  }
-
-  &__form {
-    max-width: 682px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &__title {
-    color: $black;
-    text-align: center;
-    font-family: 'Effra';
-    font-size: 1.625rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    @media (max-width: $mobile) {
-      font-size: 1.5rem;
-    }
-  }
-
-  &__description {
-    margin-top: 7px;
-    color: $black;
-    text-align: center;
-    font-family: 'OpenSans';
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.75rem;
-    @media (max-width: $mobile) {
-      font-size: 0.875rem;
-    }
-  }
-
+.sign-section {
   &__button {
-    padding: 20px;
-    margin-top: 20px;
-    display: block;
     max-width: 270px;
     max-height: 65px;
-    width: 100%;
-    height: 65px;
-    margin-left: auto;
-    margin-right: auto;
-    color: $white;
-    text-align: center;
-    font-family: 'Effra';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    &:disabled {
-      animation: none;
-      background-color: $disabled_color;
-    }
-    @media (max-width: $mobile) {
-      max-width: 444px;
-      font-size: 16px;
-      padding: 18px;
-      margin-top: 20px;
-      height: 100%;
+  }
+  .social-block{
+    .text-with-lines-block{
+      margin-bottom: 40px;
     }
   }
-
-  .text-with-lines-block {
-    margin-top: 40px;
-    &__text {
-      @media (max-width: $mobile) {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .social-block {
-    margin-top: 40px;
-  }
-}
-.form-error {
-  color: #ff7d4e;
-  font-family: 'OpenSans';
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.input-block {
-  margin-top: 23px;
-  & + .input-block {
-    margin-top: 15px;
-  }
-  @media (max-width: $mobile) {
-    margin-top: 15px;
-    & + .input-block {
-      margin-top: 10px;
-    }
-  }
-}
-
-.inputs-block {
-  max-width: 444px;
-  margin-left: auto;
-  margin-right: auto;
 }

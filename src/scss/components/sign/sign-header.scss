@@ -5,8 +5,8 @@
   padding-bottom: 30px;
   position: static;
   @media (max-width: $mobile) {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 16.31px;
     border-bottom: 1px solid rgba($color: $black, $alpha: 0.07);
   }
   &__container {
@@ -35,7 +35,7 @@
   .back-button {
     display: none;
     @media (max-width: $mobile) {
-      display: block;
+      display: flex;
     }
   }
   .sign-header-title {

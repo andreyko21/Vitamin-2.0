@@ -1,5 +1,6 @@
 .input-block {
   max-width: 444px;
+
   &__label {
     max-height: 56px;
     height: 56px;
@@ -14,6 +15,26 @@
       outline: 1px solid $focus_color;
     }
   }
+  &.file {
+    .input-block__label {
+      padding: 10px 10px 10px 24px;
+    }
+  }
+  &__file-button {
+    max-width: 104px;
+    max-height: 36px;
+    padding: 9px 30px;
+    background: $main-orange;
+    border-radius: 12px;
+    color: $white;
+    text-align: center;
+    font-family: 'OpenSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 10px;
+  }
   &__input {
     flex-grow: 1;
     width: 100%;
@@ -24,6 +45,23 @@
     font-weight: 400;
     line-height: normal;
     background: none;
+    &[type='file'] {
+      display: none;
+    }
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px $grayish_white inset; /* Встановлюємо білий колір фону */
+    }
+    &#fileName {
+      color: $black;
+      font-family: 'OpenSans';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &:placeholder-shown {
+        font-size: 18px;
+      }
+    }
   }
   &__link {
     white-space: nowrap;

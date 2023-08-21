@@ -11,13 +11,18 @@ const paths = {
 
 export const webpackConfig = (isMode) => {
   return {
-    entry: ['@babel/polyfill', path.join(paths.src, 'js/app.js')],
+    entry: {
+      main: path.join(paths.src, 'js/app.js'),
+      index: path.join(paths.src, 'js/index.js'),
+      signIn: path.join(paths.src, 'js/signIn.js'),
+      signUp: path.join(paths.src, 'js/signUp.js'),
+    },
 
     mode: isMode ? 'development' : 'production',
 
     output: {
       path: path.join(paths.build, 'js'),
-      filename: 'app.min.js',
+      filename: '[name].min.js', // Використовуйте [name] для генерації імені файла
       publicPath: '/',
     },
 

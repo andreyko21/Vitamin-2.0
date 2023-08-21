@@ -11,6 +11,13 @@
   &:focus {
     outline: 1px solid rgb(65, 65, 65);
   }
+  &:disabled{
+    background-color: $grayish_white;
+    cursor: default;
+  }
+  &:hover:not(:disabled){
+    background-color: aliceblue;
+  }
   @media (max-width: $mobile) {
     padding: 18px;
     max-height: 56px;

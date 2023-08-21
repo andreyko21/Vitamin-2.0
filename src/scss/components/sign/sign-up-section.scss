@@ -1,0 +1,54 @@
+@import './sign.scss';
+@import './../UI/social-button.scss';
+@import './../sign/social-block.scss';
+@import './../UI/text-with-lines.scss';
+
+.sign-section {
+  padding: 0;
+  &__inner {
+    padding-top: 60px;
+    @media (max-width: $mobile) {
+      padding-top: 48px;
+    }
+  }
+  .social-block {
+    margin-top: 60px;
+    .text-with-lines-block {
+      margin-bottom: 40px;
+      @media (max-width: $mobile) {
+        margin-bottom: 30px;
+      }
+      .text-with-lines-block__text {
+        font-size: 26px;
+        @media (max-width: $mobile) {
+          font-size: 24px;
+        }
+      }
+    }
+    @media (max-width: $mobile) {
+      margin-top: 40px;
+    }
+  }
+}
+.text-with-lines-block {
+  @media (max-width: $mobile) {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  .text-with-lines-block__text {
+    @media (max-width: $mobile) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.input-block{
+    margin-top: 40px;
+}
+
+.sign-section__button{
+    margin-bottom: 40px;
+}

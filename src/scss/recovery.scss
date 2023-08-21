@@ -41,3 +41,20 @@ input:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s; /* Застосовуємо перехід для анімації стилів */
 }
 
+.wrapper {
+  background-color: #faf8f6;
+  @media (max-width: $mobile) {
+    background-color: $white;
+  }
+}
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign-section {
+    flex: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}

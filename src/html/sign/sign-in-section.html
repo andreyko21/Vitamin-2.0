@@ -1,23 +1,20 @@
-<section class="sign-in-section">
-  <div class="sign-in-section__container">
-    <div class="sign-in-section__inner">
-      <form class="sign-in-section__form" id="myForm">
-        <h1 class="sign-in-section__title">Sign in with email</h1>
-        <p class="sign-in-section__description">
+<section class="sign-section">
+  <div class="sign-section__container">
+    <div class="sign-section__inner">
+      <form class="sign-section__form" id="myForm">
+        <h1 class="sign-section__title">Sign in with email</h1>
+        <p class="sign-section__description">
           Please enter your e-mail and password:
         </p>
         <div class="inputs-block">
           @@include('./../UI/input.html',{'placeholder':'Email', 'id': 'email',
           'type': 'text'} ) @@include('./../UI/input-link.html',
-          {'placeholder':'Password', 'id': 'password', 'href': '#', 'text-link':
+          {'placeholder':'Password', 'id': 'password', 'href': './recovery.html', 'text-link':
           'Forgot password?', 'type': 'password'})
           <div class="form-error"></div>
-          <button class="sign-in-section__button default-button">
-            Sign in
-          </button>
+          <button class="sign-section__button default-button">Sign in</button>
         </div>
-        @@include('./../UI/text-with-lines.html')
-        @@include('./social-block.html')
+        @@include('./social-block.html', { 'text': 'or sign in with...'})
       </form>
     </div>
   </div>

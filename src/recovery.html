@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Sign Up', 'style':
+  'css/recovery.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/sign/sign-header.html')
+      <main class="page">@@include('html/sign/recovery-section.html')</main>
+      @@include('html/sign/sign-footer.html', {'text': 'Remember your password?', 'text-link': 'Back to login', 'href': './sign-in.html'})
+    </div>
+    <script type="module" src="js/signUp.min.js"></script>
+  </body>
+</html>

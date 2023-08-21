@@ -1,0 +1,23 @@
+<section class="sign-section">
+  <div class="sign-section__container">
+    <div class="sign-section__inner">
+      <form class="sign-section__form" id="myForm">
+        @@include('./../UI/radio-switch.html')
+        @@include('./social-block.html', { 'text': 'or sign in with...'})
+        @@include('./../UI/text-with-lines.html', { 'text' : 'or sign up using your email address...'})
+        <div class="inputs-block">
+          @@include('./../UI/input.html',{'placeholder':'Email', 'id': 'email',
+          'type': 'text'} ) @@include('./../UI/input.html',{'placeholder':'First Name', 
+          'id': 'firstName', 'type': 'text'} )
+          @@include('./../UI/input.html',{'placeholder':'Last Name', 'id':
+          'lastName', 'type': 'text'} ) @@include('./../UI/input.html',
+          {'placeholder':'Password', 'id': 'password', 'type': 'password'})
+          @@include('./../UI/file-upload-input.html',{'id': 'file',
+          'type': 'file'} )
+          <div class="form-error"></div>
+          <button class="sign-section__button default-button">Create my account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

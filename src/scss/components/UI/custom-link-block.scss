@@ -25,6 +25,9 @@
     &:hover {
       color: red;
     }
+    &:focus {
+      color: $focus_color;
+    }
     @media (max-width: $mobile) {
       font-size: 14px;
     }

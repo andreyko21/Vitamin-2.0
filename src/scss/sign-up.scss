@@ -1,8 +1,9 @@
 @import './style.scss';
 @import './components/sign/sign-header.scss';
-@import './components/sign/sign-in-section.scss';
+@import './components/sign/sign-up-section.scss';
 @import './components/sign/sign-footer.scss';
 @import './components/UI/input.scss';
+@import './components/UI/radio-switch.scss';
 
 @font-face {
   font-family: Effra;
@@ -27,17 +28,3 @@
   font-weight: 400;
   font-style: normal;
 }
-
-.wrapper {
-  background-color: $grayish_white;
-  @media (max-width: $mobile) {
-    background-color: $white;
-  }
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  transition: background-color 5000s ease-in-out 0s; /* Застосовуємо перехід для анімації стилів */
-}
-
