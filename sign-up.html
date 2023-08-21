@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/sign-up.min.css?_v=20230816181916">
+  <link rel="stylesheet" href="css/sign-up.min.css?_v=20230821083703">
   <title>Sign Up</title>
 </head>
 
@@ -19,7 +19,7 @@
     <use href="images/Sprite.svg#logo"></use>
   </svg>
 </a>
- <a class="back-button" href="./index.html">
+ <a class="back-button" href="./index.html" aria-label="Back button">
   <svg class="back-arrow">
     <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
   </svg>
@@ -35,11 +35,11 @@
       <form class="sign-section__form" id="myForm">
         <div class="radio-switch">
     <div class="radio-switch__label radio-switch__label--selected">
-         <input type="radio" class="radio-switch__input" value="regular" name="customerType" checked="checked">
+         <input type="radio" class="radio-switch__input" value="regular" name="customerType" aria-label="Regular customer" checked="checked">
         Regular customer
     </div>
     <div class="radio-switch__label">
-         <input type="radio" class="radio-switch__input" value="wholesale" name="customerType">
+         <input type="radio" class="radio-switch__input" value="wholesale" name="customerType" aria-label="Wholesale customer">
         Wholesale customer
     </div>
 </div>
@@ -130,6 +130,6 @@
 </footer>
 
     </div>
-    <script type="module" src="js/signUp.min.js?_v=20230816181916"></script>
+    <script type="module" src="js/signUp.min.js?_v=20230821083703"></script>
   </body>
 </html>
