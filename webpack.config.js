@@ -16,6 +16,8 @@ export const webpackConfig = (isMode) => {
       index: path.join(paths.src, 'js/index.js'),
       signIn: path.join(paths.src, 'js/signIn.js'),
       signUp: path.join(paths.src, 'js/signUp.js'),
+      recovery: path.join(paths.src, 'js/recovery.js'),
+      permission: path.join(paths.src, 'js/wholesalePermission.js'),
     },
 
     mode: isMode ? 'development' : 'production',

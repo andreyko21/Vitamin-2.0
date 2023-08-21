@@ -1,9 +1,8 @@
 @import './style.scss';
 @import './components/sign/sign-header.scss';
-@import './components/sign/sign-up-section.scss';
+@import './components/sign/sign-in-section.scss';
 @import './components/sign/sign-footer.scss';
 @import './components/UI/input.scss';
-@import './components/UI/radio-switch.scss';
 
 @font-face {
   font-family: Effra;
@@ -36,3 +35,47 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.wrapper {
+  background-color: $grayish_white;
+  @media (max-width: $mobile) {
+    background-color: $white;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-section{
+  flex: 100%;
+  &__inner{
+    padding-top: 18px;
+    @media (max-width: $mobile) {
+      padding-top: 0;
+    }
+  }
+  &__button{
+    max-width: none;
+    width: 100%;
+  }
+  .input-block__input#fileName:placeholder-shown{
+    font-size: 14px;
+  }
+  @media (max-width: $mobile) {
+    padding-bottom: 10px;
+  }
+}
+
+.sign-footer__container .custom-link-block{
+  padding-top: 10px;
+}
+

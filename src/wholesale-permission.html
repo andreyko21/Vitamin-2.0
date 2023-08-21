@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Permission', 'style':
+  'css/wholesale-permission.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/sign/sign-header.html')
+      <main class="page">@@include('html/sign/wholesale-permission-section.html')</main>
+      <footer class="sign-footer">
+        <div class="sign-footer__container">
+          @@include('html/UI/custom-link-block.html', {'text-link': 'Create one', 
+          'href': './sign-up.html', 'text': 'Don\'t have an account?'})
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="js/permission.min.js"></script>
+  </body>
+</html>

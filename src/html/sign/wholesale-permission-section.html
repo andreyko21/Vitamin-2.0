@@ -1,0 +1,18 @@
+<section class="sign-section">
+  <div class="sign-section__container">
+    <div class="sign-section__inner">
+      <form class="sign-section__form" id="myForm">
+        <h1 class="sign-section__title">Wholesale purchase permission</h1>
+        <p class="sign-section__description">
+          Please attach file to continue 
+        </p>
+        <div class="inputs-block">
+          @@include('./../UI/file-upload-input.html',{'id': 'file',
+          'type': 'file', 'style': '', 'placeholder': 'Permission'} )
+          <div class="form-error"></div>
+          <button class="sign-section__button default-button">Create my account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

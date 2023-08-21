@@ -1,11 +1,11 @@
-$maxWidth: 1920; // максимальная ширина страницы
-$minWidth: 320; // минимальная ширина телефона
-$maxWidthContainer: 1436; // ширина контейнера с учетом padding слева и справа
-$containerWidth: 1396; // ширина контейнера из макета
+$maxWidth: 1920;
+$minWidth: 320;
+$maxWidthContainer: 1436;
+$containerWidth: 1396;
 
-$mainOffset: 15; // отступы безопасности для контейнера
-$mainFont: 'OpenSans'; // !указать здесь основное семейство шрифта
-$mainWeight: 400; // !указать здесь основное начертание шрифта
+$mainOffset: 15;
+$mainFont: 'OpenSans';
+$mainWeight: 400;
 
 $headerHeight: 100;
 $footerHeight: 100;
@@ -28,13 +28,13 @@ $focus_color: $grayColor;
 $disabled_color: #c3bdb6;
 $light_shade_0f_gray: #f2f2f2;
 
-$firstAccentColor: $blackColor;
+$firstAccentColor: #4027e2;
 $secondAccentColor: $redColor;
 
-$fontFamily: $mainFont, sans-serif; // Семейство шрифта по умолчанию
-$fontColor: $blackColor; // Цвет шрифта по умолчанию
-$fontSize: 16; // Размер шрифта по умолчанию
-$fontWeight: $mainWeight; // Жирность шрифта по умолчанию
+$fontFamily: $mainFont, sans-serif;
+$fontColor: $blackColor;
+$fontSize: 16;
+$fontWeight: $mainWeight;
 
 $standartTrans: all 280ms ease-in-out 0ms;
 
