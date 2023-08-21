@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/recovery.min.css?_v=20230821100823">
-  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/wholesale-permission.min.css?_v=20230821100823">
+  <title>Sign In</title>
 </head>
 
   <body>
@@ -33,36 +33,37 @@
   <div class="sign-section__container">
     <div class="sign-section__inner">
       <form class="sign-section__form" id="myForm">
-        <h1 class="sign-section__title">Recover password</h1>
+        <h1 class="sign-section__title">Wholesale purchase permission</h1>
         <p class="sign-section__description">
-          Please enter your email:
+          Please attach file to continue 
         </p>
         <div class="inputs-block">
-          <div class="input-block">
-  <label class="input-block__label" for="email">
-    <input class="input-block__input" id="email" name="email" type="text" placeholder="Email">
-  </label>
+          <div class="file input-block" style="">
+  <div class="input-block__label">
+    <input type="text" class="input-block__input" id="fileName" placeholder="Permission" disabled="disabled" readonly="readonly">
+    <button type="button" class="input-block__file-button">Upload</button>
+    <input class="input-block__input" id="file" name="file" type="file">
+  </div>
   <div class="input-block__error"></div>
 </div>
 
           <div class="form-error"></div>
-          <button class="default-button sign-section__button">Recover</button>
+          <button class="default-button sign-section__button">Create my account</button>
         </div>
       </form>
     </div>
   </div>
 </section></main>
       <footer class="sign-footer">
-  <div class="sign-footer__container">
-    <div class="custom-link-block">
-  <p class="custom-link-block__text">Remember your password?</p>
-  <a class="custom-link-block__link" href="./sign-in.html">Back to login</a>
+        <div class="sign-footer__container">
+          <div class="custom-link-block">
+  <p class="custom-link-block__text">Don't have an account?</p>
+  <a class="custom-link-block__link" href="./sign-up.html">Create one</a>
 </div>
 
-  </div>
-</footer>
-
+        </div>
+      </footer>
     </div>
-    <script type="module" src="js/signUp.min.js?_v=20230821100823"></script>
+    <script type="module" src="js/permission.min.js?_v=20230821100823"></script>
   </body>
 </html>
