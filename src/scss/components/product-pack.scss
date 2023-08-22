@@ -1,0 +1,28 @@
+@import './product-box.scss';
+
+.product-pack-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #faf8f6;
+  column-gap: 32px;
+  row-gap: 32px;
+  @media (max-width: 1250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $tablet) {
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  @media (max-width: 360px) {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 15px;
+  }
+  .product-box {
+    width: 100%;
+    &:not(:first-child) {
+    }
+    @media (max-width: 1250px) {
+      max-width: none;
+    }
+  }
+}

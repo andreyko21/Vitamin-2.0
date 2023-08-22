@@ -1,0 +1,72 @@
+.product-box {
+  max-width: 325px;
+  background-color: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 65px 30px 30px;
+  border-radius: 12px;
+  @media (max-width: $tablet) {
+    padding: 45px 20px 20px;
+  }
+  @media (max-width: $mobile) {
+    padding: 30px 20px 20px;
+  }
+  @media (max-width: 360px) {
+    padding: 50px 20px 20px;
+  }
+  &__img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 71%;
+    height: fit-content;
+  }
+  &__type {
+    flex: 1;
+    margin-top: 51px;
+    color: #6b5ebb;
+    font-family: 'OpenSans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @media (max-width: $mobile) {
+      font-size: 12px;
+    }
+    @media (max-width: 360px) {
+      margin-top: 40px;
+    }
+  }
+  &__name {
+    margin-top: 12px;
+    font-family: 'Effra';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media (max-width: $tablet) {
+      font-size: 17px;
+    }
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
+    @media (max-width: 360px) {
+      margin-top: 10px;
+    }
+  }
+  &__price {
+    margin-top: 15px;
+    font-family: 'OpenSans';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
+    @media (max-width: 360px) {
+      margin-top: 15px;
+    }
+  }
+}

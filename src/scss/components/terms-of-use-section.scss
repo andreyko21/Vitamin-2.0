@@ -1,0 +1,63 @@
+@import './UI/line-list.scss';
+@import './product-pack.scss';
+
+
+.terms-of-use-section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  @media (max-width: $mobile) {
+      padding-top: 50px;
+      padding-bottom: 62px;
+    }
+  &__article {
+    max-width: 681px;
+    margin-left: auto;
+    margin-right: auto;
+    &:not(:first-child) {
+      margin-top: 60px;
+    }
+  }
+  &__title {
+    font-family: 'Effra';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -1px;
+    font-variant-ligatures: historical-ligatures discretionary-ligatures;
+    @media (max-width: $mobile) {
+      font-size: 24px;
+    }
+  }
+  &__title-h2 {
+    font-family: 'Effra';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @media (max-width: $mobile) {
+      font-size: 20px;
+    }
+  }
+  &__description {
+    color: rgba($color: $fontColor, $alpha: 0.5);
+    font-family: 'OpenSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.776;
+    margin-top: 40px;
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      margin-top: 30px;
+      line-height: 1.71429;
+      letter-spacing: 0.01px;
+    }
+  }
+  .line-list {
+    margin-top: 40px;
+    @media (max-width: $mobile) {
+      margin-top: 30px;
+    }
+  }
+}
