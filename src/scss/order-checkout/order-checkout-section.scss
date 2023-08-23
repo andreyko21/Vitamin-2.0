@@ -1,0 +1,52 @@
+@import './../components/information-inputs-block.scss';
+
+.order-checkout-section {
+  &__title {
+    font-family: 'Effra';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @media (max-width: $mobile) {
+      font-size: 20px;
+    }
+  }
+  h2 {
+    margin-top: 85px;
+    @media (max-width: $mobile) {
+      margin-top: 61px;
+    }
+  }
+  @media (max-width: $mobile) {
+    h1 {
+      margin-top: 14px;
+    }
+  }
+  .information-inputs-block {
+    margin-top: 40px;
+    @media (max-width: $mobile) {
+      margin-top: 30px;
+      row-gap: 26px;
+    }
+  }
+  &__button {
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Effra';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 35px;
+    @media (min-width: 836px) {
+      display: none;
+    }
+    @media (max-width: $mobile) {
+      padding: 18px;
+      font-size: 16px;
+      margin-top: 43px;
+    }
+  }
+}

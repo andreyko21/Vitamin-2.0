@@ -1,0 +1,19 @@
+<div class="information-inputs-block">
+  <div class="information-inputs-block__cardNumber">
+    <label class="input-title" for="cardNumber">Card Number</label>
+    @@include('./../UI/input.html',{'placeholder':'', 'id': 'cardNumber',
+    'type': 'text'} )
+  </div>
+  <div class="information-inputs-block__mini-inputs-block">
+    <div class="information-inputs-block__expiration">
+      <label class="input-title" for="expiration">Expiration</label>
+      @@include('./../UI/input.html',{'placeholder':'MM/YY', 'id': 'expiration',
+      'type': 'text'} )
+    </div>
+    <div class="information-inputs-block__cvc">
+      <label class="input-title" for="cvc">CVC</label>
+      @@include('./../UI/input.html',{'placeholder':'CVC', 'id': 'cvc', 'type':
+      'password'} )
+    </div>
+  </div>
+</div>

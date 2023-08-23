@@ -1,0 +1,88 @@
+@import './style.scss';
+@import './order-checkout/order-checkout-header.scss';
+@import './order-checkout/order-checkout-section.scss';
+@import './order-checkout/order-checkout-footer.scss';
+@import './order-checkout/order-checkout-sidebar.scss';
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Rg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrapper__container {
+  max-width: 1436px;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'page sidebar'
+    'footer none';
+  @media (max-width: 835px) {
+    grid-template-areas:
+      'header'
+      'sidebar'
+      'page'
+      'footer';
+    .order-checkout-sidebar {
+      margin-left: 0px;
+    }
+  }
+}
+
+.page {
+  max-width: 920px;
+  grid-area: page;
+  height: 100%;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  @media (max-width: $mobile) {
+    padding-bottom: 40px;
+  }
+  .order-checkout-section {
+    .information-inputs-block {
+      @media (max-width: 1080px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      @media (max-width: 835px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $mobile) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

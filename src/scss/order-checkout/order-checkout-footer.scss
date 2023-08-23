@@ -1,0 +1,64 @@
+@import './../components/UI/text-link.scss';
+
+.order-checkout-footer {
+  grid-area: footer;
+  border-top: 1px solid $light_shade_0f_gray;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 1250px) {
+    flex-direction: column-reverse;
+    &__sub-menu {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: $mobile) {
+    border-top: 1px solid rgba($color: $black, $alpha: 0.07);
+  }
+  &__sub-menu {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: baseline;
+    justify-content: center;
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, auto);
+      margin-top: 30px;
+    }
+    &-item {
+      &:not(:first-child) {
+        margin-left: 30px;
+        @media (max-width: 880px) {
+          margin-left: 0;
+        }
+      }
+      @media (max-width: $mobile) {
+        &:nth-child(2) {
+          margin-left: 30px;
+        }
+        &:nth-child(3) {
+            margin-top: 15px;
+          grid-column-start: 1;
+          grid-column-end: 3;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__card-supports {
+    display: flex;
+    align-items: center;
+    &-img {
+      flex: auto;
+      height: max-content;
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

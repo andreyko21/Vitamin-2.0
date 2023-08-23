@@ -126,19 +126,7 @@
       display: flex;
       align-items: center;
       max-width: 182px;
-      opacity: 0.5;
-      color: $black;
-      font-family: 'OpenSans';
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.6;
       order: 1;
-      transition: opacity 0.3s ease-in-out;
-      &:hover {
-        transition: opacity 0.3s ease-in-out;
-        opacity: 0.7;
-      }
       &:not(:first-child) {
         margin-top: 12px;
         @media (max-width: $mobile) {
