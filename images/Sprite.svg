@@ -101,4 +101,17 @@
       d="M14.8788 1.46376L13.4339 3.6646e-07L7.43942 6.07249L1.44495 -6.31608e-08L-3.2942e-07 1.46376L7.43942 9L14.8788 1.46376Z"
       ></path>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 95" id="circle">
+    <circle cx="47.5" cy="47.5" r="47.5"></circle>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 158"
+    id="one-fourth-circle">
+    <path d="M129 -3.84172e-06C129 71.2447 71.2447 129 7.69978e-07 129" stroke="#FFCA78"
+      stroke-width="58"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279 141" id="one-two-circle">
+    <path
+      d="M250 -3.17821e-06C250 61.8559 200.527 112 139.5 112C78.4725 112 29 61.8559 29 6.48201e-06"
+      ></path>
+  </symbol>
 </svg>
