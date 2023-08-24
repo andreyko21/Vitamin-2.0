@@ -1,5 +1,6 @@
+@import "./UI/text-link.scss";
+
 .footer {
-  padding-bottom: 74px;
   background-color: $grayish_white;
 
   &__container {
@@ -7,6 +8,7 @@
   }
   &__inner {
     padding-top: 70px;
+    padding-bottom: 74px;
     @media (max-width: $tablet) {
       padding-top: 40px;
       padding-bottom: 40px;

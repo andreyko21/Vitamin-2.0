@@ -1,0 +1,129 @@
+.get-started-section {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  &__container {
+    padding-top: 90px;
+    padding-bottom: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    width: 99px;
+    height: 99px;
+    use {
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: $mobile) {
+      width: 49.845px;
+      height: 46.01px;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-family: 'Effra';
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 850px;
+    margin-top: 45px;
+    @media (max-width: $mobile) {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+  }
+  &__description {
+    color: #808080;
+    text-align: center;
+    font-family: 'OpenSans';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.63418;
+    max-width: 900px;
+    margin-top: 40px;
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  }
+  &__button {
+    background: #6e5ddc;
+    color: #fff;
+    text-align: center;
+    font-family: 'OpenSans';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.63418;
+    padding: 22px 20px 21px;
+    max-width: 260px;
+    width: 100%;
+    margin-top: 46px;
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      padding: 14px 30px;
+      margin-top: 27px;
+      width: max-content;
+    }
+    @media (max-width: 360px) {
+      margin-top: 20px;
+    }
+  }
+  .background-img {
+    &__one-two-circle {
+      position: absolute;
+      width: 280px;
+      height: max-content;
+      stroke: #e99478;
+      stroke-width: 58px;
+      transform: rotate(90deg);
+      fill: none;
+      z-index: 0;
+      @media (min-width: (1400px + 0.1px)) {
+        left: 52px;
+        top: 250px;
+      }
+      @media (max-width: 1400px) {
+        bottom: 0;
+        transform: rotate(180deg) translate(50%);
+      }
+      @media (min-width: ($mobile + 0.1px)) {
+        left: 0;
+      }
+      @media (max-width: $mobile) {
+        width: 140px;
+        right: 0;
+        bottom: 0;
+        transform: translate(40%, 62%) rotate(0deg);
+      }
+      @media (max-width: 360px) {
+        transform: translate(37%, 65%) rotate(0deg);
+      }
+    }
+    &__one-two-circle-2 {
+      position: absolute;
+      width: 280px;
+      height: max-content;
+      stroke: #ffca78;
+      stroke-width: 58px;
+      fill: none;
+      z-index: -1;
+      @media (min-width: ($mobile + 0.1px)) {
+        right: 0;
+        top: 67px;
+        transform: translate(50%);
+      }
+      @media (max-width: $mobile) {
+        left: 0;
+        top: 35px;
+        transform: translate(-50%);
+        width: 140px;
+      }
+    }
+  }
+}

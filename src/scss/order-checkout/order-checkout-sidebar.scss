@@ -7,6 +7,7 @@
   padding: 40px;
   grid-area: sidebar;
   max-width: 444px;
+  width: 100%;
   height: max-content;
   margin-left: 32px;
   border-radius: 16px;
@@ -30,16 +31,24 @@
       background-color: #faf8f6;
       z-index: -1;
     }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -100%;
+      width: 1000%;
+      border-bottom: 1px solid rgba($color: $black, $alpha: 0.07);
+    }
   }
 
   &__accordeon {
     display: none;
     @media (max-width: $mobile) {
+      position: relative;
       display: flex;
       align-items: center;
       padding-top: 17px;
       padding-bottom: 20px;
-      border-bottom: 1px solid rgba($color: $black, $alpha: 0.07);
       &-img {
         max-width: 32px;
         max-height: 32px;
@@ -52,6 +61,21 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+        letter-spacing: -0.03em;
+      }
+      &-arrow {
+        width: 15px;
+        height: 15px;
+        margin-left: 14px;
+        transition: transform 0.3s ease;
+        &.open{
+          transform: rotate(180deg);
+
+        }
+        use {
+          width: 9px;
+          height: 15px;
+        }
       }
       &-total-price {
         flex-grow: 1;
@@ -70,9 +94,25 @@
     }
   }
   &__accordeon-content {
+    @media (min-width: ($mobile + 0.5px)) {
+    display: block!important;
+    }
     @media (max-width: $mobile) {
+      display: none;
+      &.open{
+        display: block;
+      }
+      position: relative;
       padding-top: 30px;
       padding-bottom: 30px;
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0%;
+        width: 100%;
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.07);
+      }
     }
   }
   &__button {
@@ -158,8 +198,8 @@
     justify-content: space-between;
     margin-top: 22px;
     @media (max-width: $mobile) {
-        margin-top: 15px;
-      }
+      margin-top: 17px;
+    }
     &-title {
       font-family: 'OpenSans';
       font-size: 20px;

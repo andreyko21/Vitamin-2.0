@@ -24,6 +24,7 @@
     font-weight: 400;
     line-height: normal;
     @media (max-width: $mobile) {
+      margin-bottom: 4px;
       font-size: 14px;
     }
   }

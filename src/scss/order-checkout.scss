@@ -45,10 +45,13 @@
 }
 
 .wrapper__container {
+  display: flex;
+  flex-direction: column;
   max-width: 1436px;
   display: grid;
+  min-height: calc(100vh - 114px);
+  grid-template-rows: 1fr auto;
   grid-template-areas:
-    'header header'
     'page sidebar'
     'footer none';
   @media (max-width: 835px) {

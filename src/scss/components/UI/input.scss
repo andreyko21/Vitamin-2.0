@@ -35,6 +35,12 @@
     line-height: normal;
     margin-left: 10px;
   }
+  &__select{
+    flex-grow: 1;
+    color: $black;
+    background: none;
+    font-size: 18px;
+  }
   &__input {
     flex-grow: 1;
     width: 100%;
