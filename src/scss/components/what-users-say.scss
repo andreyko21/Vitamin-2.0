@@ -1,0 +1,13 @@
+@import './swiper.scss';
+@import './customer-say-block.scss';
+
+.what-users-say {
+    overflow: hidden;
+  .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+  }
+  .swiper-slide {
+    height: auto;
+  }
+}

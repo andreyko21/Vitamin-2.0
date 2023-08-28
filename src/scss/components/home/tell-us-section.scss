@@ -1,10 +1,14 @@
 .tell-us-section {
   position: relative;
   max-width: 1650px;
-  padding-top: 90px;
-  padding-bottom: 75px;
+  padding-top: 50px;
+  padding-bottom: 148px;
   margin-left: auto;
   margin-right: auto;
+  @media (max-width: $mobile) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -81,8 +85,8 @@
       fill: none;
       z-index: 0;
       @media (min-width: (1400px + 0.1px)) {
-        left: 55px;
-        top: 170px;
+        left: 5px;
+        top: 130px;
       }
       @media (max-width: 1400px) {
         display: none;
@@ -91,11 +95,20 @@
     &__circle {
       position: absolute;
       right: 147px;
-      top: 65px;
+      top: 25px;
       max-width: 95px;
       fill: #8172dd;
       @media (max-width: $tablet) {
-        display: none;
+        top: 0px;
+        right: 0;
+        transform: translate(50%);
+        max-width: 60px;
+      }
+      @media (max-width: $tablet) {
+        top: -19px;
+      }
+      @media (max-width: 360px) {
+        top: 0px;
       }
     }
   }

@@ -3,16 +3,16 @@
     @@include('menu.html') @@include('shop-menu.html')
     @@include('information-menu.html') @@include('profile-menu.html')
     <button class="burger-menu-button" aria-label="Open Menu">
-      <div class="icon-menu">
-        <span></span>
-      </div>
+      <svg class="burger-menu-button__icon">
+        <use xlink:href="images/Sprite.svg#burger-menu"></use>
+      </svg>
     </button>
     @@include('./../UI/logo.html')
     <div class="header__buttons">
       @@include('user-button.html')
       <button class="header__basket-button" aria-label="Basket">
         <svg class="header__basket-button-img">
-          <use href="images/Sprite.svg#basket"></use>
+          <use xlink:href="images/Sprite.svg#basket"></use>
         </svg>
       </button>
       <a class="header__quiz-button default-button" href="#">Take the quiz</a>

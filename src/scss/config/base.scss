@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
-
+  overflow-x: hidden;
   /** Поменять на clip - если используется в проекте position: sticky */
   overflow: clip;
 }

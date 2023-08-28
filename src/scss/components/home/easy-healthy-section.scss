@@ -76,6 +76,10 @@
         width: 100%;
         height: 100%;
         @media (max-width: $mobile) {
+          max-width: 70px;
+          max-height: 70px;
+        }
+        @media (max-width: 400px) {
           max-width: 46.396px;
           max-height: 48.157px;
         }
@@ -95,6 +99,10 @@
           margin-left: 50px;
         }
         @media (max-width: $mobile) {
+          
+          font-size: 20px;
+        }
+        @media (max-width: 400px) {
           margin-left: 25px;
           font-size: 14px;
         }
@@ -161,35 +169,37 @@
   }
   &__images-block {
     max-width: 1330px;
-    height: max-content;
     position: relative;
     display: flex;
-    bottom: 100px;
-    justify-content: end;
+    justify-content: flex-end;
     grid-column-start: 1;
     grid-column-end: 3;
-    padding-bottom: 20%;
+    height: fit-content;
+    bottom: 100px;
     @media (max-width: 1350px) {
       width: 100%;
+    }
+    @media (max-width: 1350px) {
       bottom: 0px;
     }
     @media (max-width: 960px) {
       grid-column-start: 1;
       grid-column-end: 2;
-      height: max-content;
-      padding-bottom: 30%;
+      padding-top: 88px;
     }
     @media (max-width: $mobile) {
       left: 0;
-      height: max-content;
-      padding-bottom: 40%;
+      padding-top: 65px;
+    }
+    @media (max-width: 360px) {
+      padding-top: 48px;
     }
     &-vitamins-box {
       position: absolute;
       left: 0px;
       z-index: 1;
       width: 39.9%;
-      height: max-content;
+      max-height: 450px;
       top: -180px;
       @media (max-width: $tablet) {
         top: 0px;
@@ -197,7 +207,7 @@
       @media (max-width: $mobile) {
         left: -20px;
         width: 60%;
-        height: max-content;
+        max-height: 200px;
       }
       @media (max-width: 375px) {
         top: 3px;
@@ -215,20 +225,18 @@
       max-height: 149px;
       position: relative;
       width: 60.1%;
-      height: max-content;
-      right: 54px;
-      @media (max-width: $tablet) {
-        top: 88px;
+      max-height: 470px;
+      height: 100%;
+
+      @media (min-width: ($mobile + 0.1px)) {
+        right: 54px;
       }
       @media (max-width: $mobile) {
         right: -20px;
         width: 86.7%;
-        height: max-content;
-        top: 68px;
       }
       @media (max-width: 360px) {
         width: 91%;
-        top: 50px;
       }
       img {
         width: 100%;

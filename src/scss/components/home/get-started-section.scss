@@ -1,16 +1,26 @@
 .get-started-section {
+  padding-bottom: 27px;
   max-width: 1800px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  
   &__container {
     padding-top: 90px;
     padding-bottom: 75px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: $mobile) {
+      padding-top: 60px;
+      padding-bottom: 35px;
+  }
+  @media (max-width: 360px) {
+    padding-bottom: 17px;
+      }
   }
   &__img {
+    margin-top: 5px;
     width: 99px;
     height: 99px;
     use {
@@ -18,6 +28,7 @@
       height: 100%;
     }
     @media (max-width: $mobile) {
+      margin-top: 0px;
       width: 49.845px;
       height: 46.01px;
     }
@@ -45,7 +56,7 @@
     font-weight: 400;
     line-height: 1.63418;
     max-width: 900px;
-    margin-top: 40px;
+    margin-top: 38px;
     @media (max-width: $mobile) {
       font-size: 14px;
       margin-top: 15px;
@@ -60,14 +71,14 @@
     font-style: normal;
     font-weight: 700;
     line-height: 1.63418;
-    padding: 22px 20px 21px;
+    padding: 20px 20px 20px;
     max-width: 260px;
     width: 100%;
-    margin-top: 46px;
+    margin-top: 50px;
     @media (max-width: $mobile) {
       font-size: 14px;
       padding: 14px 30px;
-      margin-top: 27px;
+      margin-top: 20px;
       width: max-content;
     }
     @media (max-width: 360px) {
@@ -81,12 +92,12 @@
       height: max-content;
       stroke: #e99478;
       stroke-width: 58px;
-      transform: rotate(90deg);
+      transform: rotate(90deg) translate(0,-35%);
       fill: none;
       z-index: 0;
       @media (min-width: (1400px + 0.1px)) {
-        left: 52px;
-        top: 250px;
+        left: 0px;
+        top: 257x;
       }
       @media (max-width: 1400px) {
         bottom: 0;
@@ -102,28 +113,43 @@
         transform: translate(40%, 62%) rotate(0deg);
       }
       @media (max-width: 360px) {
+        bottom: 5px;
         transform: translate(37%, 65%) rotate(0deg);
       }
     }
     &__one-two-circle-2 {
       position: absolute;
       width: 280px;
-      height: max-content;
       stroke: #ffca78;
       stroke-width: 58px;
+      max-height: 251px;
       fill: none;
       z-index: -1;
+      use{
+        width: 100%;
+        height: 100%;
+      }
       @media (min-width: ($mobile + 0.1px)) {
         right: 0;
-        top: 67px;
+        top: 74px;
         transform: translate(50%);
       }
       @media (max-width: $mobile) {
-        left: 0;
-        top: 35px;
+        left: 5px;
+        top: 5px;
         transform: translate(-50%);
         width: 140px;
       }
+      @media (max-width: 360px) {
+        left: -5px;
+      }
+    }
+  }
+  .link-arrow{
+    margin-top: 32px;
+    margin-left: 0;
+    @media (max-width: $mobile) {
+      margin-top: 20px;
     }
   }
 }
