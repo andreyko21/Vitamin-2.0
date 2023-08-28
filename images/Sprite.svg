@@ -198,4 +198,12 @@
       fill="#FF7D4E"></path>
     <path d="M68.8 11.4524H17.2002V17.1786H68.8V11.4524Z" fill="#FFBE5A"></path>
   </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="burger-menu">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M4 7H28V9H4V7ZM4 15H28V17H4V15ZM28 23H4V25H28V23Z" fill="black"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="close">
+    <path d="M8 24L24 8" stroke-width="2"></path>
+    <path d="M24 24L8 8" stroke-width="2"></path>
+  </symbol>
 </svg>
