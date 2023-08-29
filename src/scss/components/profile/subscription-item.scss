@@ -1,0 +1,227 @@
+.subscription-item {
+  background: #faf8f6;
+  display: grid;
+  grid-template:
+    'img type type' max-content
+    'img product price' max-content
+    'img line line' max-content
+    'img ship-time button' max-content
+    'img next-delivery button' / 152px auto auto;
+  @media (max-width: $tablet) {
+    grid-template:
+      'img img'
+      'type type'
+      'product price' max-content
+      'line line' max-content
+      'ship-time ship-time' max-content
+      'next-delivery next-delivery'
+      'button button' / auto auto;
+  }
+  padding: 30px 40px;
+  border-radius: 12px;
+  @media (max-width: $mobile) {
+    padding: 20px;
+  }
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: img;
+    border-radius: 12px;
+    height: 170px;
+    max-width: 122px;
+    width: 100%;
+    background-color: #94d6be;
+    margin-right: 30px;
+    @media (max-width: $tablet) {
+      max-width: none;
+      max-height: max-content;
+      height: 100%;
+    }
+    padding-top: 5px;
+    @media (max-width: $mobile) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    @media (max-width: 360px) {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    img {
+      width: 70%;
+      height: 55%;
+      object-fit: contain;
+      max-height: 300px;
+      @media (max-width: $mobile) {
+        width: 35%;
+        height: 80%;
+      }
+      @media (max-width: 360px) {
+        width: 40%;
+      }
+    }
+  }
+  &__type {
+    display: flex;
+    align-items: center;
+    grid-area: type;
+    color: #6bb0a4;
+    font-family: 'OpenSans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 10px;
+    @media (max-width: $mobile) {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  }
+  &__product {
+    vertical-align: baseline;
+    grid-area: product;
+    font-family: 'Effra';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 5px;
+    @media (max-width: 750px) {
+      font-size: 16px;
+      margin-top: 2px;
+    }
+    @media (max-width: $mobile) {
+      margin-top: 6px;
+    }
+    &-amount {
+    }
+    &-name {
+    }
+  }
+  &__price {
+    text-align: end;
+    vertical-align: baseline;
+    grid-area: price;
+    font-family: 'OpenSans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-left: 20px;
+    @media (max-width: 750px) {
+      font-size: 16px;
+      margin-top: 0;
+    }
+    @media (max-width: $mobile) {
+      margin-top: 6px;
+      margin-right: 1px;
+    }
+    &::before {
+      content: '$';
+    }
+  }
+  &__line {
+    grid-area: line;
+    max-height: 1px;
+    height: 1px;
+    width: 100%;
+    background-color: rgba($color: $black, $alpha: 0.07);
+    margin-top: 20px;
+  }
+  &__shipment-time {
+    grid-area: ship-time;
+    font-family: 'OpenSans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    vertical-align: baseline;
+    margin-top: 27px;
+    color: rgba($color: $black, $alpha: 0.5);
+    @media (max-width: $mobile) {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+    &::before {
+      content: 'Shipment every';
+      margin-right: 5px;
+      @media (max-width: $mobile) {
+        margin-right: 3px;
+      }
+    }
+    &::after {
+      content: 'days';
+      margin-left: 5px;
+      @media (max-width: $mobile) {
+        margin-left: 3px;
+      }
+    }
+  }
+  &__next-delivery {
+    vertical-align: top;
+    grid-area: next-delivery;
+    font-family: 'OpenSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 6px;
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      margin-top: 2px;
+    }
+    &::before {
+      content: 'Next delivery:';
+      margin-right: 5px;
+      @media (max-width: $mobile) {
+        margin-right: 3px;
+      }
+    }
+  }
+  &__button {
+    grid-area: button;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    border: 1px solid rgba($color: red, $alpha: 0.2);
+    padding: 12px 36px;
+    margin-right: 5px;
+    width: max-content;
+    margin-left: auto;
+    background: none;
+    color: var(--red, #d32d2c);
+    text-align: center;
+    font-family: 'Effra';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      margin-top: 16px;
+      padding: 15px 36px;
+      margin-bottom: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--red-hover, #ff5a59);
+      color: var(--white, #ffffff);
+      border-color: rgba($color: red, $alpha: 0.4);
+    }
+
+    &:active {
+      background-color: var(--red-active, #a62827);
+      border-color: rgba($color: red, $alpha: 0.4);
+      color: var(--white, #ffffff);
+      transform: translateY(2px);
+    }
+  }
+}

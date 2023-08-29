@@ -1,0 +1,56 @@
+@import './style.scss';
+@import './components/profile/profile.scss';
+@import './components/profile/profile-sidebar.scss';
+@import './components/information-inputs-block.scss';
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Rg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.information-inputs-block {
+  margin-left: 5px;
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(1, minmax(200px, 444px));
+    justify-content: center;
+    row-gap: 26px;
+  }
+}

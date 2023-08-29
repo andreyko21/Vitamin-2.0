@@ -1,0 +1,45 @@
+.profile-sidebar {
+  max-width: 217px;
+  width: 100%;
+  @media (max-width: $mobile) {
+    display: none;
+  }
+  &__menu {
+    &-item {
+      display: block;
+      font-family: 'Effra';
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+       transition: color 0.3s ease, font-weight 0.3s ease;
+      &:not(:first-child) {
+        margin-top: 43px;
+      }
+      &:hover,
+      &:focus {
+        color: #8172dd;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      &:active {
+        color: #8172dd;
+      }
+      &_active {
+        font-family: 'Effra';
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      &_exit {
+        color: #d32d2c;
+        &:hover,
+        &:focus {
+          color: #ff5a59;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
