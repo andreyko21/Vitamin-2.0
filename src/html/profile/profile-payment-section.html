@@ -1,0 +1,35 @@
+<section class="profile-payment-section">
+  <div class="profile-payment-section__card">
+    <div class="profile-payment-section__front-card">
+      <div class="information-inputs-block__cardNumber">
+        <label class="input-title" for="cardNumber">Card Number</label>
+        @@include('./../UI/input.html',{'placeholder':'', 'id': 'cardNumber',
+        'type': 'text'} )
+      </div>
+      <div class="profile-payment-section__card-supports">
+        <picture class="profile-payment-section__card-supports-img">
+          <source srcset="images/powered-by-stripe.avif" type="image/avif" />
+          <source srcset="images/powered-by-stripe.webp" type="image/webp" />
+          <img src="images/powered-by-stripe.png" alt="Ortho Complex" />
+        </picture>
+        <picture class="profile-payment-section__card-supports-img">
+          <source srcset="images/supported-cards.avif" type="image/avif" />
+          <source srcset="images/supported-cards.webp" type="image/webp" />
+          <img src="images/supported-cards.png" alt="Ortho Complex" />
+        </picture>
+      </div>
+    </div>
+    <div class="information-inputs-block__expiration">
+      <label class="input-title" for="expiration">Expiration</label>
+      @@include('./../UI/input.html',{'placeholder':'', 'id': 'expiration',
+      'type': 'text'} )
+    </div>
+    <div class="profile-payment-section__back-card">
+      <div class="information-inputs-block__cvc">
+        <label class="input-title" for="cvc">CVC</label>
+        @@include('./../UI/input.html',{'placeholder':'', 'id': 'cvc', 'type':
+        'Password'} )
+      </div>
+    </div>
+  </div>
+</section>

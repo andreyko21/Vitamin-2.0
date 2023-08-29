@@ -5,10 +5,10 @@ $black: #000000;
 $main_orange: #ff7d4e;
 
 .burger-menu {
-  @media (min-width: ($mobile + 0.1px)) {
+  @media (min-width: (850px + 0.1px)) {
     display: none;
   }
-  @media (max-width: $mobile) {
+  @media (max-width: 850px) {
     position: fixed;
     top: 0;
     left: 0;

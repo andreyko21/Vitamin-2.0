@@ -17,6 +17,10 @@
       'next-delivery next-delivery'
       'button button' / auto auto;
   }
+  @media (max-width: 850px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
   padding: 30px 40px;
   border-radius: 12px;
   @media (max-width: $mobile) {
@@ -199,7 +203,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease, transform 0.2s ease;
     @media (max-width: $tablet) {
       width: 100%;
     }

@@ -1,0 +1,183 @@
+@import './style.scss';
+@import './components/profile/profile.scss';
+@import './components/profile/profile-sidebar.scss';
+@import './components/UI/input.scss';
+@import './components/profile/subscription-item.scss';
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Effra;
+  font-display: swap;
+  src: url('../fonts/Effra_Std_Rg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.profile-payment-section {
+  &__card {
+    position: relative;
+    max-width: 674px;
+    height: 336px;
+    display: flex;
+    @media (max-width: 850px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: $mobile) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: min-content;
+      max-width: 444px;
+      column-gap: 17px;
+      row-gap: 27px;
+      height: auto;
+    }
+  }
+  &__front-card {
+    @media (min-width: ($mobile + 0.1px)) {
+      padding: 50px 40px;
+      position: relative;
+      max-width: 490px;
+      max-height: 288px;
+      min-width: 420px;
+      width: 100%;
+      height: 100%;
+      background: #f3efea;
+      border-radius: 16px;
+      z-index: 1;
+    }
+    @media (max-width: $mobile) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+  &__back-card {
+    @media (min-width: ($mobile + 0.1px)) {
+      margin-top: 48px;
+      position: relative;
+      max-width: 184px;
+      max-height: 288px;
+      width: 100%;
+      height: 100%;
+      &:before {
+        border-radius: 16px;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -310px;
+        width: calc(100% + 310px);
+        height: 100%;
+        background: #ece8e2;
+        z-index: -1;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: -310px;
+        width: calc(100% + 310px);
+        height: 63px;
+        background-color: black;
+      }
+    }
+  }
+  .input-title {
+    color: rgba($color: $black, $alpha: 0.5);
+    font-family: 'OpenSans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .input-block {
+    margin-top: 5px;
+  }
+  .information-inputs-block {
+    &__expiration {
+      max-width: 104px;
+      margin-top: 0px;
+      @media (min-width: ($mobile + 0.1px)) {
+        position: absolute;
+        top: 164px;
+        left: 40px;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+      @media (max-width: $mobile) {
+        max-width: none;
+      }
+    }
+    &__cvc {
+      margin-top: 155px;
+      max-width: 104px;
+      margin-left: auto;
+      margin-right: auto;
+      .input-block {
+        margin-top: 10px;
+      }
+      @media (max-width: $mobile) {
+        
+        margin-top: 0;
+        max-width: none;
+        .input-block {
+        margin-top: 5px;
+      }
+      }
+    }
+  }
+  &__card-supports {
+    opacity: 0.5;
+    position: relative;
+    top: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: flex-end;
+    &-img {
+      width: fit-content;
+      height: 100%;
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+      img {
+        width: fit-content;
+        height: 23px;
+      }
+    }
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+}

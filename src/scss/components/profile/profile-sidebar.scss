@@ -1,7 +1,7 @@
 .profile-sidebar {
   max-width: 217px;
   width: 100%;
-  @media (max-width: $mobile) {
+  @media (max-width: 850px) {
     display: none;
   }
   &__menu {

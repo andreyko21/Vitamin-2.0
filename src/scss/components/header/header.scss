@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     > .user-button {
-      @media (max-width: $mobile) {
+      @media (max-width: 850px) {
         display: none;
       }
     }
@@ -30,7 +30,7 @@
   &__quiz-button {
     margin-left: 30px;
     white-space: nowrap;
-    @media (max-width: $mobile) {
+    @media (max-width: 850px) {
       display: none;
     }
   }
@@ -55,7 +55,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width: $mobile) {
+    @media (max-width: 850px) {
       margin-left: 0;
     }
     &-img {

@@ -12,13 +12,19 @@
     text-align: start;
     max-width: 1045px;
     padding-top: 50px;
+    margin-left: 40px;
+    @media (max-width: 850px) {
+        margin-left: 0;
+    }
   }
   &__content {
     padding-top: 40px;
     padding-bottom: 100px;
+    margin-left: 5px;
     @media (max-width: $mobile) {
       padding-top: 30px;
       padding-bottom: 60px;
+      margin-left: 0;
     }
   }
   &__title-block {
@@ -28,6 +34,11 @@
     align-items: baseline;
     @media (max-width: 850px) {
       flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    @media (max-width: 450px) {
+        align-items: start;
     }
   }
   &__title {
@@ -68,11 +79,11 @@
     border-radius: 100px;
     background: #c3bdb6;
     margin-top: 40px;
-    margin-left: 5px;
     @media (max-width: 850px) {
       max-width: 444px;
       width: 100%;
-      margin-left: 0;
+      margin-left: auto;
+      margin-right: auto;
     }
     @media (max-width: $mobile) {
       margin-top: 35px;
