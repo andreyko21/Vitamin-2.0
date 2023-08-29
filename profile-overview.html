@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/home.min.css?_v=20230829083515">
+  <link rel="stylesheet" href="css/profile-overview.min.css?_v=20230829105219">
   <title>Account Overview</title>
 </head>
 
@@ -174,6 +174,177 @@
 </header>
 
       <main class="page">
+        <div class="profile">
+          <div class="profile__container">
+            <div class="profile-sidebar">
+              <div class="profile-sidebar__menu">
+                <a class="profile-sidebar__menu-item" href="profile-subscriptions.html">Subscriptions</a>
+                <a class="profile-sidebar__menu-item" href="profile-orders.html">Orders</a>
+                <a class="profile-sidebar__menu-item profile-sidebar__menu-item_active" href="profile-overview.html">Account Overview</a>
+                <a class="profile-sidebar__menu-item" href="profile-payment.html">Payment methods</a>
+                <a class="profile-sidebar__menu-item" href="profile-change-password.html">Change Password</a>
+                <li class="profile-sidebar__menu-item profile-sidebar__menu-item_exit">
+                  Sign out
+                </li>
+              </div>
+            </div>
+            <div class="profile__main">
+              <div class="profile__title-block">
+                <h1 class="profile__title">Account Overview</h1>
+                <p class="profile__type-customer">Regular customer</p>
+              </div>
+              <div class="profile__content">
+                <div class="information-inputs-block">
+  <div class="information-inputs-block__firstName">
+    <label class="input-title" for="firstName">First Name</label>
+    <div class="input-block">
+  <label class="input-block__label" for="firstName">
+    <input class="input-block__input" id="firstName" name="firstName" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+  </div>
+  <div class="information-inputs-block__lastName">
+    <label class="input-title" for="lastName">Last Name</label>
+    <div class="input-block">
+  <label class="input-block__label" for="lastName">
+    <input class="input-block__input" id="lastName" name="lastName" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+  </div>
+  <div class="information-inputs-block__addressLine1">
+    <label class="input-title" for="addressLine1">Address Line 1</label>
+    <div class="input-block">
+  <label class="input-block__label" for="addressLine1">
+    <input class="input-block__input" id="addressLine1" name="addressLine1" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+  </div>
+  <div class="information-inputs-block__addressLine2">
+    <label class="input-title" for="addressLine2">Address Line 2</label>
+    <div class="input-block">
+  <label class="input-block__label" for="addressLine2">
+    <input class="input-block__input" id="addressLine2" name="addressLine2" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+  </div>
+  <div class="information-inputs-block__city">
+    <label class="input-title" for="city">City</label>
+    <div class="input-block">
+  <label class="input-block__label" for="city">
+    <input class="input-block__input" id="city" name="city" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+  </div>
+  <div class="information-inputs-block__mini-inputs-block">
+    <div class="information-inputs-block__stateProvince">
+      <label class="input-title" for="stateProvince">State / Province</label>
+      <div class="input-block">
+  <label class="input-block__label" for="stateProvince">
+    <select id="stateProvince" class="input-block__select">
+      <option value="AL">AL</option>
+      <option value="AK">AK</option>
+      <option value="AZ">AZ</option>
+      <option value="AR">AR</option>
+      <option value="CA">CA</option>
+      <option value="CO">CO</option>
+      <option value="CT">CT</option>
+      <option value="DE">DE</option>
+      <option value="FL">FL</option>
+      <option value="GA">GA</option>
+      <option value="HI">HI</option>
+      <option value="ID">ID</option>
+      <option value="IL">IL</option>
+      <option value="IN">IN</option>
+      <option value="IA">IA</option>
+      <option value="KS">KS</option>
+      <option value="KY">KY</option>
+      <option value="LA">LA</option>
+      <option value="ME">ME</option>
+      <option value="MD">MD</option>
+      <option value="MA">MA</option>
+      <option value="MI">MI</option>
+      <option value="MN">MN</option>
+      <option value="MS">MS</option>
+      <option value="MO">MO</option>
+      <option value="MT">MT</option>
+      <option value="NE">NE</option>
+      <option value="NV">NV</option>
+      <option value="NH">NH</option>
+      <option value="NJ">NJ</option>
+      <option value="NM">NM</option>
+      <option value="NY">NY</option>
+      <option value="NC">NC</option>
+      <option value="ND">ND</option>
+      <option value="OH">OH</option>
+      <option value="OK">OK</option>
+      <option value="OR">OR</option>
+      <option value="PA">PA</option>
+      <option value="RI">RI</option>
+      <option value="SC">SC</option>
+      <option value="SD">SD</option>
+      <option value="TN">TN</option>
+      <option value="TX">TX</option>
+      <option value="UT">UT</option>
+      <option value="VT">VT</option>
+      <option value="VA">VA</option>
+      <option value="WA">WA</option>
+      <option value="WV">WV</option>
+      <option value="WI">WI</option>
+      <option value="WY">WY</option>
+    </select>
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+    </div>
+    <div class="information-inputs-block__zipPostalCode">
+      <label class="input-title" for="zipPostalCode">ZIP / Postal Code</label>
+      <div class="input-block">
+  <label class="input-block__label" for="zipPostalCode">
+    <input class="input-block__input" id="zipPostalCode" name="zipPostalCode" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+    </div>
+  </div>
+  <div class="information-inputs-block__email">
+    <label class="input-title" for="email">Email</label>
+    <div class="input-block">
+  <label class="input-block__label" for="email">
+    <input class="input-block__input" id="email" name="email" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+  </div>
+  <div class="information-inputs-block__phoneNumber">
+    <label class="input-title" for="phoneNumber">Phone Number</label>
+    <div class="input-block">
+  <label class="input-block__label" for="phoneNumber">
+    <input class="input-block__input" id="phoneNumber" name="phoneNumber" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+  </div>
+</div>
+
+                <button class="profile__content-button">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer class="footer">
   <div class="footer__container">
@@ -241,6 +412,5 @@
 </footer>
 
     </div>
-    <script src="js/index.min.js?_v=20230829083515"></script>
   </body>
 </html>
