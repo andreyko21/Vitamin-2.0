@@ -7,20 +7,23 @@
   &__menu {
     &-item {
       display: block;
+      width: max-content;
       font-family: 'Effra';
       font-size: 22px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-       transition: color 0.3s ease, font-weight 0.3s ease;
       &:not(:first-child) {
         margin-top: 43px;
       }
-      &:hover,
-      &:focus {
-        color: #8172dd;
-        cursor: pointer;
-        font-weight: 700;
+      &:not(.profile-sidebar__menu-item_active) {
+        &:hover,
+        &:focus {
+          color: #8172dd;
+          cursor: pointer;
+          font-weight: 700;
+          transform: translate(-1%);
+        }
       }
 
       &:active {
