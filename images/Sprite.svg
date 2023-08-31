@@ -206,4 +206,52 @@
     <path d="M8 24L24 8" stroke-width="2"></path>
     <path d="M24 24L8 8" stroke-width="2"></path>
   </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"
+    id="slider-button-right">
+    <g filter="url(#filter0_d_537_4574)">
+      <circle cx="35" cy="35" r="35" transform="matrix(-1 0 0 1 80 5)" fill="white"></circle>
+    </g>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M43.4638 48.6855L42 47.2405L48.0725 41.2461L42 35.2516L43.4638 33.8066L51 41.2461L43.4638 48.6855Z"
+      fill="black"></path>
+    <defs>
+      <filter id="filter0_d_537_4574" x="0" y="0" width="90" height="90"
+        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feColorMatrix in="SourceAlpha" type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+        <feOffset dy="5"></feOffset>
+        <feGaussianBlur stdDeviation="5"></feGaussianBlur>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"></feColorMatrix>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_537_4574"></feBlend>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_537_4574" result="shape"></feBlend>
+      </filter>
+    </defs>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" id="slider-button-left">
+    <g filter="url(#filter0_d_535_924)">
+      <circle cx="45" cy="40" r="35" fill="white"></circle>
+    </g>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M47.5362 48.6855L49 47.2405L42.9275 41.2461L49 35.2516L47.5362 33.8066L40 41.2461L47.5362 48.6855Z"
+      fill="black"></path>
+    <defs>
+      <filter id="filter0_d_535_924" x="0" y="0" width="90" height="90" filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feColorMatrix in="SourceAlpha" type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+        <feOffset dy="5"></feOffset>
+        <feGaussianBlur stdDeviation="5"></feGaussianBlur>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"></feColorMatrix>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_535_924"></feBlend>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_535_924" result="shape"></feBlend>
+      </filter>
+    </defs>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406 307" id="figure-2">
+    <path d="M377 1.1993e-05C377 85.0519 307.996 154 222.875 154L183 154" stroke="#FFCA78"
+      stroke-width="58"></path>
+    <path d="M29 307C29 222.5 97.9481 154 183 154" stroke="#FFCA78" stroke-width="58"></path>
+  </symbol>
 </svg>
