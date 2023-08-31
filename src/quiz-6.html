@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Quiz', 'style': 'css/quiz.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/quiz/quiz-header.html', {'quizNumber': '6/9'})
+      <main class="page quiz">
+        <div class="quiz__container">
+          <div class="quiz__title-block">
+            <h1 class="quiz__title">Describe your stress level</h1>
+          </div>
+          <div class="quiz__answer-block">
+            <div class="quiz__buttons-block">
+              <button class="quiz__button">I feel calm and relaxed most of the time</button>
+              <button class="quiz__button">I get nerevous from time to time</button>
+              <button class="quiz__button">I’m under a lot of stress most of the time</button>
+            </div>
+            <svg class="one-fourth-circle one-fourth-circle-6">
+              <use xlink:href="images/Sprite.svg#one-fourth-circle"></use>
+            </svg>
+            <svg class="circle circle-6">
+              <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+            </svg>
+          </div>
+        </div>
+      </main>
+      @@include('html/quiz/quiz-footer.html', { 'href': 'quiz-5.html'})
+    </div>
+  </body>
+</html>

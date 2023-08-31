@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Quiz', 'style': 'css/quiz.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/quiz/quiz-header.html', {'quizNumber': '3/9'})
+      <main class="page quiz">
+        <div class="quiz__container">
+          <div class="quiz__title-block">
+            <h1 class="quiz__title">What is your eating habits?</h1>
+          </div>
+          <div class="quiz__answer-block">
+            <div class="quiz__buttons-block">
+              <button class="quiz__button">Vegan diet</button>
+              <button class="quiz__button">Vegetarian diet</button>
+              <button class="quiz__button">My diet is generally healthy and includes animal protein, fish and veggies</button>
+              <button class="quiz__button">My diet includes fast food and soft drinks</button>
+            </div>
+            <svg class="one-two-circle one-two-circle-3">
+              <use xlink:href="images/Sprite.svg#one-two-circle"></use>
+            </svg>
+            <svg class="circle circle-3">
+              <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+            </svg>
+          </div>
+        </div>
+      </main>
+      @@include('html/quiz/quiz-footer.html', { 'href': 'quiz-2.html'})
+    </div>
+  </body>
+</html>

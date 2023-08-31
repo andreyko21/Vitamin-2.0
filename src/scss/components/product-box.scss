@@ -11,16 +11,31 @@
     padding: 45px 20px 20px;
   }
   @media (max-width: $mobile) {
-    padding: 30px 20px 20px;
+    padding: 20px 15px 20px;
   }
   @media (max-width: 360px) {
     padding: 50px 20px 20px;
   }
   &__img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 71%;
+    width: 100%;
     height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 186px;
+      max-height: 209px;
+      width: 100%;
+      height: 100%;
+      @media (max-width: $mobile) {
+        max-width: 91.245px;
+        max-height: 102.367px;
+      }
+      @media (max-width: 320px) {
+        max-width: 171.17px;
+        max-height: 191.192px;
+      }
+    }
   }
   &__type {
     flex: 1;
@@ -33,13 +48,14 @@
     line-height: normal;
     @media (max-width: $mobile) {
       font-size: 12px;
+      margin-top: 17px;
     }
     @media (max-width: 360px) {
       margin-top: 40px;
     }
   }
   &__name {
-    margin-top: 12px;
+    margin-top: 14px;
     font-family: 'Effra';
     font-size: 20px;
     font-style: normal;
@@ -50,13 +66,14 @@
     }
     @media (max-width: $mobile) {
       font-size: 16px;
+      margin-top: 10px;
     }
     @media (max-width: 360px) {
       margin-top: 10px;
     }
   }
   &__price {
-    margin-top: 15px;
+    margin-top: 16px;
     font-family: 'OpenSans';
     font-size: 20px;
     font-style: normal;

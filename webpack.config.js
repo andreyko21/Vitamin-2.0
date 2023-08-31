@@ -20,6 +20,7 @@ export const webpackConfig = (isMode) => {
       permission: path.join(paths.src, 'js/wholesalePermission.js'),
       orderCheckout: path.join(paths.src, 'js/orderCheckout.js'),
       profileOrders: path.join(paths.src, 'js/profileOrders.js'),
+      catalogue: path.join(paths.src, 'js/catalogue.js'),
     },
 
     mode: isMode ? 'development' : 'production',

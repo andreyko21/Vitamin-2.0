@@ -1,5 +1,9 @@
 <div class="product-box">
-    <img class="product-box__img" src="images/@@src" alt="@@name">
+    <picture class="product-box__img">
+        <source srcset="images/@@src.avif" type="image/avif" />
+        <source srcset="images/@@src.webp" type="image/webp" />
+        <img src="images/@@src.png" alt="@@name" />
+      </picture>
     <p class="product-box__type">@@type</p>
     <p class="product-box__name">@@name</p>
     <p class="product-box__price">@@price</p>

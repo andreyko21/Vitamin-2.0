@@ -54,6 +54,9 @@
   padding-bottom: 100px;
   .personal-pack-setion {
     margin-top: 85px;
+    @media (max-width: $mobile) {
+      margin-top: 60px;
+    }
   }
   @media (max-width: $mobile) {
     padding-top: 50px;

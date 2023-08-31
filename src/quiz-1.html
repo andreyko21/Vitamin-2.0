@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Quiz', 'style': 'css/quiz.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/quiz/quiz-header.html', {'quizNumber': '1/9'})
+      <main class="page quiz">
+        <div class="quiz__container">
+          <div class="quiz__title-block">
+            <h1 class="quiz__title">What’s your first name?</h1>
+          </div>
+          <div class="quiz__answer-block">
+            <div class="information-inputs-block__firstName">
+              <label class="input-title" for="firstName">First Name</label>
+              @@include('html/UI/input-button.html',{'placeholder':'', 'id':
+              'firstName', 'type': 'text'} )
+            </div>
+            <svg class="circle circle-1">
+              <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+            </svg>
+            <svg class="figure figure-1">
+              <use xlink:href="images/Sprite.svg#figure-2"></use>
+            </svg>
+          </div>
+        </div>
+      </main>
+      @@include('html/quiz/quiz-footer.html', { 'href': 'quiz-1.html'})
+    </div>
+  </body>
+</html>

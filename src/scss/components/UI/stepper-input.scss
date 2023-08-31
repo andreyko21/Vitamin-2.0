@@ -1,0 +1,26 @@
+.stepper-input {
+  max-width: 100px;
+  display: flex;
+  height: 30px;
+}
+
+.stepper-input__button {
+  background: #f5f5f5;
+  border: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  width: 30px;
+}
+
+.stepper-input__content {
+  flex: 1;
+}
+
+.stepper-input__input {
+  text-align: center;
+  border: none;
+  height: 100%;
+  width: 100%;
+}

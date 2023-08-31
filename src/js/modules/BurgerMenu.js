@@ -1,3 +1,4 @@
+import './basket';
 class BurgerMenu {
   constructor() {
     this.menuOpen = false;

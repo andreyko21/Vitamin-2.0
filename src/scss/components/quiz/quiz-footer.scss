@@ -1,0 +1,45 @@
+.quiz-footer {
+  position: sticky;
+  bottom: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  min-height: 52px;
+  z-index: 2;
+  @media (max-width: $tablet) {
+    padding-bottom: 20px;
+    padding-top: 0;
+    margin-top: 30px;
+    min-height: 0;
+    background: #faf8f6;
+  }
+  &__container {
+    max-width: 1770px;
+    display: flex;
+    align-items: flex-end;
+    &::before {
+    }
+  }
+  &__button {
+    color: $white;
+    font-family: 'OpenSans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    @media (max-width: $tablet) {
+      color: $black;
+    }
+  }
+  .back-arrow {
+    margin-right: 15px;
+    fill: white;
+    width: 9px;
+    height: 15px;
+    @media (max-width: $tablet) {
+      fill: $black;
+    }
+  }
+}

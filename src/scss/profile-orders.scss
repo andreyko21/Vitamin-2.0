@@ -288,7 +288,12 @@
     }
     img {
       width: 70%;
-      height: fit-content;
+      height: 100%;
+      max-width: 85px;
+      @media (max-width: $mobile) {
+      max-width: 70px;
+      max-height: 80px;
+    }
     }
   }
   &__type {

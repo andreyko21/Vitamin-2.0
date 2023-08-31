@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Quiz', 'style': 'css/quiz.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/quiz/quiz-header.html', {'quizNumber': '8/9'})
+      <main class="page quiz">
+        <div class="quiz__container">
+          <div class="quiz__title-block">
+            <h1 class="quiz__title">Tell us what you want to focus on</h1>
+          </div>
+          <div class="quiz__answer-block">
+            <div class="quiz__buttons-block quiz-8">
+              <button class="quiz__button">Weight managment</button>
+              <button class="quiz__button">Stress relief</button>
+              <button class="quiz__button">Immune boost</button>
+              <button class="quiz__button">Need to solve a sprcific problem</button>
+              <button class="quiz__button">I need a bassic kit for a daily intake</button>
+              <button class="quiz__button">All in one</button>
+            </div>
+            <svg class="one-fourth-circle one-fourth-circle-8">
+              <use xlink:href="images/Sprite.svg#one-fourth-circle"></use>
+            </svg>
+            <svg class="circle circle-8">
+              <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+            </svg>
+          </div>
+        </div>
+      </main>
+      @@include('html/quiz/quiz-footer.html', { 'href': 'quiz-7.html'})
+    </div>
+  </body>
+</html>

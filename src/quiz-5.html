@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Quiz', 'style': 'css/quiz.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/quiz/quiz-header.html', {'quizNumber': '5/9'})
+      <main class="page quiz">
+        <div class="quiz__container">
+          <div class="quiz__title-block">
+            <h1 class="quiz__title">
+              How frequently do you have cold/flu symptoms?
+            </h1>
+          </div>
+          <div class="quiz__answer-block">
+            <div class="quiz__buttons-block">
+              <button class="quiz__button">≤ 2 per year</button>
+              <button class="quiz__button">3 - 5 times per year</button>
+              <button class="quiz__button">5+ times per week</button>
+            </div>
+            <svg class="one-fourth-circle one-fourth-circle-5">
+              <use xlink:href="images/Sprite.svg#one-fourth-circle"></use>
+            </svg>
+            <svg class="circle circle-5">
+              <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+            </svg>
+          </div>
+        </div>
+      </main>
+      @@include('html/quiz/quiz-footer.html', { 'href': 'quiz-4.html'})
+    </div>
+  </body>
+</html>

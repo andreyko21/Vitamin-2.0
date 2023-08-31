@@ -1,0 +1,24 @@
+.quiz-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    z-index: 2;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1770px;
+  }
+  .logo {
+    &-img {
+      width: 42px;
+      height: 50px;
+    }
+  }
+  &__quiz-number {
+    font-family: 'OpenSans';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}

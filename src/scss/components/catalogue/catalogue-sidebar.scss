@@ -1,4 +1,6 @@
-.profile-sidebar {
+.catalogue-sidebar {
+  padding-top: 30px;
+  padding-bottom: 80px;
   max-width: 217px;
   width: 100%;
   @media (max-width: 850px) {
@@ -6,6 +8,7 @@
   }
   &__menu {
     &-item {
+      text-align: left;
       display: block;
       width: max-content;
       font-family: 'Effra';
@@ -13,10 +16,12 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      max-width: 200px;
+      background: none;
       &:not(:first-child) {
-        margin-top: 43px;
+        margin-top: 44.5px;
       }
-      &:not(.profile-sidebar__menu-item_exit, .profile-sidebar__menu-item_active){
+      &:not(.catalogue-sidebar__menu-item_active, .catalogue-sidebar__menu-item_warn) {
         &:hover,
         &:focus {
           color: #8172dd;
@@ -33,9 +38,9 @@
         font-family: 'Effra';
         font-size: 22px;
         font-style: normal;
-        font-weight: 700;
+        color: #ff7d4e;
       }
-      &_exit {
+      &_warn {
         color: #d32d2c;
         background: none;
         &:hover,

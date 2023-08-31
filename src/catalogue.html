@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Catalogue', 'style':
+  'css/catalogue.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/header/header.html')
+      <main class="page">
+        @@include('html/catalogue/slider-section.html')
+        <div class="page__container">
+          <div class="list-products">
+            @@include('html/catalogue/catalogue-sidebar.html')
+            @@include('html/catalogue/catalogue-list.html')
+          </div>
+          @@include('html/catalogue/banner.html')
+          @@include('html/catalogue/happy-customer-section.html')
+        </div>
+      </main>
+      @@include('html/footer.html')
+    </div>
+    <script src="js/catalogue.min.js"></script>
+  </body>
+</html>

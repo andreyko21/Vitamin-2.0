@@ -1,0 +1,41 @@
+.slider-section {
+  width: 100%;
+  &__swiper-container {
+    margin-top: 20px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__swiper-wrapper {
+    align-items: stretch;
+  }
+  .swiper-slide-next, .swiper-slide-prev{
+    .banner__container{
+      opacity: 0;
+      
+    }
+  }
+  
+  .left-button,
+  .right-button {
+    max-width: 90px;
+    max-height: 90px;
+    width: 100%;
+    position: absolute;
+    height: fit-content;
+    top: 47%;
+    z-index: 2;
+    transform: translate(0,-25%);
+    use {
+      min-width: 70px;
+      min-height: 70px;
+    }
+  }
+  .left-button {
+    left: 11.2%;
+  }
+  .right-button {
+    right: 11.2%;
+  }
+}
+

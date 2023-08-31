@@ -55,7 +55,7 @@
       display: none;
     }
     &:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 30px $grayish_white inset; /* Встановлюємо білий колір фону */
+      -webkit-box-shadow: 0 0 0 30px $grayish_white inset;
     }
     &#fileName {
       color: $black;

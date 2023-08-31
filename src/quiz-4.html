@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Quiz', 'style': 'css/quiz.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/quiz/quiz-header.html', {'quizNumber': '4/9'})
+      <main class="page quiz">
+        <div class="quiz__container">
+          <div class="quiz__title-block">
+            <h1 class="quiz__title">How frequently do you consume alcoholic beverages?</h1>
+          </div>
+          <div class="quiz__answer-block">
+            <div class="quiz__buttons-block">
+              <button class="quiz__button">≤ 3 times per week</button>
+              <button class="quiz__button">4 - 7 times per week</button>
+              <button class="quiz__button">7+ times per week</button>
+            </div>
+            <svg class="one-two-circle one-two-circle-4">
+              <use xlink:href="images/Sprite.svg#one-two-circle"></use>
+            </svg>
+            <svg class="circle circle-4">
+              <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+            </svg>
+          </div>
+        </div>
+      </main>
+      @@include('html/quiz/quiz-footer.html', { 'href': 'quiz-3.html'})
+    </div>
+  </body>
+</html>

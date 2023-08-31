@@ -1,0 +1,33 @@
+<div class="basket-list-item">
+  <picture class="basket-list-item__img">
+    <source
+      srcset="images/Ortho-Molecular-Prenatal-Complete-with-DHA.avif"
+      type="image/avif"
+    />
+    <source
+      srcset="images/Ortho-Molecular-Prenatal-Complete-with-DHA.webp"
+      type="image/webp"
+    />
+    <img
+      src="images/Ortho-Molecular-Prenatal-Complete-with-DHA.png"
+      alt="Ortho Complex"
+    />
+  </picture>
+  <p class="basket-list-item__name">
+    @@name
+  </p>
+  <svg class="basket-list-item__delete">
+    <use xlink:href="images/Sprite.svg#close"></use>
+  </svg>
+  <div class="basket-list-item__amount">
+    @@include('./../UI/stepper-input.html',{'amount': '@@amount'})
+  </div>
+  <p class="basket-list-item__price">@@price</p>
+  <hr class="basket-list-item__line" />
+  <div class="basket-list-item__time-delivery"> 
+    <div class="checkbox">
+    <input class="custom-checkbox" type="checkbox" id="@@id-checkbox" name="Autoship" value="true">
+    <label for="@@id-checkbox">Autoship every @@include('./../UI/input-select-time.html') days</label>
+  </div>
+  </div>
+</div>

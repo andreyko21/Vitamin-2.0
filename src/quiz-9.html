@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { 'title': 'Quiz', 'style': 'css/quiz.min.css' })
+  <body>
+    <div class="wrapper">
+      @@include('html/quiz/quiz-header.html', {'quizNumber': '9/9'})
+      <main class="page quiz">
+        <div class="quiz__container">
+          <div class="quiz__title-block">
+            <h1 class="quiz__title">What’s your email address?</h1>
+          </div>
+          <div class="quiz__answer-block">
+            <div class="information-inputs-block__email">
+              <label class="input-title" for="email">Email</label>
+              @@include('html/UI/input-button.html',{'placeholder':'', 'id':
+              'email', 'type': 'text'} )
+            </div>
+            <svg class="circle circle-9">
+              <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+            </svg>
+            <svg class="figure figure-9">
+              <use xlink:href="images/Sprite.svg#figure-2"></use>
+            </svg>
+          </div>
+        </div>
+      </main>
+      @@include('html/quiz/quiz-footer.html', { 'href': 'quiz-8.html'})
+    </div>
+  </body>
+</html>
