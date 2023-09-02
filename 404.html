@@ -21,7 +21,7 @@
           var linkTag = document.createElement('link');
           linkTag.rel = 'stylesheet';
           linkTag.type = 'text/css';
-          linkTag.href = `css/${fileName}.min.css`;
+          linkTag.href = `/css/${fileName}.min.css`;
           document.head.appendChild(linkTag);
         }
 
@@ -36,7 +36,7 @@
         }
 
         function SetPage(fileName, title) {
-          loadPageContent(fileName);
+          loadPageContent(`/${fileName}`);
           SetStyleFile(fileName);
           SetJsFile(fileName);
           SetHeadInfo(title);
