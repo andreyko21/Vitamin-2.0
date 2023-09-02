@@ -5,60 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Your concise and informative description here">
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var path = window.location.pathname;
-        var pageElement = document.getElementById('pages');
-        console.log(path);
-
-        if (path === '/catalogue/product') {
-          SetPage('product', 'Product');
-        } else {
-          pageElement.innerHTML = 'Page not found.';
-        }
-
-        function SetStyleFile(fileName) {
-          var linkTag = document.createElement('link');
-          linkTag.rel = 'stylesheet';
-          linkTag.type = 'text/css';
-          linkTag.href = `/css/${fileName}.min.css`;
-          document.head.appendChild(linkTag);
-        }
-
-        function SetJsFile(fileName) {
-          var scriptTag = document.createElement('script');
-          scriptTag.src = `/js/${fileName}.min.js`;
-          document.body.appendChild(scriptTag);
-        }
-
-        function SetHeadInfo(title) {
-          document.title = title;
-        }
-
-        function SetPage(fileName, title) {
-          loadPageContent(`/${fileName}`);
-          SetStyleFile(fileName);
-          SetJsFile(fileName);
-          SetHeadInfo(title);
-        }
-
-        function loadPageContent(url) {
-          fetch(url)
-            .then(function (response) {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              return response.text();
-            })
-            .then(function (data) {
-              pageElement.innerHTML = data;
-            })
-            .catch(function (error) {
-              pageElement.innerHTML = 'Error: ' + error.message;
-            });
-        }
-      });
-    </script>
+    <script src="/js/signIn.min.js?_v=20230902201414"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   </head>
   <body>

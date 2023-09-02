@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Your concise and informative description here">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/sign-up.min.css?_v=20230902201414">
+  <title>Sign Up</title>
+</head>
+
+  <body>
+    <div class="wrapper">
+      <header class="sign-header">
+  <div class="sign-header__container">
+    <a class="logo" href="./index.html" aria-label="Home">
+  <svg class="logo-img">
+    <use xlink:href="/images/Sprite.svg#logo"></use>
+  </svg>
+</a>
+ <a class="back-button" href="./index.html" aria-label="Back button">
+  <svg class="back-arrow">
+    <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
+  </svg>
+</a>
+
+    <h2 class="sign-header-title">Account</h2>
+  </div>
+</header>
+
+      <main class="page"><section class="sign-section">
+  <div class="sign-section__container">
+    <div class="sign-section__inner">
+      <form class="sign-section__form" id="myForm">
+        <div class="radio-switch">
+    <div class="radio-switch__label radio-switch__label--selected">
+         <input type="radio" class="radio-switch__input" value="regular" name="customerType" aria-label="Regular customer" checked="checked">
+        Regular customer
+    </div>
+    <div class="radio-switch__label">
+         <input type="radio" class="radio-switch__input" value="wholesale" name="customerType" aria-label="Wholesale customer">
+        Wholesale customer
+    </div>
+</div>
+        <div class="social-block">
+  <div class="text-with-lines-block">
+  <p class="text-with-lines-block__text">or sign in with...</p>
+</div>
+
+  <div class="social-block__buttons">
+    <button class="social-button" type="button" id="googleSignInButton" @@disabled>
+  <svg class="social-button__icon">
+    <use xlink:href="images/Sprite.svg#google"></use>
+  </svg>
+  <p class="social-button__text">Google</p>
+</button>
+ <button class="social-button" type="button" id="appleSignInButton" disabled="disabled">
+  <svg class="social-button__icon">
+    <use xlink:href="images/Sprite.svg#apple"></use>
+  </svg>
+  <p class="social-button__text">Apple</p>
+</button>
+ <button class="social-button" type="button" id="facebookSignInButton">
+  <svg class="social-button__icon">
+    <use xlink:href="images/Sprite.svg#facebook_log"></use>
+  </svg>
+  <p class="social-button__text">Facebook</p>
+</button>
+
+  </div>
+</div>
+
+        <div class="text-with-lines-block">
+  <p class="text-with-lines-block__text">or sign up using your email address...</p>
+</div>
+
+        <div class="inputs-block">
+          <div class="input-block">
+  <label class="input-block__label" for="email">
+    <input class="input-block__input" id="email" name="email" type="text" placeholder="Email">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+ <div class="input-block">
+  <label class="input-block__label" for="firstName">
+    <input class="input-block__input" id="firstName" name="firstName" type="text" placeholder="First Name">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+          <div class="input-block">
+  <label class="input-block__label" for="lastName">
+    <input class="input-block__input" id="lastName" name="lastName" type="text" placeholder="Last Name">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+ <div class="input-block">
+  <label class="input-block__label" for="password">
+    <input class="input-block__input" id="password" name="password" type="password" placeholder="Password">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+          <div class="input-block file" style="display: none">
+  <div class="input-block__label">
+    <input type="text" class="input-block__input" id="fileName" placeholder="Wholesale purchase permission" disabled="disabled" readonly="readonly">
+    <button type="button" class="input-block__file-button">Upload</button>
+    <input class="input-block__input" id="file" name="file" type="file">
+  </div>
+  <div class="input-block__error"></div>
+</div>
+
+          <div class="form-error"></div>
+          <button class="default-button sign-section__button">Create my account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+      <footer class="sign-footer">
+  <div class="sign-footer__container">
+    <div class="custom-link-block">
+  <p class="custom-link-block__text">Already have an account?</p>
+  <a class="custom-link-block__link" href="./sign-in.html">Sign In</a>
+</div>
+
+  </div>
+</footer>
+
+    </div>
+    <script type="module" src="js/signUp.min.js?_v=20230902201414"></script>
+  </body>
+</html>
