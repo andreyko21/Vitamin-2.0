@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/home.min.css?_v=20230902134121">
-  <title>Home</title>
+  <link rel="stylesheet" href="css/profile-payment.min.css?_v=20230902134121">
+  <title>Payment methods</title>
 </head>
 
   <body>
@@ -400,7 +400,81 @@
 </header>
 
       <main class="page">
-      1
+        <div class="profile">
+          <div class="profile__container">
+            <div class="profile-sidebar">
+              <div class="profile-sidebar__menu">
+                <a class="profile-sidebar__menu-item" href="profile-subscriptions.html">Subscriptions</a>
+                <a class="profile-sidebar__menu-item" href="profile-orders.html">Orders</a>
+                <a class="profile-sidebar__menu-item" href="profile-overview.html">Account Overview</a>
+                <a class="profile-sidebar__menu-item profile-sidebar__menu-item_active" href="profile-payment.html">Payment methods</a>
+                <a class="profile-sidebar__menu-item" href="profile-change-password.html">Change Password</a>
+                <button class="profile-sidebar__menu-item profile-sidebar__menu-item_exit">
+                  Sign out
+                </button>
+              </div>
+            </div>
+            <div class="profile__main">
+              <div class="profile__title-block">
+                <h1 class="profile__title">Payment methods</h1>
+              </div>
+              <div class="profile__content">
+                <section class="profile-payment-section">
+  <div class="profile-payment-section__card">
+    <div class="profile-payment-section__front-card">
+      <div class="information-inputs-block__cardNumber">
+        <label class="input-title" for="cardNumber">Card Number</label>
+        <div class="input-block">
+  <label class="input-block__label" for="cardNumber">
+    <input class="input-block__input" id="cardNumber" name="cardNumber" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+      </div>
+      <div class="profile-payment-section__card-supports">
+        <picture class="profile-payment-section__card-supports-img">
+          <source srcset="images/powered-by-stripe.avif" type="image/avif">
+          <source srcset="images/powered-by-stripe.webp" type="image/webp">
+          <img src="images/powered-by-stripe.png" alt="Ortho Complex">
+        </picture>
+        <picture class="profile-payment-section__card-supports-img">
+          <source srcset="images/supported-cards.avif" type="image/avif">
+          <source srcset="images/supported-cards.webp" type="image/webp">
+          <img src="images/supported-cards.png" alt="Ortho Complex">
+        </picture>
+      </div>
+    </div>
+    <div class="information-inputs-block__expiration">
+      <label class="input-title" for="expiration">Expiration</label>
+      <div class="input-block">
+  <label class="input-block__label" for="expiration">
+    <input class="input-block__input" id="expiration" name="expiration" type="text" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+    </div>
+    <div class="profile-payment-section__back-card">
+      <div class="information-inputs-block__cvc">
+        <label class="input-title" for="cvc">CVC</label>
+        <div class="input-block">
+  <label class="input-block__label" for="cvc">
+    <input class="input-block__input" id="cvc" name="cvc" type="Password" placeholder="">
+  </label>
+  <div class="input-block__error"></div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+                <button class="profile__content-button">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer class="footer">
   <div class="footer__container">
@@ -468,6 +542,5 @@
 </footer>
 
     </div>
-    <script src="js/index.min.js?_v=20230902134121"></script>
   </body>
 </html>
