@@ -2,7 +2,9 @@ import BurgerMenu from './modules/BurgerMenu';
 import Swiper from 'swiper';
 new BurgerMenu().init();
 
-document.addEventListener('DOMContentLoaded', function () {
+
+
+window.addEventListener('load', function () {
   const swiperContainer = document.querySelector('.swiper-container');
   if (swiperContainer) {
     const mySwiper = new Swiper(swiperContainer, {
@@ -17,11 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
     });
-    
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
   const swiperContainer = document.querySelector('.products-swiper-container');
   if (swiperContainer) {
     const mySwiper = new Swiper(swiperContainer, {
@@ -48,3 +49,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+

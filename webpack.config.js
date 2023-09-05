@@ -12,7 +12,7 @@ const paths = {
 export const webpackConfig = (isMode) => {
   return {
     entry: {
-      main: path.join(paths.src, 'js/app.js'),
+      app: path.join(paths.src, 'js/app.js'),
       index: path.join(paths.src, 'js/index.js'),
       signIn: path.join(paths.src, 'js/signIn.js'),
       signUp: path.join(paths.src, 'js/signUp.js'),
@@ -21,6 +21,7 @@ export const webpackConfig = (isMode) => {
       orderCheckout: path.join(paths.src, 'js/orderCheckout.js'),
       profileOrders: path.join(paths.src, 'js/profileOrders.js'),
       catalogue: path.join(paths.src, 'js/catalogue.js'),
+      product: path.join(paths.src, 'js/product.js'),
     },
 
     mode: isMode ? 'development' : 'production',
@@ -50,5 +51,6 @@ export const webpackConfig = (isMode) => {
         },
       ],
     },
+    devtool: isMode ? 'source-map' : 'cheap-source-map',
   };
 };

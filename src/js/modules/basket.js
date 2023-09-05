@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import './stepperInput';
 
 $(document).ready(function () {
   $('.header__basket-button').click(function () {
@@ -25,17 +26,4 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
-  $('.stepper-input__button').click(function () {
-    var input = $(this)
-      .siblings('.stepper-input__content')
-      .find('.stepper-input__input');
-    var currentValue = parseInt(input.val());
 
-    if ($(this).hasClass('increment')) {
-      input.val(currentValue + 1);
-    } else if ($(this).hasClass('decrement') && currentValue > 1) {
-      input.val(currentValue - 1);
-    }
-  });
-});
