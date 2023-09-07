@@ -1792,4 +1792,10 @@
       fill="#FF7D4E" stroke="#FF7D4E"></path>
     <rect x="7" y="8" width="20" height="4" fill="white" stroke="black" stroke-width="2"></rect>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="minus">
+    <rect x="6" y="11" width="12" height="2"></rect>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="plus">
+    <path d="M13 6H11V11H6V13H11V18H13V13H18V11H13V6Z"></path>
+  </symbol>
 </svg>
