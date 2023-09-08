@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var path = window.location.pathname;
   var pageElement = document.getElementById('pages');
   console.log(path);
-  const pattern = /^\/catalogue\/product-\d+$/;
+  const pattern = /^\/product#\d+$/;
   if (pattern.test(path)) {
     SetPage('product', 'Product');
   } else {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var linkTag = document.createElement('link');
     linkTag.rel = 'stylesheet';
     linkTag.type = 'text/css';
-    linkTag.href = `/css/${fileName}.min.css`;
+    linkTag.href = `./../css/${fileName}.min.css`;
     document.head.appendChild(linkTag);
   }
 

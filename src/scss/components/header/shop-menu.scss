@@ -9,10 +9,10 @@
   z-index: 3;
   transition: transform 0.3s ease-in-out;
   &:not(.open) {
-    transform: translate(100%);
+    display: none;
   }
   &.open {
-    transform: translate(0%);
+    display: none;
   }
   &__back-button {
     width: 32px;

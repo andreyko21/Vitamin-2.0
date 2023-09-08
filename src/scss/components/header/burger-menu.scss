@@ -5,9 +5,7 @@ $black: #000000;
 $main_orange: #ff7d4e;
 
 .burger-menu {
-  @media (min-width: (850px + 0.1px)) {
-    display: none;
-  }
+ display: none;
   @media (max-width: 850px) {
     position: fixed;
     top: 0;
@@ -18,10 +16,10 @@ $main_orange: #ff7d4e;
     transition: transform 0.3s ease-in-out;
     z-index: 2;
     &:not(.open) {
-      transform: translate(0, -1000%);
+   display: none;
     }
     &.open {
-      transform: translate(0);
+    display: none;
       overflow-y: auto;
       overflow-x: hidden;
     }

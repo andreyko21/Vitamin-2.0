@@ -1,83 +1,49 @@
-import { setupStepperInput } from './modules/stepperInput.js';
-import { app, auth } from './modules/Auth.js';
-import { getFirestore, collection, getDoc, doc } from 'firebase/firestore';
 import $ from 'jquery';
+import { firebaseConfig } from './modules/Config';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, doc } from 'firebase/firestore';
+
+import { PersonalPack } from './modules/PersonalPack';
+import { Product } from './modules/Product';
+import { AmountInput } from './modules/stepperInput';
+
+import './modules/basket';
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const currentURL = window.location.href;
+const currentFilename = currentURL.substring(currentURL.lastIndexOf('/') + 1);
+const firestoreFilename = currentURL.endsWith('.html')
+  ? currentFilename.replace('.html', '')
+  : currentURL.endsWith('#')
+  ? currentFilename.replace('#', '')
+  : currentFilename;
+
+const productsRef = collection(db, 'products');
+
+const packBox1DocRef = doc(productsRef, 'product-1');
+const packBox2DocRef = doc(productsRef, 'product-2');
+const packBox3DocRef = doc(productsRef, 'product-3');
+const packBox4DocRef = doc(productsRef, 'product-4');
+
+const productDocRef = doc(productsRef, firestoreFilename.replace('#', '-'));
 
 $(document).ready(function () {
-  setupStepperInput();
-  console.log('1');
+  const product = new Product(productDocRef);
+
+  $('.product-section__information-block').find('.stepper-input__button').click(
+    function () {
+      AmountInput($(this));
+      product.Price();
+    }
+  );
+
+  $('.product-section__button').click(() => {
+    product.Buy();
+  });
+  new PersonalPack($('#product-box-1'), packBox1DocRef);
+  new PersonalPack($('#product-box-2'), packBox2DocRef);
+  new PersonalPack($('#product-box-3'), packBox3DocRef);
+  new PersonalPack($('#product-box-4'), packBox4DocRef);
 });
-
-class Product {
-  constructor(
-    name,
-    type,
-    img,
-    price,
-    quantity,
-    weight,
-    icon,
-    background,
-    color
-  ) {
-    this.name = name;
-    this.type = type;
-    this.img = img;
-    this.price = price;
-    this.quantity = quantity;
-    this.weight = weight;
-    this.icon = icon;
-    this.background = background;
-    this.color = color;
-  }
-  init() {
-    $('.product-section__name').html(this.name);
-    $('.product-section__type').html(this.type);
-    $('.product-section__price').html(this.price);
-    $('.product-section__quantity-in').html(this.quantity);
-    $('.product-section__weight').html(this.weight);
-    $('.product-section__icon-product-use').attr(
-      'xlink:href',
-      `/images/Sprite.svg#icon_${this.icon}`
-    );
-    $('.product-section__avif').attr('srcset', `/images/${this.img}.avif`);
-    $('.product-section__webp').attr('srcset', `/images/${this.img}.webp`);
-    $('.product-section__avif').attr('srcset', `/images/${this.img}.png`);
-    $('.product-section__img-block').css('background-color', this.background);
-    $('.product-section__type').css('color', this.background);
-  }
-}
-
- const db = getFirestore(app);
- const productsRef = collection(db, 'products');
- let firestoreFilename;
- const currentURL = window.location.href;
- const currentFilename = currentURL.substring(currentURL.lastIndexOf('/') + 1);
- if (currentURL.endsWith('.html')) {
-   firestoreFilename = currentFilename.replace('.html', '');
- } else {
-   firestoreFilename = currentFilename;
- }
- const matchingDocRef = doc(productsRef, firestoreFilename);
- getDoc(matchingDocRef)
-   .then((docSnapshot) => {
-     if (docSnapshot.exists()) {
-       const product1 = new Product(
-         docSnapshot.data().name,
-         docSnapshot.data().type,
-         docSnapshot.data().img,
-         docSnapshot.data().price,
-         docSnapshot.data().quantity,
-         docSnapshot.data().weight,
-         docSnapshot.data().icon,
-         docSnapshot.data().background,
-         docSnapshot.data().color
-       );
-       product1.init();
-     } else {
-       console.log('Документ не знайдено в Firestore.');
-     }
-   })
-   .catch((error) => {
-     console.error('Помилка при отриманні даних: ', error);
-   });

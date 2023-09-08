@@ -40,6 +40,19 @@ class BurgerMenu {
     this.toggleScrollLock();
   }
 
+  toggleBodyLock(isLock) {
+    const lockPaddingValue = window.innerWidth - this.pageWrapper.offsetWidth;
+
+    if (this.lockPaddingElements) {
+      this.lockPaddingElements.forEach((element) => {
+        element.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
+      });
+    }
+
+    this.body.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
+    this.html.classList.toggle('lock', isLock);
+  }
+
   toggleScrollLock() {
     this.body.classList.toggle('scroll-lock');
   }
@@ -66,3 +79,4 @@ class BurgerMenu {
 }
 
 export default BurgerMenu;
+
