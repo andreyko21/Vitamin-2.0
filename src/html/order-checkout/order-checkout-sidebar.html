@@ -11,32 +11,23 @@
   </div>
   <div class="order-checkout-sidebar__accordeon-content" >
     <ul class="order-checkout-sidebar__products-list">
-      @@include('./product-item-checkout.html',{'img':'Ortho-Molecular-Prenatal-Complete-with-DHA',
-      'name': 'Ortho Molecular Products 5-HTP Capsules', 'price': '61.98',
-      'discount': '', 'amount': '1'})
-      @@include('./product-item-checkout-discount.html',{'img':'Metagenics-500-C-Methoxyflavone',
-      'name': 'Standard Process Thymus PMG 90 Tablets', 'price': '125.00',
-      'discount': '61.98', 'amount': '3'})
-      @@include('./product-item-checkout-discount.html',{'img':'Ortho-Molecular-Reacted-Magnesium',
-      'name': 'Ortho Molecular Products 5-HTP Capsules', 'price': '125.00',
-      'discount': '61.98', 'amount': '1'})
     </ul>
     <div class="order-checkout-sidebar__total-block total-block">
       <div class="total-block__item">
         <p class="total-block__item-title">Subtotal</p>
-        <p class="total-block__item-price">120.46</p>
+        <p class="total-block__item-price"></p>
       </div>
-      <div class="total-block__item">
+      <div class="total-block__item total-block__discount">
         <p class="total-block__item-title">Discount</p>
-        <p class="total-block__item-price discount">31.20</p>
+        <p class="total-block__item-price-discount"></p>
       </div>
       <div class="total-block__item">
         <p class="total-block__item-title">Shipping</p>
-        <p class="total-block__item-price">120.46</p>
+        <p class="total-block__item-price-shipping"></p>
       </div>
       <div class="total-block__total-price">
         <p class="total-block__total-price-title">Today’s Total</p>
-        <p class="total-block__total-price-price">129.66</p>
+        <p class="total-block__total-price-price"></p>
       </div>
     </div>
     <button class="order-checkout-sidebar__button default-button">

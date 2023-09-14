@@ -68,9 +68,8 @@
         height: 15px;
         margin-left: 14px;
         transition: transform 0.3s ease;
-        &.open{
+        &.open {
           transform: rotate(180deg);
-
         }
         use {
           width: 9px;
@@ -95,11 +94,11 @@
   }
   &__accordeon-content {
     @media (min-width: ($mobile + 0.5px)) {
-    display: block!important;
+      display: block !important;
     }
     @media (max-width: $mobile) {
       display: none;
-      &.open{
+      &.open {
         display: block;
       }
       position: relative;
@@ -166,7 +165,9 @@
         font-size: 14px;
       }
     }
-    &-price {
+    &-price,
+    &-price-shipping,
+    &-price-discount {
       text-align: right;
       font-family: 'OpenSans';
       font-size: 16px;
@@ -176,14 +177,14 @@
       @media (max-width: $mobile) {
         font-size: 14px;
       }
-      &.discount {
-        color: red;
-        &::before {
-          content: '-$';
-        }
-      }
       &::before {
         content: '$';
+      }
+    }
+    &-price-discount {
+      color: red;
+      &::before {
+        content: '-$';
       }
     }
     &:not(:first-child) {

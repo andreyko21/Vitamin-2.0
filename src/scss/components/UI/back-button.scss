@@ -19,13 +19,20 @@
       fill: $black;
       transition: opacity 0.3s ease-in-out;
       width: 100%;
-    height: 100%;
+      height: 100%;
+    }
+  }
+  &:focus {
+    .back-arrow {
+      use.back-arrow-use {
+        fill: #8172dd;
+      }
     }
   }
   &:hover {
     use.back-arrow-use {
+      fill: $focus_color;
       transition: opacity 0.3s ease-in-out;
-      opacity: 0.4;
     }
   }
 }

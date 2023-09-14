@@ -44,15 +44,12 @@
         padding-right: 20px;
       }
     }
-    .swiper-wrapper {
-    }
   }
   &__product-card {
     position: relative;
     padding: 40px 30px;
     display: block;
     max-width: 400px;
-    background-color: #89d4a7;
     border-radius: 15px;
     @media (max-width: $mobile) {
       padding: 31.5px 20px;
@@ -66,12 +63,13 @@
         padding-top: 0;
       }
       img {
-        max-width: 189px;
-        max-height: 211px;
+        max-width: 265px;
+        max-height: 245px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         @media (max-width: $mobile) {
-          width: 143px;
-          height: 159px;
-          padding-top: 0;
+         
         }
       }
     }

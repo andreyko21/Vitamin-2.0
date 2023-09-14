@@ -1,82 +1,77 @@
-import './basket';
-class BurgerMenu {
+import $ from 'jquery';
+import { app } from './InitFirebase';
+import { ScrollLock } from './ScrollLock';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
+export class BurgerMenu {
   constructor() {
+    this.scroll = new ScrollLock();
     this.menuOpen = false;
-    this.burgerMenu = document.querySelector('.burger-menu');
-    this.burgerButtons = document.querySelectorAll('.burger-menu-button');
+    this.auth = getAuth(app);
+    this.burgerMenu = $('.burger-menu');
+    this.openButton = $('.burger-menu-button');
+    this.closeButton = $('.burger-menu__container').find('.burger-menu-button');
     this.subMenus = {
       shops: {
-        menu: document.querySelector('.sub-menu_shop'),
-        openButton: document.querySelector('.burger-shop-open-button'),
-        closeButton: document.querySelector('.burger-shop-close-button'),
+        menu: $('.sub-menu_shop'),
+        openButton: $('.burger-shop-open-button'),
+        closeButton: $('.burger-shop-close-button'),
       },
       information: {
-        menu: document.querySelector('.sub-menu_information'),
-        openButton: document.querySelector('.burger-information-open-button'),
-        closeButton: document.querySelector('.burger-information-close-button'),
+        menu: $('.sub-menu_information'),
+        openButton: $('.burger-information-open-button'),
+        closeButton: $('.burger-information-close-button'),
       },
       profile: {
-        menu: document.querySelector('.sub-menu_profile'),
-        openButton: document.querySelector('.burger-profile-open-button'),
-        closeButton: document.querySelector('.burger-profile-close-button'),
+        menu: $('.sub-menu_profile'),
+        openButton: $('.burger-profile-open-button'),
+        closeButton: $('.burger-profile-close-button'),
       },
     };
-    this.body = document.body;
-    this.bindSubMenuEvents();
+    this.body = $('body');
+    this.bindEvents();
   }
 
-  init() {
-    if (this.burgerButtons.length > 0 && this.burgerMenu) {
-      this.burgerButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-          this.toggleMenu(index);
-        });
-      });
-    }
+  bindEvents() {
+    this.openButton.click(() => this.ShowBurgerMenu());
+    this.closeButton.click(() => this.HideBurgerMenu());
+    this.subMenus.shops.openButton.click(() => this.ShowSubMenu(this.subMenus.shops));
+    this.subMenus.shops.closeButton.click(() => this.HideSubMenu(this.subMenus.shops));
+    this.subMenus.information.openButton.click(() => this.ShowSubMenu(this.subMenus.information));
+    this.subMenus.information.closeButton.click(() => this.HideSubMenu(this.subMenus.information));
+
+    this.subMenus.profile.openButton.click(() => this.OpenProfile());
+    this.subMenus.profile.closeButton.click(() => this.HideSubMenu(this.subMenus.profile));
+
+
   }
 
-  toggleSubMenu(subMenu) {
-    subMenu.classList.toggle('open');
-    this.toggleScrollLock();
+  ShowBurgerMenu() {
+    this.scroll.toggleBodyLock(true);
+    this.burgerMenu.addClass('burger-open');
   }
 
-  toggleBodyLock(isLock) {
-    const lockPaddingValue = window.innerWidth - this.pageWrapper.offsetWidth;
-
-    if (this.lockPaddingElements) {
-      this.lockPaddingElements.forEach((element) => {
-        element.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
-      });
-    }
-
-    this.body.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
-    this.html.classList.toggle('lock', isLock);
+  HideBurgerMenu() {
+    this.scroll.toggleBodyLock(false);
+    this.burgerMenu.removeClass('burger-open');
   }
 
-  toggleScrollLock() {
-    this.body.classList.toggle('scroll-lock');
+  ShowSubMenu(obj) {
+    obj.menu.addClass('submenu-open');
   }
 
-  bindSubMenuEvents() {
-    for (const key in this.subMenus) {
-      const { menu, openButton, closeButton } = this.subMenus[key];
-      if (menu && openButton && closeButton) {
-        openButton.addEventListener('click', () => {
-          this.toggleSubMenu(menu);
-        });
-        closeButton.addEventListener('click', () => {
-          menu.classList.remove('open');
-          this.toggleScrollLock();
-        });
+  HideSubMenu(obj) {
+    obj.menu.removeClass('submenu-open');
+  }
+
+  OpenProfile() {
+    onAuthStateChanged(this.auth, (user) => {
+      if (user) {
+        this.ShowSubMenu(this.subMenus.profile);
+      } else {
+        window.location.href = '/sign-in.html';
       }
-    }
-  }
-
-  toggleMenu(index) {
-    this.menuOpen = !this.menuOpen;
-    this.burgerMenu.classList.toggle('open', this.menuOpen);
+    });
   }
 }
-
-export default BurgerMenu;
 

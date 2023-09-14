@@ -81,6 +81,10 @@
     line-height: normal;
     &:focus {
       color: $focus_color;
+      font-weight: 700;
+    }
+    &:active{
+      color: $active_color;
     }
     @media (max-width: $mobile) {
       margin-left: 10px;

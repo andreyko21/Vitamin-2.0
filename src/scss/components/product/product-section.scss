@@ -339,6 +339,7 @@
       display: flex;
     }
     .product-section__price {
+      display: none;
       font-family: 'OpenSans';
       font-size: 16px;
       font-style: normal;
@@ -350,6 +351,7 @@
       }
     }
     .product-section__discount {
+      display: none;
       margin-left: 8px;
       background: #d32d2c;
       border-radius: 4px;

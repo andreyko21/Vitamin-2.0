@@ -1,12 +1,11 @@
 import $ from 'jquery';
 import 'jquery-validation';
+import { getFirestore, setDoc, doc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  FacebookAuthProvider,
-  OAuthProvider,
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
 
@@ -110,10 +109,23 @@ class SignUpModule {
           .then((userCredential) => {
             const user = userCredential.user;
             console.log('Successful registration:', user);
-
-            // Perform any additional actions after successful registration
-            // For example, redirect to another page:
-            window.location.href = 'login.html'; // Replace with your desired redirect URL
+            const db = getFirestore(app);
+            const myDocument = doc(db, 'users', user.uid);
+            console.log('1');
+            const newData = {
+              firstName: $('#firstName').val(),
+              lastName: $('#lastName').val(),
+            };
+            console.log('1');
+            setDoc(myDocument, newData)
+              .then(() => {
+                console.log(
+                  'Новий документ створено з власним ідентифікатором'
+                );
+              })
+              .catch((error) => {
+                console.error('Помилка створення документа:', error);
+              });
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -132,7 +144,6 @@ class SignUpModule {
 
 $(document).ready(function () {
   $('.radio-switch__label').on('click', function () {
-    // Remove the "checked" attribute from all radio inputs
     $('.radio-switch__input').removeAttr('checked');
 
     // Find the radio input within the clicked label and set the "checked" attribute
@@ -176,8 +187,6 @@ $(document).ready(function () {
       );
       $(this).addClass('radio-switch__label--selected');
       $(this).find('.radio-switch__input').prop('checked', true);
-
-      // Additional line to set the "checked" attribute
       $(this)
         .siblings('.radio-switch__label')
         .find('.radio-switch__input')
@@ -198,8 +207,6 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   const $fileNameInput = $('#fileName');
-
-  // Function to update placeholder based on screen size
   function updatePlaceholder() {
     if (window.innerWidth <= 600) {
       $fileNameInput.attr('placeholder', 'Permission');
@@ -208,14 +215,10 @@ $(document).ready(function () {
     }
   }
 
-  // Initial update on page load
   updatePlaceholder();
 
-  // Update placeholder when window is resized
   $(window).on('resize', updatePlaceholder);
 });
-
-
 
 const googleSignInButton = document.getElementById('googleSignInButton');
 
@@ -256,35 +259,5 @@ googleSignInButton.addEventListener('click', async () => {
     console.error('Google Sign-In error:', signInError);
   }
 });
-
-
-
-const facebookSignInButton = document.getElementById('facebookSignInButton');
-
-facebookSignInButton.addEventListener('click', async () => {
-  const facebookAuthProvider = new FacebookAuthProvider();
-
-  try {
-    const facebookResult = await signInWithPopup(auth, facebookAuthProvider);
-    const user = facebookResult.user;
-
-    // You might want to check if the user already exists with the Facebook credential
-    // If the account already exists, you can handle the account linking scenario
-
-    console.log('Facebook Sign-In successful:', user);
-  } catch (error) {
-    if (error.code === 'auth/cancelled-popup-request') {
-      console.log('Facebook Sign-In cancelled by user.');
-    } else if (error.code === 'auth/account-exists-with-different-credential') {
-      // Handle the account linking scenario here
-    } else {
-      console.error('Facebook Sign-In error:', error);
-    }
-  }
-});
-
-function generateRandomState() {
-  return Math.random().toString(36).substring(7);
-}
 
 new SignUpModule().init();

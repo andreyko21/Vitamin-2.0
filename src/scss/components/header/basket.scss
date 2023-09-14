@@ -26,7 +26,14 @@
   display: flex;
   flex-direction: column;
   z-index: 5;
-  transition: right 0.5s ease;
+  &.basket-open {
+    right: 0;
+    transition: right 0.5s ease;
+  }
+  &:not(.basket-open) {
+    right: -100%;
+    transition: right 0.5s ease;
+  }
   &__background {
     position: absolute;
     z-index: -1;
@@ -112,13 +119,13 @@
       }
     }
     &__delete {
-      cursor: pointer ;
+      cursor: pointer;
       margin-left: auto;
       grid-area: delete;
-      stroke: #C7C7C7;
+      stroke: #c7c7c7;
       width: 24px;
       height: 24px;
-      use{
+      use {
         pointer-events: none;
       }
     }
@@ -140,8 +147,10 @@
       line-height: normal;
       margin-top: 15px;
     }
-    &__price {
-      margin-top: 18px;
+    &__price-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       grid-area: price;
       font-family: 'OpenSans';
       font-size: 18px;
@@ -149,6 +158,27 @@
       font-weight: 600;
       line-height: normal;
       text-align: end;
+      .discount-price {
+        color: #D32D2C;
+        font-size: 16px;
+        &::before{
+          content: "$";
+        }
+      }
+      .sub-price {
+        color: #000;
+        text-align: right;
+        font-size: 10px;
+        text-decoration: line-through;
+        &::before{
+          content: "$";
+        }
+      }
+      .price{
+        &::before{
+          content: "$";
+        }
+      }
     }
     &__line {
       grid-area: line;

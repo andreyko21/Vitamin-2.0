@@ -9,7 +9,7 @@
   border-radius: 10px;
   background-color: $grayish_white;
   &:focus {
-    outline: 1px solid rgb(65, 65, 65);
+    outline: 1px solid $focus_color;
   }
   &:disabled{
     background-color: $grayish_white;

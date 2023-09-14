@@ -1,15 +1,10 @@
 import $ from 'jquery';
-import { firebaseConfig } from './modules/Config';
-import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, doc } from 'firebase/firestore';
-
 import { PersonalPack } from './modules/PersonalPack';
-import { Product } from './modules/Product';
 import { AmountInput } from './modules/stepperInput';
+import { Product } from './modules/Product';
+import { app } from './modules/InitFirebase';
 
-import './modules/basket';
-
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const currentURL = window.location.href;
@@ -17,8 +12,8 @@ const currentFilename = currentURL.substring(currentURL.lastIndexOf('/') + 1);
 const firestoreFilename = currentURL.endsWith('.html')
   ? currentFilename.replace('.html', '')
   : currentURL.endsWith('#')
-  ? currentFilename.replace('#', '')
-  : currentFilename;
+    ? currentFilename.replace('#', '')
+    : currentFilename;
 
 const productsRef = collection(db, 'products');
 
@@ -35,13 +30,10 @@ $(document).ready(function () {
   $('.product-section__information-block').find('.stepper-input__button').click(
     function () {
       AmountInput($(this));
-      product.Price();
+      product.updatePrice();
     }
   );
 
-  $('.product-section__button').click(() => {
-    product.Buy();
-  });
   new PersonalPack($('#product-box-1'), packBox1DocRef);
   new PersonalPack($('#product-box-2'), packBox2DocRef);
   new PersonalPack($('#product-box-3'), packBox3DocRef);

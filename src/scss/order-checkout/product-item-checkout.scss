@@ -29,6 +29,8 @@
     }
   }
   &__price {
+    display: flex;
+    flex-direction: column;
     margin-left: 30px;
     text-align: right;
     font-family: 'OpenSans';
@@ -41,45 +43,37 @@
     @media (max-width: $mobile) {
       font-size: 14px;
     }
-    &.discount {
-      display: flex;
-      flex-direction: column;
-      .price {
-        color: rgba($color: $black, $alpha: 0.5);
-        text-align: right;
-        font-family: 'OpenSans';
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: line-through;
-        &::before {
-          content: '$';
-        }
-        @media (max-width: $mobile) {
-          font-size: 10px;
-        }
-      }
-      .discount {
-        margin-top: 2px;
-        text-align: right;
-        font-family: 'OpenSans';
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        color: red;
-        &::before {
-          content: '$';
-        }
-        @media (max-width: $mobile) {
-          font-size: 14px;
-        }
+
+    display: flex;
+    flex-direction: column;
+    .sub-price {
+      color: rgba($color: $black, $alpha: 0.5);
+      text-align: right;
+      font-family: 'OpenSans';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-decoration: line-through;
+
+      @media (max-width: $mobile) {
+        font-size: 10px;
       }
     }
-    &:not(.discount) {
+    .discount-price {
+      margin-top: 2px;
+      text-align: right;
+      font-family: 'OpenSans';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      color: red;
       &::before {
         content: '$';
+      }
+      @media (max-width: $mobile) {
+        font-size: 14px;
       }
     }
   }

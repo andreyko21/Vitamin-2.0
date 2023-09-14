@@ -2,6 +2,8 @@
 
 .catalogue-list {
   display: grid;
+  height: max-content;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
   @media (max-width: $mobile) {
     grid-template-columns: repeat(2, 1fr);

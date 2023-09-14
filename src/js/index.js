@@ -1,53 +1,30 @@
-import BurgerMenu from './modules/BurgerMenu';
-import Swiper from 'swiper';
-new BurgerMenu().init();
+import $ from 'jquery';
+import { Header } from './modules/Header';
+import { ChooseProducts } from './modules/ChooseProducts';
+import { Reviews } from './modules/Reviews';
 
 
+const header = new Header();
+const choose = new ChooseProducts();
+const reviews = new Reviews();
 
-window.addEventListener('load', function () {
-  const swiperContainer = document.querySelector('.swiper-container');
-  if (swiperContainer) {
-    const mySwiper = new Swiper(swiperContainer, {
-      slidesPerView: 1,
-      spaceBetween: 32,
-      breakpoints: {
-        600: {
-          slidesPerView: 2,
-        },
-        960: {
-          slidesPerView: 3,
-        },
-      },
-    });
-  }
-});
+$('.take-quiz').click(() => {
+  header.OpenQuiz();
+})
 
-window.addEventListener('load', function () {
-  const swiperContainer = document.querySelector('.products-swiper-container');
-  if (swiperContainer) {
-    const mySwiper = new Swiper(swiperContainer, {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      breakpoints: {
-        401: {
-          slidesPerView: 1.5,
-          spaceBetween: 10,
-        },
-        601: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        961: {
-          slidesPerView: 1,
-          spaceBetween: 40,
-        },
-        1351: {
-          slidesPerView: 2,
-          spaceBetween: 40,
-        },
-      },
-    });
-  }
+$(document).ready(function() {
+  const header = $('.header');
+  const scrollThreshold = 100; // При скролі на 100px змінюємо фон
+
+  $(window).scroll(function() {
+      if ($(this).scrollTop() > scrollThreshold) {
+          // Додаємо клас для зміни фону
+          header.addClass('header-background');
+      } else {
+          // Видаляємо клас, якщо прокрутка менша, ніж scrollThreshold
+          header.removeClass('header-background');
+      }
+  });
 });
 
 

@@ -1,37 +1,15 @@
 import $ from 'jquery';
 import 'jquery-validation';
-import { initializeApp } from 'firebase/app';
+import { app } from './modules/InitFirebase';
 import {
   getAuth,
   signInWithEmailAndPassword,
-  fetchSignInMethodsForEmail,
-  createUserWithEmailAndPassword
+  onAuthStateChanged,
 } from 'firebase/auth';
-import {
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithPopup,
-} from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import toastr from 'toastr';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyBpgFlMAO4G5RzG6bzqZxY0znzeHpj63f4',
-  authDomain: 'vitamin-a3aa5.firebaseapp.com',
-  projectId: 'vitamin-a3aa5',
-  storageBucket: 'vitamin-a3aa5.appspot.com',
-  messagingSenderId: '38815317747',
-  appId: '1:38815317747:web:bec97192b49cbe49820186',
-  measurementId: 'G-1RNF6X74BH',
-};
-
-const app = initializeApp(firebaseConfig);
-
-class SignIn{
-  constructor() {
-    
-  }
-}
-
-class SignInModule {
+class SignIn {
   constructor() {
     this.customErrorMessages = {
       'auth/user-not-found': 'User not found. Please check your email.',
@@ -39,19 +17,44 @@ class SignInModule {
         'The login or password is incorrect. Please try again.',
       'auth/invalid-email':
         'Invalid email format. Please enter a valid email address.',
-      'auth/too-many-requests': 'Доступ заблоковано, попробуйте пізніше',
+      'auth/too-many-requests': 'Access is blocked, please try again later',
     };
   }
 
   init() {
-    this.setupValidation();
-    this.setupSignIn();
-    this.setupFacebookSignIn();
-    this.setupGoogleSignIn();
+    const auth = getAuth(app);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        window.location.href = '/profile-subscriptions.html';
+      }
+    });
+    new Validator().init();
+    new EmailAndPasswordSignIn().init();
+    new GoogleSignIn();
+
+    toastr.options = {
+      closeButton: true,
+      progressBar: true,
+      timeOut: 9000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    };
+    const toastrStyles = document.createElement('link');
+    toastrStyles.rel = 'stylesheet';
+    toastrStyles.href =
+      'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css';
+    document.head.appendChild(toastrStyles);
+  }
+}
+
+class Validator {
+  constructor(formSelector) {
+    this.formSelector = formSelector;
+    this.validator = null;
   }
 
-  setupValidation() {
-    this.validator = $('#myForm').validate({
+  init() {
+    this.validator = $(this.formSelector).validate({
       rules: {
         email: {
           required: true,
@@ -82,130 +85,98 @@ class SignInModule {
         $(element).parent().removeClass('error-block').addClass(validClass);
       },
     });
-
-    $('input').on('keyup change', () => {
-      let valid = true;
-      $('input').each(() => {
-        valid = this.validator.element(this) && valid;
-      });
-    });
-  }
-
-  setupSignIn() {
-    const errorContainer = $('.form-error');
-
-    $('#myForm').submit((event) => {
-      event.preventDefault();
-
-      // Перевіряємо, чи пройшла валідація
-      if (this.validator.form()) {
-        const email = $('#email').val();
-        const password = $('#password').val();
-
-        const firebaseConfig = {
-          apiKey: 'AIzaSyBpgFlMAO4G5RzG6bzqZxY0znzeHpj63f4',
-          authDomain: 'localhost',
-          projectId: 'vitamin-a3aa5',
-          storageBucket: 'vitamin-a3aa5.appspot.com',
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
-        errorContainer.empty();
-
-        signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            console.log('Successful login:', user);
-
-            // Виконуємо додатковий код, який повинен бути виконаний після успішного входу
-            // Наприклад, перенаправлення на іншу сторінку:
-            window.location.href = 'index.html';
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-
-            if (this.customErrorMessages.hasOwnProperty(errorCode)) {
-              errorContainer.text(this.customErrorMessages[errorCode]);
-            } else {
-              console.error('Login error:', errorCode, errorMessage);
-            }
-          });
-      }
-    });
-  }
-  setupGoogleSignIn() {
-    const googleSignInButton = document.getElementById('googleSignInButton');
-
-    googleSignInButton.addEventListener('click', async () => {
-      const provider = new GoogleAuthProvider();
-      const auth = getAuth();
-
-      try {
-        const googleResult = await signInWithPopup(auth, provider);
-        const user = googleResult.user;
-
-        console.log('Google Sign-In successful:', user);
-        // Perform additional actions after successful sign-in
-      } catch (error) {
-        console.error('Google Sign-In error:', error);
-      }
-    });
-  }
-  setupFacebookSignIn() {
-    const facebookSignInButton = document.getElementById(
-      'facebookSignInButton'
-    );
-
-    facebookSignInButton.addEventListener('click', async () => {
-      const provider = new FacebookAuthProvider();
-      const auth = getAuth();
-
-      try {
-        const facebookResult = await signInWithPopup(auth, provider);
-        const user = facebookResult.user;
-
-        console.log('Facebook Sign-In successful:', user);
-
-        // Check if the user's account exists with different credentials
-        try {
-          const methods = await fetchSignInMethodsForEmail(auth, user.email);
-
-          if (methods.includes('password')) {
-            // Handle account linking scenario
-            // Display UI to let the user choose how to proceed (link accounts or not)
-            // Implement account linking logic using linkWithCredential
-            const password = prompt('Enter your password to link accounts:');
-            const credential = EmailAuthProvider.credential(
-              user.email,
-              password
-            );
-            await linkWithCredential(user, credential);
-            console.log('Accounts linked successfully.');
-          } else {
-            // Proceed with account creation
-            const registrationResult = await createUserWithEmailAndPassword(
-              auth,
-              user.email,
-              'randomPassword'
-            );
-            const registeredUser = registrationResult.user;
-
-            console.log(
-              'Facebook Sign-In and Registration successful:',
-              registeredUser
-            );
-            // Additional actions after successful registration
-          }
-        } catch (error) {
-          console.error('Error checking sign-in methods:', error);
-        }
-      } catch (error) {
-        console.error('Facebook Sign-In error:', error);
-      }
-    });
   }
 }
-new SignInModule().init();
+
+class EmailAndPasswordSignIn {
+  constructor() {
+    this.errorContainer = $('.form-error');
+    this.form = $('#myForm');
+    this.auth = getAuth(app);
+    this.validator = new Validator(this.form);
+    this.isFormInitialized = false;
+    this.init();
+  }
+
+  init() {
+    if (!this.isFormInitialized) {
+      this.validator.init();
+      this.form.submit((event) => {
+        event.preventDefault();
+        if (this.validator.validator.form()) {
+          this.errorContainer.empty();
+          this.SignIn();
+        }
+      });
+      this.isFormInitialized = true;
+    }
+  }
+
+  async SignIn() {
+    const email = $('#email').val();
+    const password = $('#password').val();
+    try {
+      await signInWithEmailAndPassword(this.auth, email, password).then(() => {
+        window.location.href = 'index.html';
+      });
+    } catch (error) {
+      switch (error.code) {
+        case 'auth/wrong-password':
+          toastr.error('Incorrect password');
+          break;
+        case 'auth/user-not-found':
+          toastr.error('User not found');
+          break;
+        case 'auth/too-many-requests':
+          toastr.error(
+            'Access to this account has been temporarily disabled due to too many failed login attempts. You can immediately restore it by resetting your password or try again later.'
+          );
+          break;
+        case 'auth/user-disabled':
+          toastr.error('User account has been disabled by the administrator');
+          break;
+        case 'auth/email-already-in-use':
+          toastr.error('Email address is already in use by another user');
+          break;
+        case 'auth/credential-already-in-use':
+          toastr.error('These credentials are already associated with another account');
+          break;
+        case 'auth/custom-token-mismatch':
+          toastr.error('Error: Custom token does not match');
+          break;
+        case 'auth/requires-recent-login':
+          toastr.error(
+            'This operation requires reauthentication. Please sign in again.'
+          );
+          break;
+        default:
+          console.error('Authentication error:', error);
+          break;
+      }
+    }
+  }
+}
+
+class GoogleSignIn {
+  constructor() {
+    this.signButton = $('#googleSignInButton');
+    this.auth = getAuth(app);
+    this.init();
+  }
+
+  init() {
+    this.signButton.click(() => this.SignIn());
+  }
+
+  async SignIn() {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(this.auth, provider);
+      window.location.href = 'index.html';
+    } catch (error) {
+      console.error('Google Sign-In error:', error);
+    }
+  }
+}
+
+new SignIn().init();

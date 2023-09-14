@@ -5,23 +5,20 @@ $black: #000000;
 $main_orange: #ff7d4e;
 
 .burger-menu {
- display: none;
+  display: none;
   @media (max-width: 850px) {
+    overflow: auto;
+    display: block;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
     background-color: #fff;
-    transition: transform 0.3s ease-in-out;
+    transition: left 0.5s ease;
     z-index: 2;
-    &:not(.open) {
-   display: none;
-    }
-    &.open {
-    display: none;
-      overflow-y: auto;
-      overflow-x: hidden;
+    &.burger-open{
+      left: 0;
     }
     &__nav {
       padding-top: 40px;
@@ -34,8 +31,14 @@ $main_orange: #ff7d4e;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 19px;
-        padding-bottom: 21px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        height: 110px;
+        @media (max-width: $mobile) {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          height: 70px;
+        }
       }
     }
     &__nav-text-button {
