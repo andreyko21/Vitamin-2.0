@@ -6,20 +6,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/quiz.min.css?_v=20230917142359">
+  <link rel="stylesheet" href="css/quiz.min.css?_v=20230918193604">
   <title>Quiz</title>
 </head>
 
   <body>
     <div class="wrapper">
       <header class="quiz-header">
-  <div class="quiz-header__container"><a class="logo" href="./index.html" aria-label="Home">
-  <svg class="logo-img">
-    <use xlink:href="/images/Sprite.svg#logo"></use>
-  </svg>
-</a>
-
+  <div class="quiz-header__container">
+    <a class="logo" href="./index.html" aria-label="Home">
+      <svg class="logo-img">
+        <use xlink:href="/images/Sprite.svg#logo"></use>
+      </svg>
+    </a>
+    <a class="logo white" href="./index.html" aria-label="Home">
+      <svg class="logo-img">
+        <use xlink:href="/images/Sprite.svg#logoWhite"></use>
+      </svg>
+    </a>
+    
     <div class="quiz-header__quiz-number">6/9</div>
+    
   </div>
 </header>
 
@@ -30,9 +37,9 @@
           </div>
           <div class="quiz__answer-block">
             <div class="quiz__buttons-block">
-              <button class="quiz__button">I feel calm and relaxed most of the time</button>
-              <button class="quiz__button">I get nerevous from time to time</button>
-              <button class="quiz__button">I’m under a lot of stress most of the time</button>
+              <a class="quiz__button" href="/quiz-7.html">I feel calm and relaxed most of the time</a>
+              <a class="quiz__button" href="/quiz-7.html">I get nerevous from time to time</a>
+              <a class="quiz__button" href="/quiz-7.html">I’m under a lot of stress most of the time</a>
             </div>
             <svg class="one-fourth-circle one-fourth-circle-6">
               <use xlink:href="images/Sprite.svg#one-fourth-circle"></use>
@@ -45,6 +52,7 @@
       </main>
       <footer class="quiz-footer">
   <div class="quiz-footer__container">
+    <div class="quiz-footer__gradient"></div>
     <a class="quiz-footer__button" href="quiz-5.html">
       <svg class="back-arrow">
         <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
@@ -54,5 +62,6 @@
 </footer>
 
     </div>
+    <script src="/js/pageQuiz.min.js?_v=20230918193604"></script>
   </body>
 </html>

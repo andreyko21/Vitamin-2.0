@@ -6,20 +6,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/quiz.min.css?_v=20230917142359">
+  <link rel="stylesheet" href="css/quiz.min.css?_v=20230918193604">
   <title>Quiz</title>
 </head>
 
   <body>
     <div class="wrapper">
       <header class="quiz-header">
-  <div class="quiz-header__container"><a class="logo" href="./index.html" aria-label="Home">
-  <svg class="logo-img">
-    <use xlink:href="/images/Sprite.svg#logo"></use>
-  </svg>
-</a>
-
+  <div class="quiz-header__container">
+    <a class="logo" href="./index.html" aria-label="Home">
+      <svg class="logo-img">
+        <use xlink:href="/images/Sprite.svg#logo"></use>
+      </svg>
+    </a>
+    <a class="logo white" href="./index.html" aria-label="Home">
+      <svg class="logo-img">
+        <use xlink:href="/images/Sprite.svg#logoWhite"></use>
+      </svg>
+    </a>
+    
     <div class="quiz-header__quiz-number">8/9</div>
+    
   </div>
 </header>
 
@@ -30,12 +37,12 @@
           </div>
           <div class="quiz__answer-block">
             <div class="quiz-8 quiz__buttons-block">
-              <button class="quiz__button">Weight managment</button>
-              <button class="quiz__button">Stress relief</button>
-              <button class="quiz__button">Immune boost</button>
-              <button class="quiz__button">Need to solve a sprcific problem</button>
-              <button class="quiz__button">I need a bassic kit for a daily intake</button>
-              <button class="quiz__button">All in one</button>
+              <a class="quiz__button" href="/quiz-9.html">Weight managment</a>
+              <a class="quiz__button" href="/quiz-9.html">Stress relief</a>
+              <a class="quiz__button" href="/quiz-9.html">Immune boost</a>
+              <a class="quiz__button" href="/quiz-9.html">Need to solve a sprcific problem</a>
+              <a class="quiz__button" href="/quiz-9.html">I need a bassic kit for a daily intake</a>
+              <a class="quiz__button" href="/quiz-9.html">All in one</a>
             </div>
             <svg class="one-fourth-circle one-fourth-circle-8">
               <use xlink:href="images/Sprite.svg#one-fourth-circle"></use>
@@ -48,6 +55,7 @@
       </main>
       <footer class="quiz-footer">
   <div class="quiz-footer__container">
+    <div class="quiz-footer__gradient"></div>
     <a class="quiz-footer__button" href="quiz-7.html">
       <svg class="back-arrow">
         <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
@@ -57,5 +65,6 @@
 </footer>
 
     </div>
+    <script src="/js/pageQuiz.min.js?_v=20230918193604"></script>
   </body>
 </html>

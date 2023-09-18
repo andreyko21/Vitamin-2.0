@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/profile-subscriptions.min.css?_v=20230917142359">
+  <link rel="stylesheet" href="css/profile-subscriptions.min.css?_v=20230918193604">
   <title>Subscriptions</title>
 </head>
 
@@ -45,9 +45,9 @@
           <use xlink:href="/images/Sprite.svg#right-arrow"></use>
         </svg>
       </button>
-      <button class="burger-menu__nav-text-button take-quiz-button">
+      <a class="burger-menu__nav-text-button take-quiz-button" href="/quiz-1.html">
         Take the quiz
-      </button>
+      </a>
     </nav>
     <div class="burger-menu__footer">
       <a class="burger-menu__mailto-link" href="mailto:support@medstogo.com">support@medstogo.com</a>
@@ -135,12 +135,14 @@
   </div>
   <div class="sub-menu__container">
     <div class="sub-menu__nav">
-      <a class="sub-menu__nav-button" href="#">Subscriptions</a>
-      <a class="sub-menu__nav-button" href="#">Orders</a>
-      <a class="sub-menu__nav-button" href="#">Account Overview</a>
-      <a class="sub-menu__nav-button" href="#">Payment methods</a>
-      <a class="sub-menu__nav-button" href="#">Change Password</a>
-      <a class="sub-menu__nav-button sub-menu__nav-button_focus" href="#">Sign Out</a>
+      <a class="sub-menu__nav-button" href="/profile-subscriptions.html">Subscriptions</a>
+      <a class="sub-menu__nav-button" href="/profile-orders.html">Orders</a>
+      <a class="sub-menu__nav-button" href="/profile-overview.html">Account Overview</a>
+      <a class="sub-menu__nav-button" href="/profile-payment.html">Payment methods</a>
+      <a class="sub-menu__nav-button" href="/profile-change-password.html">Change Password</a>
+      <button id="signOut" class="sub-menu__nav-button sub-menu__nav-button_focus">
+        Sign Out
+      </button>
     </div>
   </div>
 </div>
@@ -154,7 +156,11 @@
       </svg>
     </div>
     <div class="basket-section__product-list">
-      
+      <div class="basket-section__empty-block">
+        <svg class="basket-section__empty-element">
+          <use xlink:href="/images/Sprite.svg#logo-background"></use>
+        </svg>
+      </div>
     </div>
     <div class="basket-section__footer">
       <button class="basket-section__footer-button"></button>
@@ -340,6 +346,6 @@
 </footer>
 
     </div>
-    <script src="/js/pageProfileSubscriptions.min.js?_v=20230917142359"></script>
+    <script src="/js/pageProfileSubscriptions.min.js?_v=20230918193604"></script>
   </body>
 </html>

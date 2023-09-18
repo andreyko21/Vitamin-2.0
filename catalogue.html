@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/catalogue.min.css?_v=20230917142359">
+  <link rel="stylesheet" href="css/catalogue.min.css?_v=20230918193604">
   <title>Catalogue</title>
 </head>
 
@@ -45,9 +45,9 @@
           <use xlink:href="/images/Sprite.svg#right-arrow"></use>
         </svg>
       </button>
-      <button class="burger-menu__nav-text-button take-quiz-button">
+      <a class="burger-menu__nav-text-button take-quiz-button" href="/quiz-1.html">
         Take the quiz
-      </button>
+      </a>
     </nav>
     <div class="burger-menu__footer">
       <a class="burger-menu__mailto-link" href="mailto:support@medstogo.com">support@medstogo.com</a>
@@ -135,12 +135,14 @@
   </div>
   <div class="sub-menu__container">
     <div class="sub-menu__nav">
-      <a class="sub-menu__nav-button" href="#">Subscriptions</a>
-      <a class="sub-menu__nav-button" href="#">Orders</a>
-      <a class="sub-menu__nav-button" href="#">Account Overview</a>
-      <a class="sub-menu__nav-button" href="#">Payment methods</a>
-      <a class="sub-menu__nav-button" href="#">Change Password</a>
-      <a class="sub-menu__nav-button sub-menu__nav-button_focus" href="#">Sign Out</a>
+      <a class="sub-menu__nav-button" href="/profile-subscriptions.html">Subscriptions</a>
+      <a class="sub-menu__nav-button" href="/profile-orders.html">Orders</a>
+      <a class="sub-menu__nav-button" href="/profile-overview.html">Account Overview</a>
+      <a class="sub-menu__nav-button" href="/profile-payment.html">Payment methods</a>
+      <a class="sub-menu__nav-button" href="/profile-change-password.html">Change Password</a>
+      <button id="signOut" class="sub-menu__nav-button sub-menu__nav-button_focus">
+        Sign Out
+      </button>
     </div>
   </div>
 </div>
@@ -154,7 +156,11 @@
       </svg>
     </div>
     <div class="basket-section__product-list">
-      
+      <div class="basket-section__empty-block">
+        <svg class="basket-section__empty-element">
+          <use xlink:href="/images/Sprite.svg#logo-background"></use>
+        </svg>
+      </div>
     </div>
     <div class="basket-section__footer">
       <button class="basket-section__footer-button"></button>
@@ -194,7 +200,7 @@
         <section class="slider-section">
   <div class="swiper-container slider-section__swiper-container">
     <div class="swiper-wrapper slider-section__swiper-wrapper">
-      <div class="banner slider-section__swiper-slide swiper-slide">
+      <div class="banner slider-section__swiper-slide swiper-slide banner-vitamins">
         <div class="banner__container">
           <div class="banner__text-block">
             <h1 class="banner__title">
@@ -206,9 +212,25 @@
             </p>
             <a class="banner__button" href="#">Take the quiz</a>
           </div>
+          <picture class="picture-block">
+            <source srcset="images/find-vitamins.avif" type="image/avif">
+            <source srcset="images/find-vitamins.webp" type="image/webp">
+            <img src="images/find-vitamins.png" alt="Ortho Complex">
+          </picture>
+          <div class="background-block">
+            <svg class="background-logo">
+              <use xlink:href="images/Sprite.svg#logo-background"></use>
+            </svg>
+          </div>
+          <svg class="circle">
+            <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
+          </svg>
+          <svg class="one-fourth-circle">
+            <use xlink:href="images/Sprite.svg#one-fourth-circle"></use>
+          </svg>
         </div>
       </div>
-      <div class="banner slider-section__swiper-slide swiper-slide">
+      <div class="banner slider-section__swiper-slide swiper-slide banner-dietary">
         <div class="banner__container">
           <div class="banner__text-block">
             <p class="banner__sub-title">You may also like</p>
@@ -219,9 +241,19 @@
             </p>
             <a class="banner__button" href="#">View category</a>
           </div>
+          <picture class="picture-block">
+            <source srcset="images/slider-image2.avif" type="image/avif">
+            <source srcset="images/slider-image2.webp" type="image/webp">
+            <img src="images/slider-image2.png" alt="Ortho Complex">
+          </picture>
+          <div class="background-block">
+            <svg class="background-logo">
+              <use xlink:href="images/Sprite.svg#logo-background"></use>
+            </svg>
+          </div>
         </div>
       </div>
-      <div class="banner slider-section__swiper-slide swiper-slide">
+      <div class="banner slider-section__swiper-slide swiper-slide banner-products">
         <div class="banner__container">
           <div class="banner__text-block">
             <p class="banner__sub-title">You may also like</p>
@@ -231,6 +263,16 @@
               list of vitamins in minutes
             </p>
             <a class="banner__button" href="#">View category</a>
+          </div>
+          <picture class="picture-block">
+            <source srcset="images/slider-image1.avif" type="image/avif">
+            <source srcset="images/slider-image1.webp" type="image/webp">
+            <img src="images/slider-image1.png" alt="Ortho Complex">
+          </picture>
+          <div class="background-block">
+            <svg class="background-logo">
+              <use xlink:href="images/Sprite.svg#logo-background"></use>
+            </svg>
           </div>
         </div>
       </div>
@@ -264,7 +306,7 @@
 </div>
 
           </div>
-          <div class="banner">
+          <div class="banner banner-products">
   <div class="banner__container">
     <div class="banner__text-block">
       <h1 class="banner__title">Don’t know what vitamins your body needs?</h1>
@@ -272,7 +314,17 @@
         Answer a few simple questions and automatically get a personalazed list
         of vitamins in minutes
       </p>
-      <a class="banner__button" href="#">Take the quiz</a>
+      <a class="banner__button" href="/quiz-1.html">Take the quiz</a>
+    </div>
+    <picture class="picture-block">
+      <source srcset="images/slider-image1.avif" type="image/avif">
+      <source srcset="images/slider-image1.webp" type="image/webp">
+      <img src="images/slider-image1.png" alt="Ortho Complex">
+    </picture>
+    <div class="background-block">
+      <svg class="background-logo">
+        <use xlink:href="images/Sprite.svg#logo-background"></use>
+      </svg>
     </div>
   </div>
 </div>
@@ -360,6 +412,6 @@
 </footer>
 
     </div>
-    <script src="js/catalogue.min.js?_v=20230917142359"></script>
+    <script src="js/catalogue.min.js?_v=20230918193604"></script>
   </body>
 </html>
