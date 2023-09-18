@@ -6,20 +6,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/quiz.min.css?_v=20230917142359">
+  <link rel="stylesheet" href="css/quiz.min.css?_v=20230918193604">
   <title>Quiz</title>
 </head>
 
   <body>
     <div class="wrapper">
       <header class="quiz-header">
-  <div class="quiz-header__container"><a class="logo" href="./index.html" aria-label="Home">
-  <svg class="logo-img">
-    <use xlink:href="/images/Sprite.svg#logo"></use>
-  </svg>
-</a>
-
+  <div class="quiz-header__container">
+    <a class="logo" href="./index.html" aria-label="Home">
+      <svg class="logo-img">
+        <use xlink:href="/images/Sprite.svg#logo"></use>
+      </svg>
+    </a>
+    <a class="logo white" href="./index.html" aria-label="Home">
+      <svg class="logo-img">
+        <use xlink:href="/images/Sprite.svg#logoWhite"></use>
+      </svg>
+    </a>
+    
     <div class="quiz-header__quiz-number">3/9</div>
+    
   </div>
 </header>
 
@@ -30,10 +37,10 @@
           </div>
           <div class="quiz__answer-block">
             <div class="quiz__buttons-block">
-              <button class="quiz__button">Vegan diet</button>
-              <button class="quiz__button">Vegetarian diet</button>
-              <button class="quiz__button">My diet is generally healthy and includes animal protein, fish and veggies</button>
-              <button class="quiz__button">My diet includes fast food and soft drinks</button>
+              <a class="quiz__button" href="/quiz-4.html">Vegan diet</a>
+              <a class="quiz__button" href="/quiz-4.html">Vegetarian diet</a>
+              <a class="quiz__button" href="/quiz-4.html">My diet is generally healthy and includes animal protein, fish and veggies</a>
+              <a class="quiz__button" href="/quiz-4.html">My diet includes fast food and soft drinks</a>
             </div>
             <svg class="one-two-circle one-two-circle-3">
               <use xlink:href="images/Sprite.svg#one-two-circle"></use>
@@ -46,6 +53,7 @@
       </main>
       <footer class="quiz-footer">
   <div class="quiz-footer__container">
+    <div class="quiz-footer__gradient"></div>
     <a class="quiz-footer__button" href="quiz-2.html">
       <svg class="back-arrow">
         <use class="back-arrow-use" xlink:href="images/Sprite.svg#back-arrow"></use>
@@ -55,5 +63,6 @@
 </footer>
 
     </div>
+    <script src="/js/pageQuiz.min.js?_v=20230918193604"></script>
   </body>
 </html>
