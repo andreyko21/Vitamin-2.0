@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/product.min.css?_v=20230918193604">
+  <link rel="stylesheet" href="css/product.min.css?_v=20230918235114">
   <title>Product</title>
 </head>
   <body>
@@ -174,7 +174,8 @@
     </button>
     <a class="logo" href="./index.html" aria-label="Home">
   <svg class="logo-img">
-    <use xlink:href="/images/Sprite.svg#logo"></use>
+    <use class="logoDefault" xlink:href="/images/Sprite.svg#logo"></use>
+    <use class="logoWhite" xlink:href="/images/Sprite.svg#logoWhite"></use>
   </svg>
 </a>
 
@@ -198,12 +199,22 @@
       <main class="page">
         <div class="product-section">
   <div class="product-section__container">
-    <picture class="product-section__img-block">
-      <source srcset="" type="png" class="product-section__png">
-      <source srcset="" type="webp" class="product-section__webp">
-      <img src="" alt="" class="product-section__avif" type="avif">
-    </picture>
+    <div class="product-section__img-block">
+      <picture class="product-section__picture">
+        <source srcset="" type="png" class="product-section__png">
+        <source srcset="" type="webp" class="product-section__webp">
+        <img src="" alt="" class="product-section__avif" type="avif">
+      </picture>
+      <svg class="one-fourth-circle">
+        <use xlink:href="images/Sprite.svg#one-fourth-circle"></use>
+      </svg>
+    </div>
     <div class="product-section__information-block">
+      <a class="product-section__back-button" href="/catalogue.html">
+        <svg class="back-arrow">
+          <use xlink:href="images/Sprite.svg#back-arrow"></use>
+        </svg>
+        Back to shop</a>
       <div class="product-section__information-block-inner">
         <p class="product-section__type"></p>
         <h1 class="product-section__name"></h1>
@@ -235,7 +246,7 @@
         </div>
         <div class="product-section__price-block">
           <div class="product-section__autoship">
-            <div class="product-section__autoship-select" style="opacity: 0.5;">
+            <div class="product-section__autoship-select" style="opacity: 0.5">
               <div class="input-block">
   <label class="input-block__label" for="selectTime">
     <select id="selectTime" class="input-block__select" disabled="disabled" aria-label="Time">
@@ -411,6 +422,6 @@
 </footer>
 
     </div>
-    <script src="/js/product.min.js?_v=20230918193604"></script>
+    <script src="/js/product.min.js?_v=20230918235114"></script>
   </body>
 </html>
