@@ -9,7 +9,7 @@ const db = getFirestore(app);
 
 const currentURL = window.location.href;
 const currentFilename = currentURL.substring(currentURL.lastIndexOf('/') + 1);
-const firestoreFilename = currentURL.endsWith('.html')
+const firestoreFilename = currentURL.includes('.html')
   ? currentFilename.replace('.html', '')
   : currentURL.endsWith('#')
     ? currentFilename.replace('#', '')
@@ -34,8 +34,8 @@ $(document).ready(function () {
     }
   );
 
-  new PersonalPack($('#product-box-1'), packBox1DocRef);
-  new PersonalPack($('#product-box-2'), packBox2DocRef);
-  new PersonalPack($('#product-box-3'), packBox3DocRef);
-  new PersonalPack($('#product-box-4'), packBox4DocRef);
+  new PersonalPack($('.product-pack-block'), packBox1DocRef);
+    new PersonalPack($('.product-pack-block'), packBox2DocRef);
+    new PersonalPack($('.product-pack-block'), packBox3DocRef);
+    new PersonalPack($('.product-pack-block'), packBox4DocRef);
 });

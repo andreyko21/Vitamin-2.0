@@ -9,13 +9,13 @@
   &__swiper-wrapper {
     align-items: stretch;
   }
-  .swiper-slide-next, .swiper-slide-prev{
-    .banner__container{
+  .swiper-slide-next,
+  .swiper-slide-prev {
+    .banner__container {
       opacity: 0;
-      
     }
   }
-  
+
   .left-button,
   .right-button {
     max-width: 90px;
@@ -25,7 +25,7 @@
     height: fit-content;
     top: 47%;
     z-index: 2;
-    transform: translate(0,-25%);
+    transform: translate(0, -25%);
     use {
       min-width: 70px;
       min-height: 70px;
@@ -37,5 +37,27 @@
   .right-button {
     right: 11.2%;
   }
+
+  .circle {
+    fill: #ffca78;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -30px;
+    right: 450px;
+  }
+  .one-fourth-circle {
+    stroke-width: 40px;
+    stroke: #f6906e;
+    transform: rotate(270deg);
+    position: absolute;
+    bottom: 0;
+    right: 800px;
+    width: 130px;
+    height: 130px;
+  }
 }
+
+
+
 

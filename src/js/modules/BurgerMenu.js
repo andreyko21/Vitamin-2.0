@@ -68,6 +68,9 @@ export class BurgerMenu {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.ShowSubMenu(this.subMenus.profile);
+        this.signOutButton = $('#signOut');
+        this.signOutButton.click(() => this.auth
+        .signOut())
       } else {
         window.location.href = '/sign-in.html';
       }

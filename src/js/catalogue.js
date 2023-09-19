@@ -103,7 +103,7 @@ class Catalogue {
         priceBlock = `<span class="price">${product.price.toFixed(2)}</span>`;
       }
       let productElement =
-        $(`<a class="product-box" href="/${product.id.replace('-', '#')}" id="${
+        $(`<a class="product-box" href="/${product.id.replace('-', '.html#')}" id="${
           product.id
         }">
         ${discountBlock ? discountBlock : ''}

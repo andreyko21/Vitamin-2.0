@@ -77,6 +77,8 @@
     display: flex;
     flex-direction: column;
     &-button {
+      background: none;
+      text-align: left;
       color: $black;
       font-family: Effra;
       font-size: 20px;

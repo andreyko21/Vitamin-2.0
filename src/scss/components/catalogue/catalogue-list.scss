@@ -12,5 +12,10 @@
   max-width: 1039px;
   .product-box{
     background-color: #FAF8F6;
+    @media (max-width: 1156px) {
+      .product-box__type{
+        height: 78px;
+      }
+    }
   }
 }

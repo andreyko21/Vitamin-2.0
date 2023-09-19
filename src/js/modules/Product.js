@@ -1,10 +1,12 @@
 import $ from 'jquery';
 import { getDoc } from 'firebase/firestore';
 import { Header } from './Header';
+import { GetLocalStorageArray, SetLocalStorageArray } from './Methods';
 
 class Product {
   constructor(docRef) {
     this.docRef = docRef;
+    console.log(this.docRef);
     this.buyButton = $('.product-section__button');
     this.avif = $('.product-section__avif');
     this.png = $('.product-section__png');
@@ -18,7 +20,11 @@ class Product {
     this.discount = $('.product-section__discount');
     this.totalPrice = $('.total-price-product');
     this.amount = $('#productAmount');
+    this.switchElement = $('.switch');
+    this.autoshipElement = $('#selectTime');
+    this.autoship = null;
     this.header = new Header();
+    this.isSwitchOn = false;
     this.bindEvents();
     this.init();
   }
@@ -29,16 +35,21 @@ class Product {
     if (docSnapshot.exists()) {
       this.productData = await docSnapshot.data();
       this.id = docSnapshot.id;
+      this.handleBasket();
       this.updateDOM();
     } else {
       console.log('Документ не знайдено в Firestore.');
     }
 
-    this.handleBasket();
+    
   }
 
   bindEvents() {
     this.buyButton.click(() => this.buy());
+    this.switchElement.click((event) =>
+      this.ChangeSwitch(event.preventDefault())
+    );
+    this.autoshipElement.click(() => this.ChangeAutoship());
   }
 
   async getDoc() {
@@ -57,14 +68,15 @@ class Product {
     this.webp.attr('srcset', this.productData.img.webp);
     this.quantity.html(this.productData.quantity);
     this.weight.html(this.productData.weight);
-    this.price.html(this.productData.price);
-    this.totalPrice.html(this.productData.price);
+    this.price.html(this.productData.price * this.productData.amount);
+    this.totalPrice.html(this.productData.price * this.amount);
     this.background.css('background-color', this.productData.background);
     this.type.css('color', this.productData.color);
   }
 
   handleBasket() {
     $('#productAmount').val(1);
+
     const basketArrayString = localStorage.getItem('basketArray');
 
     if (basketArrayString) {
@@ -75,6 +87,14 @@ class Product {
 
         if (productInBasket) {
           $('#productAmount').val(productInBasket.amount);
+          if (productInBasket.autoship != null) {
+            
+            this.ChangeSwitch();
+            $('#selectTime').val(productInBasket.autoship);
+            this.autoship = productInBasket.autoship;
+            console.log(productInBasket.autoship);
+            this.ChangeAutoship();
+          }
         }
       } else {
         console.error('Ошибка при получении корзины из localStorage');
@@ -105,95 +125,54 @@ class Product {
     );
   }
 
-  AddItemToBasket(product) {
-    let newItem = $(`<div class="basket-list-item" id="item-${product.id}">
-  <picture class="basket-list-item__img" style="background-color: ${product.background}">
-    <source
-      srcset="${product.img.avif}"
-      type="image/avif"
-    />
-    <source
-      srcset="${product.img.webp}"
-      type="image/webp"
-    />
-    <img
-      src="${product.img.png}"
-      alt="Ortho Complex"
-    />
-  </picture>
-  <p class="basket-list-item__name">
-    ${product.name}
-  </p>
-  <svg class="basket-list-item__delete" id="${product.id}">
-    <use xlink:href="/images/Sprite.svg#close"></use>
-  </svg>
-  <div class="basket-list-item__amount">
-   <div class="stepper-input" id="stepper-${product.id}">
-    <button class="stepper-input__button decrement">-</button>
-    <div class="stepper-input__content">
-        <input type="text" id="amount-${product.id}" class="stepper-input__input" value="${product.amount}" readonly aria-label="Amount"/>
-    </div>
-    <button class="stepper-input__button increment">+</button>
-</div>
-  </div>
-  <p class="basket-list-item__price">${(product.price * product.amount).toFixed(2)}</p>
-  <hr class="basket-list-item__line" />
-  <div class="basket-list-item__time-delivery"> 
-    <div class="checkbox">
-    <input class="custom-checkbox" type="checkbox" id="autoship-${product.id}" name="Autoship" value="true">
-    <label for="autoship-${product.id}">Autoship every <div class="input-block">
-  <label class="input-block__label" for="time-${product.id}">
-    <select id="time-${product.id}" class="input-block__select">
-      <option value="15">15</option>
-      <option value="30">30</option>
-      <option value="45">45</option>
-      <option value="60">60</option>
-    </select>
-  </label>
-  <div class="input-block__error"></div>
-</div>
- days</label>
-  </div>
-  </div>
-</div>`);
-    $('.basket-section__product-list').append(newItem);
-  }
-
-  ChangeItemBusket(product){
-    $(`#item-${product.id}`).find(`#amount-${product.id}`).val(product.amount); 
-    $(`#item-${product.id}`)
-      .find('.basket-list-item__price')
-    .html((product.amount * product.price).toFixed(2));
-  }
-
   buy() {
     const product = {
       id: this.id,
-      name: this.productData.name,
       amount: this.amount.val(),
-      price: this.productData.price,
-      discountPrice: this.productData.discountPrice,
-      img: {
-        avif: this.productData.img.avif,
-        png: this.productData.img.png,
-        webp: this.productData.img.webp,
-      },
-      background: this.productData.background,
+      autoship: this.autoship,
     };
 
-    const basketArray = JSON.parse(localStorage.getItem('basketArray')) || [];
-
+    const basketArray = GetLocalStorageArray('basketArray') || [];
     const indexToUpdate = basketArray.findIndex((item) => item.id === this.id);
 
     if (indexToUpdate !== -1) {
       basketArray[indexToUpdate] = product;
-      this.ChangeItemBusket(product);
+      this.header.basket.UpdateItem(product.id);
     } else {
-      basketArray.push(product);
       this.header.basket.AddItem(product);
+      basketArray.push(product);
     }
-    localStorage.setItem('basketArray', JSON.stringify(basketArray));
-    this.header.basket.updateTotalPrice();
+
+    SetLocalStorageArray('basketArray', basketArray);
+    this.header.basket.UpdateBasket();
+    this.header.basket.UpdateBasketItem(product);
+  }
+
+  ChangeSwitch() {
+    if (this.isSwitchOn == true) {
+      this.autoship = null;
+      this.isSwitchOn = false;
+      console.log(this.isSwitchOn);
+      this.switchElement.removeClass('switch--on').addClass('switch--off');
+      $('#selectTime').attr('disabled', true);
+      $('.product-section__autoship-select').css('opacity', '0.5');
+    } else {
+      this.isSwitchOn = true;
+      this.switchElement.removeClass('switch--off').addClass('switch--on');
+      $('#selectTime').attr('disabled', false);
+      $('.product-section__autoship-select').css('opacity', '1');
+
+      this.autoship = $('#selectTime').val();
+      console.log(this.isSwitchOn);
+    }
+  }
+
+  ChangeAutoship() {
+    if (this.isSwitchOn) {
+      this.autoship = $('#selectTime').val();
+    } else {
+      this.autoship = null;
+    }
   }
 }
 

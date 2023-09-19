@@ -30,13 +30,14 @@ export const webpackConfig = (isMode) => {
       pageProfileOverview: path.join(paths.src, 'js/pageProfileOverview.js'),
       pageProfilePassword: path.join(paths.src, 'js/pageProfilePassword.js'),
       pageProfilePayment: path.join(paths.src, 'js/pageProfilePayment.js'),
+      pageQuiz: path.join(paths.src, 'js/pageQuiz.js'),
     },
 
     mode: isMode ? 'development' : 'production',
 
     output: {
       path: path.join(paths.build, 'js'),
-      filename: '[name].min.js', // Використовуйте [name] для генерації імені файла
+      filename: '[name].min.js',
       publicPath: '/',
     },
 

@@ -44,6 +44,7 @@
     background: rgba($color: $black, $alpha: 0.2);
   }
   &__header {
+    max-height: 110px;
     background-color: $white;
     top: 0;
     position: sticky;
@@ -51,6 +52,10 @@
     padding: 40px 30px;
     display: flex;
     justify-content: space-between;
+    @media (max-width: $mobile) {
+      max-height: 70px;
+      padding: 22px 20px;
+    }
     &-title {
       font-family: 'Effra';
       font-size: 26px;
@@ -62,11 +67,15 @@
       stroke: $black;
       width: 32px;
       height: 32px;
+      cursor: pointer;
     }
   }
   &__product-list {
+    position: relative;
     overflow: auto;
     flex: 1;
+    display: grid;
+    grid-template-columns: repeat(1) 1fr;
   }
   &__footer {
     border-top: 1px solid rgba($color: $black, $alpha: 0.07);
@@ -93,6 +102,9 @@
   }
 
   .basket-list-item {
+    &:not(:first-child){
+      margin-top: 1px;
+    }
     padding: 30px;
     display: grid;
     grid-template:
@@ -101,6 +113,7 @@
       'img line line'
       'img time-delivery time-delivery' auto/min-content auto min-content;
     &__img {
+      position: relative;
       grid-area: img;
       background-color: #da91e0;
       border-radius: 8px;
@@ -116,6 +129,27 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
+      }
+      @media (max-width: 500px) {
+        max-width: 100px;
+        min-width: 100px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: -30px;
+          left: 0;
+          background-color: inherit;
+          width: 100%;
+          height: calc(100% + 60px);
+          z-index: -1;
+        }
+        border-radius: 0px;
+      }
+      @media (max-width: 360px) {
+        &::before {
+          top: -20px;
+          height: calc(100% + 40px);
+        }
       }
     }
     &__delete {
@@ -137,6 +171,9 @@
       font-weight: 400;
       line-height: normal;
       overflow: hidden;
+      @media (max-width: 500px) {
+        font-size: 16px;
+      }
     }
     &__amount {
       grid-area: amount;
@@ -159,10 +196,10 @@
       line-height: normal;
       text-align: end;
       .discount-price {
-        color: #D32D2C;
+        color: #d32d2c;
         font-size: 16px;
-        &::before{
-          content: "$";
+        &::before {
+          content: '$';
         }
       }
       .sub-price {
@@ -170,13 +207,13 @@
         text-align: right;
         font-size: 10px;
         text-decoration: line-through;
-        &::before{
-          content: "$";
+        &::before {
+          content: '$';
         }
       }
-      .price{
-        &::before{
-          content: "$";
+      .price {
+        &::before {
+          content: '$';
         }
       }
     }
@@ -199,5 +236,44 @@
       align-items: center;
       color: rgba($color: $black, $alpha: 0.5);
     }
+    @media (max-width: 500px) {
+      padding: 30px 20px 30px 0px;
+    }
+    @media (max-width: 360px) {
+      padding: 20px 20px 20px 0px;
+    }
+  }
+
+  &__empty-block {
+    padding: 100px 50px;
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &::before {
+      content: 'Your cart is empty';
+      position: absolute;
+      text-align: center;
+      font-family: 'OpenSans';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px;
+    }
+  }
+
+  &__empty-element {
+    fill: #faf8f6;
+    max-width: 294px;
+    max-height: 350px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }

@@ -61,6 +61,7 @@
   align-items: stretch;
   &__container {
     flex: 1;
+    min-height: 500px;
     max-width: 1800px;
     width: 100%;
     height: auto;
@@ -71,6 +72,7 @@
     align-items: stretch;
     @media (max-width: $tablet) {
       grid-template-columns: repeat(1, 1fr);
+      min-height: min-content;
     }
   }
   &__answer-block {
@@ -99,10 +101,10 @@
     &:before {
       content: '';
       position: absolute;
-      top: -100vh;
+      top: -120px;
       right: 0;
-      width: 100vw;
-      height: 200vh;
+      width: 50vw;
+      height: calc(100% + 112px + 102px);
       background-color: #8172dd;
       z-index: -1;
       @media (max-width: $tablet) {
@@ -140,9 +142,10 @@
       grid-template-columns: repeat(2, 1fr);
       max-width: 680px;
     }
+    
   }
   &__button {
-    display: block;
+    display: flex;
     font-family: 'OpenSans';
     font-size: 18px;
     font-style: normal;
@@ -154,15 +157,33 @@
     height: 100%;
     width: 100%;
     text-align: left;
+    align-items: center;
     background-color: $white;
     border-radius: 16px;
     @media (max-width: $tablet) {
       font-size: 16px;
+      justify-content: center;
       text-align: center;
       padding: 19px 20px;
     }
     @media (max-width: 360px) {
-      font-size: 12px;
+      font-size: 16px;
+    }
+    &:focus{
+      border: 1px solid $focus_color;
+    }
+    &:active{
+      border: 1px solid $focus_color;
+    }
+  }
+  .quiz-2, .quiz-7{
+    .quiz__buttons-block{
+      @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        .quiz__button{
+          justify-content: center;
+        }
+      }
     }
   }
 }

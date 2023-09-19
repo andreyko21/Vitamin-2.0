@@ -79,3 +79,33 @@
     }
   }
 }
+
+.header__basket-button-img {
+  @media (max-width: $tablet) {
+    fill: white;
+  }
+}
+
+.user-button__icon {
+  @media (max-width: $tablet) {
+    fill: white;
+  }
+}
+
+.burger-menu-button__icon {
+  use {
+    fill: white;
+    stroke: white;
+  }
+}
+.header {
+  .logo {
+    .logoDefault {
+      display: none;
+    }
+    .logoWhite {
+      display: block;
+      fill: white;
+    }
+  }
+}

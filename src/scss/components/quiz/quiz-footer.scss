@@ -12,6 +12,25 @@
     min-height: 0;
     background: #faf8f6;
   }
+
+  &__gradient {
+    display: none;
+    @media (max-width: $tablet) {
+      display: block;
+      background: linear-gradient(
+        180deg,
+        rgba(250, 248, 246, 0) 0%,
+        #faf8f6 100%
+      );
+      position: absolute;
+      top: -100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+    }
+  }
+
   &__container {
     max-width: 1770px;
     display: flex;

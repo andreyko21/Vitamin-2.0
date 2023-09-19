@@ -35,3 +35,15 @@ export class Header {
         window.location.href = '/quiz-1.html';
     }
 }
+
+$(document).ready(function() {
+    const header = $('.header');
+    const scrollThreshold = 20;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > scrollThreshold) {
+            header.addClass('header-background');
+        } else {
+            header.removeClass('header-background');
+        }
+    });
+  });

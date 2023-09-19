@@ -1,4 +1,5 @@
 import { getDoc } from 'firebase/firestore';
+import $ from 'jquery';
 
 export class PersonalPack {
   constructor(container, docRef) {
@@ -11,10 +12,8 @@ export class PersonalPack {
     getDoc(this.docRef)
       .then((docSnapshot) => {
         if (docSnapshot.exists()) {
-          this.name = docSnapshot.data().name;
-          this.price = docSnapshot.data().price;
-          this.type = docSnapshot.data().type;
-          this.img = docSnapshot.data().img;
+          this.product = docSnapshot.data();
+          this.product.id = docSnapshot.id.replace('-', '.html#');
           this.Render();
         } else {
           console.log('Документ не знайдено в Firestore.');
@@ -26,11 +25,41 @@ export class PersonalPack {
   }
 
   Render() {
-    this.container.find('.product-box__name').html(this.name);
-    this.container.find('.product-box__type').html(this.type);
-    this.container.find('.product-box__price').html(this.price);
-    this.container.find('.product-box__avif').attr('src', this.img.avif);
-    this.container.find('.product-box__webp').attr('srcset', this.img.webp);
-    this.container.find('.product-box__png').attr('srcset', this.img.png);
+    let priceBlock, discountBlock;
+    if (this.product.discountPrice != null) {
+      priceBlock = `<span class="sub-price">${this.product.price.toFixed(
+        2
+      )}</span><span class="discount-price">${this.product.discountPrice.toFixed(
+        2
+      )}</span>`;
+      discountBlock = `<div class="discount-block">${(
+        100 -
+        (this.product.discountPrice / this.product.price) * 100
+      ).toFixed(0)}</div>`;
+    } else {
+      priceBlock = `<span class="price">${this.product.price.toFixed(2)}</span>`;
+    }
+    let productElement = $(`<a class="product-box" href="/${this.product.id.replace(
+      '-',
+      '#'
+    )}" id="${this.product.id}">
+          ${discountBlock ? discountBlock : ''}
+        <picture class="product-box__img">
+            <source srcset="${
+              this.product.img.avif
+            }" type="image/avif" class="product-box__avif" />
+            <source srcset="${
+              this.product.img.webp
+            }" type="image/webp" class="product-box__webp" />
+            <img src="${this.product.img.png}" alt="" class="product-box__png" />
+          </picture>
+        <p class="product-box__type" style="color:${this.product.color}">${
+          this.product.type
+    }</p>
+        <p class="product-box__name">${this.product.name}</p>
+        <p class="product-box__price-block">${priceBlock}</p>
+    </a>
+    `);
+    this.container.append(productElement);
   }
 }

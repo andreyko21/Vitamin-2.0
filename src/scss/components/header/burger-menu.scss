@@ -90,4 +90,41 @@ $main_orange: #ff7d4e;
     justify-content: center;
     padding-top: 3px;
   }
+  .burger-menu-button__icon{
+    use{
+      stroke: black;
+
+    }
+  }
+  .user-button__icon{
+    use{
+      fill: black;
+    }
+  }
+}
+
+.header-background{
+  .burger-menu-button__icon{
+    use{
+      stroke: black;
+      fill: black;
+    }
+  }
+  .user-button__icon{
+    use{
+      fill: black;
+    }
+  }
+  .header__basket-button-img{
+    fill: black;
+  }
+  
+  .logo {
+    .logoDefault {
+      display: block!important;
+    }
+    .logoWhite {
+      display: none!important;
+    }
+  }
 }

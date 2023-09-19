@@ -102,9 +102,7 @@ class ProfileOrders {
             }</span>х
             <span class="product-order__product-name">${product.name}</span>
           </div>
-          <div class="product-order__price">${(
-            price
-          ).toFixed(2)}</div>
+          <div class="product-order__price">${price.toFixed(2)}</div>
         </div>`);
 
         productList.append(productOrder);

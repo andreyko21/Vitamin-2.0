@@ -10,6 +10,7 @@
   z-index: 10;
   &-background{
     background-color: rgba($color: $white, $alpha: .98);
+    border-bottom: 1px solid rgba($color: $blackColor, $alpha: 0.07) ;
   }
   @media (max-width: $mobile) {
     max-height: 70px;
@@ -17,7 +18,7 @@
     padding-bottom: 15px;
   }
   &__container {
-    max-width: 1770px;
+    max-width: 1775px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,11 +35,15 @@
   &__quiz-button {
     margin-left: 30px;
     white-space: nowrap;
+    line-height: 1.2;
     @media (max-width: 850px) {
       display: none;
     }
   }
   .logo {
+    .logoWhite{
+      display: none;
+    }
     &-img {
       max-width: 42px;
       max-height: 50px;

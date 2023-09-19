@@ -1,17 +1,27 @@
 import $ from 'jquery';
-import './stepperInput';
 import { AmountInput } from './stepperInput';
 import { ScrollLock } from './ScrollLock';
+import { getDoc } from 'firebase/firestore';
+import { app } from './InitFirebase';
+import { getFirestore, collection, addDoc, doc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import {
+  GetLocalStorageArray,
+  GetProduct,
+  SetLocalStorageArray,
+} from './Methods';
 
 export class BasketController {
   constructor() {
     this.basketIcon = $('.basket-button-icon');
     this.basketContainer = $('#basketContainer');
     this.basketSection = $('.basket-section');
-    this.basketList = $('.basket-section__product-list');
+    this.basketListBlock = $('.basket-section__product-list');
     this.htmlElement = $('html');
     this.basketTotalPrice = $('.basket-section__footer-button');
     this.scroll = new ScrollLock();
+    this.auth = getAuth(app);
+    this.db = getFirestore(app);
     this.bindEvents();
     this.loadBasketItems();
   }
@@ -21,7 +31,7 @@ export class BasketController {
     $('#hideBasketButton').click(() => this.hideBasket());
     this.basketContainer.click(() => this.hideBasket());
     this.basketSection.click((event) => this.stopPropagation(event));
-    this.basketList.click((event) => this.elementFunc(event));
+    this.basketListBlock.click((event) => this.elementFunc(event));
     this.basketTotalPrice.click(() => this.GoToOrderPage());
   }
 
@@ -51,54 +61,66 @@ export class BasketController {
     event.stopPropagation();
   }
 
-  elementFunc(event) {
+  async elementFunc(event) {
     const targetClasses = event.target.classList;
     if (targetClasses.contains('stepper-input__button')) {
       AmountInput($(event.target));
-      this.changeElement(
+      console.log(event.target);
+      await this.changeElement(
         $(event.target).parent()[0].id.replace('stepper-', '')
       );
-      this.updateTotalPrice();
     } else if (targetClasses.contains('basket-list-item__delete')) {
       const productId = event.target.getAttribute('id');
       this.DeleteItem(productId);
-      this.updateTotalPrice();
+      console.log(event.target);
+    } else if (targetClasses.contains('checkbox')){
+      const productId = event.target.getAttribute('id');
+      console.log(event.target);
     }
   }
 
-  changeElement(id) {
-    const basketArrayString = localStorage.getItem('basketArray');
-    if (basketArrayString !== null) {
-      const basket = JSON.parse(basketArrayString);
-      if (Array.isArray(basket)) {
-        basket.forEach((element, index) => {
-          if (element.id === id) {
-            const amount = $(`#item-${id}`).find('.stepper-input__input').val();
-            if (element.discountPrice != null && element.discountPrice != 0) {
-              $(`#item-${id}`)
-                .find('.discount-price')
-                .html((amount * element.discountPrice).toFixed(2));
-              AmountInput($(event.target).parent());
-              $(`#item-${id}`)
-                .find('.sub-price')
-                .html((amount * element.price).toFixed(2));
-            } else {
-              $(`#item-${id}`)
-                .find('.price')
-                .html((amount * element.price).toFixed(2));
-            }
+  async changeElement(productId) {
+    try {
+      const basket = GetLocalStorageArray('basketArray') || [];
 
-            basket[index].amount = amount;
-          }
-        });
-        localStorage.setItem('basketArray', JSON.stringify(basket));
-      } else {
-        console.error('Ошибка при получении корзины из localStorage');
+      if (!Array.isArray(basket)) {
+        console.error('Помилка при отриманні кошика з localStorage');
+        return;
       }
+
+      for (let index = 0; index < basket.length; index++) {
+        const productData = basket[index];
+
+        if (productData.id === productId) {
+          const product = await GetProduct(productData);
+          const amountInput = $(`#item-${productId}`).find(
+            '.stepper-input__input'
+          );
+          const amount = amountInput.val();
+
+          let newPrice;
+          if (product.discountPrice != null && product.discountPrice !== 0) {
+            newPrice = (amount * product.discountPrice).toFixed(2);
+            $(`#item-${productId}`).find('.discount-price').html(newPrice);
+          } else {
+            newPrice = (amount * product.price).toFixed(2);
+            $(`#item-${productId}`).find('.price').html(newPrice);
+          }
+
+          basket[index].amount = amount;
+          this.UpdateBasket();
+        }
+      }
+
+      SetLocalStorageArray('basketArray', basket);
+    } catch (error) {
+      console.error('Помилка при оновленні елементу кошика:', error);
     }
   }
 
-  AddItem(product) {
+  async AddItem(productData) {
+    const product = await GetProduct(productData);
+    this.UpdateBasket();
     let priceBlock;
     if (product.discountPrice != null && product.discountPrice != 0) {
       priceBlock = `<span class="sub-price">${(
@@ -111,6 +133,25 @@ export class BasketController {
         product.price * product.amount
       ).toFixed(2)}</span>`;
     }
+    let checkbox = '';
+    if (productData.autoship != null) {
+      checkbox = `<input class="custom-checkbox" checked type="checkbox" id="autoship-${product.id}" name="Autoship" value="true"></input>`;
+    } else {
+      checkbox = `<input class="custom-checkbox" type="checkbox" id="autoship-${product.id}" name="Autoship" value="true"></input>`;
+    }
+    let optionArray = [15, 30, 45, 60];
+    let optionArrayHtml = '';
+    for (let i = 0; i < optionArray.length; i++) {
+      if (
+        productData.autoship != null &&
+        optionArray[i] == productData.autoship
+      ) {
+        optionArrayHtml += `<option selected value="${optionArray[i]}">${optionArray[i]}</option>`;
+      } else {
+        optionArrayHtml += `<option  value="${optionArray[i]}">${optionArray[i]}</option>`;
+      }
+    }
+
     let newItem = $(`<div class="basket-list-item" id="item-${product.id}">
     <picture class="basket-list-item__img" style="background-color: ${product.background}">
       <source
@@ -145,14 +186,11 @@ export class BasketController {
     <hr class="basket-list-item__line" />
     <div class="basket-list-item__time-delivery"> 
       <div class="checkbox">
-      <input class="custom-checkbox" type="checkbox" id="autoship-${product.id}" name="Autoship" value="true">
+      ${checkbox}
       <label for="autoship-${product.id}">Autoship every <div class="input-block">
     <label class="input-block__label" for="time-${product.id}">
-      <select id="time-${product.id}" class="input-block__select">
-        <option value="15">15</option>
-        <option value="30">30</option>
-        <option value="45">45</option>
-        <option value="60">60</option>
+      <select id="time-${product.id}"  class="input-block__select">
+        ${optionArrayHtml}
       </select>
     </label>
     <div class="input-block__error"></div>
@@ -164,12 +202,10 @@ export class BasketController {
     $('.basket-section__product-list').append(newItem);
   }
 
-  ChangeItem(product) {
-    $(`#item-${product.id}`).find(`#amount-${product.id}`).val(product.amount);
-    $(`#item-${product.id}`)
-      .find('.basket-list-item__price-block')
-      .find('.sub-price')
-      .html((product.amount * product.price).toFixed(2));
+  UpdateItem(productData) {
+    $(`#item-${productData.id}`)
+      .find('.stepper-input__input')
+      .html(productData.amount);
   }
 
   DeleteItem(productId) {
@@ -183,6 +219,7 @@ export class BasketController {
             basket.splice(index, 1);
 
             localStorage.setItem('basketArray', JSON.stringify(basket));
+            this.UpdateBasket();
           }
         });
       } else {
@@ -191,47 +228,94 @@ export class BasketController {
     }
   }
 
-  loadBasketItems() {
+  async loadBasketItems() {
     const basketArrayString = localStorage.getItem('basketArray');
     if (basketArrayString !== null) {
       const basket = JSON.parse(basketArrayString);
       if (Array.isArray(basket)) {
-        basket.forEach((element) => {
-          this.AddItem(element);
+        await basket.forEach(async (product) => {
+          await this.AddItem(product);
         });
       } else {
         console.error('Ошибка при получении корзины из localStorage');
       }
     }
-    this.updateTotalPrice();
+    this.UpdateBasket();
   }
 
-  updateTotalPrice() {
-    const basketArrayString = localStorage.getItem('basketArray');
-    if (basketArrayString !== null) {
-      let totalPrice = 0;
-      const basket = JSON.parse(basketArrayString);
-      if (Array.isArray(basket)) {
-        this.ChangeBasketIcon(basket);
-        basket.forEach((element) => {
-          if (element.discountPrice != null && element.discountPrice != 0) {
-            totalPrice += element.discountPrice * element.amount;
-          } else {
-            totalPrice += element.price * element.amount;
-          }
-        });
-        $('.basket-section__footer-button').html(totalPrice.toFixed(2));
-      } else {
-        console.error('Ошибка при получении корзины из localStorage');
-      }
+  async UpdateBasketItem(productData) {
+    const product = await GetProduct(productData);
+    this.UpdateAmount(product);
+  }
+
+  UpdateAmount(product) {
+    $(`#item-${product.id}`).find('.stepper-input__input').val(product.amount);
+    this.UpdateProductPrice(product);
+    this.UpdateAutoship(product);
+  }
+
+  UpdateAutoship(product) {
+    console.log(product.autoship);
+    if (product.autoship != null) {
+      $(`#item-${product.id}`).find('.custom-checkbox').attr('checked', true);
+      $(`#item-${product.id}`).find('.input-block__select').val(product.autoship);
+
+    } else{
+      $(`#item-${product.id}`).find('.custom-checkbox').attr('checked', false);
     }
   }
 
-  ChangeBasketIcon(basket){
-    if (basket.length > 0) {
-      this.basketIcon.attr('xlink:href', '/images/Sprite.svg#Cart_alert');
+  UpdateProductPrice(product) {
+    let newPrice;
+    if (product.discountPrice != null && product.discountPrice !== 0) {
+      newPrice = (product.amount * product.discountPrice).toFixed(2);
+      $(`#item-${product.id}`).find('.discount-price').html(newPrice);
     } else {
+      newPrice = (product.amount * product.price).toFixed(2);
+      $(`#item-${product.id}`).find('.price').html(newPrice);
+    }
+  }
+
+  UpdateBasket() {
+    this.basketList = GetLocalStorageArray('basketArray');
+    this.BasketIsEmpty();
+    this.ChangeBasketIcon();
+
+    this.ChangeTotalPrice();
+  }
+
+  BasketIsEmpty() {
+    if (this.basketList.length == 0) {
+      $('.basket-section__footer').css('display', 'none');
+      $('.basket-section__empty-block').css('display', 'flex');
+    } else {
+      $('.basket-section__footer').css('display', 'block');
+      $('.basket-section__empty-block').css('display', 'none');
+    }
+  }
+
+  ChangeBasketIcon() {
+    if (this.basketList.length == 0) {
       this.basketIcon.attr('xlink:href', '/images/Sprite.svg#Cart');
+    } else {
+      this.basketIcon.attr('xlink:href', '/images/Sprite.svg#Cart_alert');
+    }
+  }
+
+  ChangeTotalPrice() {
+    let price = this.basketListBlock.find('.price');
+    let totalPrice = 0;
+    for (let i = 0; i < price.length; i++) {
+      totalPrice += parseFloat(price[i].textContent);
+    }
+    this.basketTotalPrice.html(totalPrice.toFixed(2));
+  }
+
+  async getDoc(ref) {
+    try {
+      return await getDoc(ref);
+    } catch (error) {
+      console.error('Помилка при отриманні даних: ', error);
     }
   }
 }

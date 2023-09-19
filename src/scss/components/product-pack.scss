@@ -25,4 +25,24 @@
       max-width: none;
     }
   }
+  @media (max-width: 637px) {
+    .product-box__type{
+      height: 78px;
+    }
+  }
+  @media (max-width: 600px) {
+    .product-box__type{
+      height: auto;
+    }
+  }
+  @media (max-width: 494px) {
+    .product-box__type{
+      height: 44px;
+    }
+  }
+  @media (max-width: 360px) {
+    .product-box__type{
+      height: auto;
+    }
+  }
 }

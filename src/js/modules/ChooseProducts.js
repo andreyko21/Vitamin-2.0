@@ -20,7 +20,9 @@ export class ChooseProducts {
                 const data = docSnapshot.data();
                 for (const element of data.List) {
                     let item = await getDoc(element);
-                    await this.AddItem(item.data());
+                    let data = item.data();
+                    data.id = item.id.replace('-','.html#');
+                    await this.AddItem(data);
                 }
             } else {
                 console.log('Документ не знайдено в Firestore.');
@@ -62,7 +64,7 @@ export class ChooseProducts {
 
 
     AddItem(product) {
-        let newItem = $(`<div class="choose-products-section__product-card swiper-slide" style="background-color: ${product.background}">
+        let newItem = $(`<a class="choose-products-section__product-card swiper-slide" href="./${product.id}" style="background-color: ${product.background}">
             <picture class="choose-products-section__product-card-img">
               <source srcset="${product.img.avif}" type="image/avif"/>
               <source srcset="${product.img.webp}" type="image/webp"/>
@@ -71,7 +73,7 @@ export class ChooseProducts {
             <p class="choose-products-section__product-card-type">${product.type}</p>
             <p class="choose-products-section__product-card-name">${product.name}</p>
             <p class="choose-products-section__product-card-description">${product.description}</p>
-          </div>`)
+          </a>`)
         $('.choose-products-section__wrapper').append(newItem);
     }
 
