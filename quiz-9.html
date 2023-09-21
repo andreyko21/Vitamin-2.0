@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Your concise and informative description here">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/quiz.min.css?_v=20230921110944">
+  <link rel="stylesheet" href="css/quiz.min.css?_v=20230921141114">
   <title>Quiz</title>
 </head>
 
@@ -36,7 +36,7 @@
             <h1 class="quiz__title">What’s your email address?</h1>
           </div>
           <div class="quiz__answer-block">
-            <div class="information-inputs-block__email">
+            <form id="myForm" class="information-inputs-block__email" preventdefault>
               <label class="input-title" for="email">Email</label>
               <div class="input-block">
   <label class="input-block__label" for="email">
@@ -50,7 +50,7 @@
   <div class="input-block__error"></div>
 </div>
 
-            </div>
+            </form>
             <svg class="circle circle-9">
               <use xlink:href="images/Sprite.svg#Ellipse 10"></use>
             </svg>
@@ -72,6 +72,6 @@
 </footer>
 
     </div>
-    <script src="/js/pageQuiz.min.js?_v=20230921110944"></script>
+    <script src="/js/pageQuiz.min.js?_v=20230921141114"></script>
   </body>
 </html>
